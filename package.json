@@ -1,0 +1,27 @@
+{
+  "version": "1.1.0",
+  "private": true,
+  "license": "GPLv3",
+  "author": "Chronocide",
+  "scripts": {
+    "start": "yarn workspace @labs/server start",
+    "start:server": "yarn workspace @labs/server start:dev",
+    "start:react": "yarn workspace @labs/react start",
+    "build": "yarn workspace @labs/react build"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "nodemon": "^2.0.3"
+  },
+  "dependencies": {},
+  "workspaces": [
+    "packages/*"
+  ]
+}
