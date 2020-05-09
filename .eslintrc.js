@@ -22,8 +22,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     // React
     'react/jsx-fragments': 'off', // Prefer <Fragment />
-    'react/jsx-props-no-spreading': 'off', // Prefer spread operator
-    // JSX
-    'jsx-a11y/label-has-for': 'off', // This rule was deprecated in v6.1.0.
+    'react/jsx-props-no-spreading': 'off' // ...rest
   }
 }

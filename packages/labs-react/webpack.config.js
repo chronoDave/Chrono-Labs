@@ -3,6 +3,7 @@ const path = require('path');
 // Plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.jsx'),
@@ -10,6 +11,10 @@ module.exports = {
     path: path.resolve(__dirname, '../labs-server/client'),
     filename: '[name].bundle.js'
   },
+  devServer: {
+    historyApiFallback: true,
+  },
+  devtool: 'source-map',
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -25,7 +30,10 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: path.resolve(__dirname, 'src'),
+        include: [
+          path.resolve(__dirname, '../../node_modules/wouter'),
+          path.resolve(__dirname, 'src'),
+        ],
         use: {
           loader: 'babel-loader',
           options: {
@@ -37,6 +45,11 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpe?g|gif)$/,
+        include: path.resolve(__dirname, 'assets'),
+        loader: 'file-loader'
+      },
+      {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src'),
         loader: 'html-loader'
@@ -45,6 +58,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin([{ from: 'assets', to: 'assets' }]),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
       filename: 'index.html'

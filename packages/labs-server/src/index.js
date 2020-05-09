@@ -11,6 +11,7 @@ const apiRouter = require('./routers/api.router');
 const { subRouter } = require('./utils');
 
 const port = process.env.PORT || 7777;
+const webpackDevServer = 'http://localhost:5000';
 const origin = [];
 
 if (process.env.NODE_ENV === 'development') origin.push('http://localhost:5000');
@@ -24,5 +25,12 @@ express()
   // Routing
   .use(subRouter('api', apiRouter))
   .use(express.static(path.resolve(__dirname, '../client')))
+  .use('/', (req, res) => {
+    if (process.env.NODE_ENV === 'development') {
+      res.redirect(webpackDevServer);
+    } else {
+      res.sendFile('index.html', { root: path.resolve(__dirname, '../client') });
+    }
+  })
   // eslint-disable-next-line no-console
   .listen(port, () => console.log(`Listening on port: ${port}`));
