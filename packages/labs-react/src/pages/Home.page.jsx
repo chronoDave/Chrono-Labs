@@ -1,31 +1,14 @@
 import React from 'react';
 
 // Core
-import { Header } from '../modules';
+import { App } from '../modules';
 
-import { Typography, Box } from '../components';
+import { Box, Button } from '../components';
 
 const HomePage = () => (
-  <Box
-    flexDirection="column"
-    alignItems="center"
-    padding={4}
-    minHeight="100vh"
-  >
-    <Header />
-    <Box
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      flexGrow={1}
-      flexShrink={0}
-    >
-      E
-    </Box>
-    <Typography variant="caption" href="https://github.com/chronoDave/Chrono-Labs" color="primary">
-      Source (GitHub)
-    </Typography>
-  </Box>
+  <App>
+    <p>Hey</p>
+  </App>
 );
 
 export default HomePage;

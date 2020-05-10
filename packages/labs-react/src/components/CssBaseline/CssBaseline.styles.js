@@ -15,9 +15,6 @@ export const useGlobalStyles = makeStyles(theme => ({
     },
     '*, *::before, *::after': {
       boxSizing: 'inherit'
-    },
-    '#root': {
-      backgroundImage: `url('assets/tile_${theme.palette.type}.png')`
     }
   }
 }));

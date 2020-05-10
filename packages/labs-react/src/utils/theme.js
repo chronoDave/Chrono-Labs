@@ -50,10 +50,14 @@ const normalizeMs = value => {
   return value;
 };
 
-const spacing = (size = 1) => `${size * 8}px`;
+const spacing = (size = 1) => {
+  if (Array.isArray(size)) return size.map(value => `${value * 8}px`).join(' ');
+  return `${size * 8}px`;
+};
 
-const formatSize = size => {
-  if (!size) return spacing(0);
+const formatSize = (size, { loose = false } = {}) => {
+  if (!size && loose) return spacing(0);
+  if (!size) return null;
   if (typeof size === 'number') return spacing(size);
   if (typeof size === 'string') return size;
   if (process.env.NODE_ENV === 'development') {
@@ -63,8 +67,9 @@ const formatSize = size => {
   }
 };
 
-export const theme = {
+export const createTheme = ({ mode }) => ({
   spacing,
+  border: (color, width = 1, style = 'solid') => `${width}px ${style} ${color}`,
   accessibility: {
     outline: false
   },
@@ -72,8 +77,13 @@ export const theme = {
     borderRadius: 2
   },
   palette: {
-    type: 'dark',
+    type: mode,
     light: {
+      primary: {
+        light: '#d6f8ed',
+        main: '#55cac5',
+        dark: '#336b87'
+      },
       text: {
         primary: grey[400],
         secondary: grey[300],
@@ -86,6 +96,11 @@ export const theme = {
       }
     },
     dark: {
+      primary: {
+        light: '#d6f8ed',
+        main: '#55cac5',
+        dark: '#336b87'
+      },
       text: {
         primary: grey[50],
         secondary: grey[100],
@@ -126,15 +141,15 @@ export const theme = {
     formatShorthandSpacing: shorthand => {
       if (!shorthand) return null;
       if (typeof shorthand === 'string') return shorthand;
-      if (typeof shorthand === 'number') return theme.spacing(shorthand);
+      if (typeof shorthand === 'number') return spacing(shorthand);
       if (Array.isArray(shorthand)) return shorthand.map(formatSize).join(' ');
       // Needs to be ordered
       return [
-        formatSize(shorthand.top),
-        formatSize(shorthand.right),
-        formatSize(shorthand.bottom),
-        formatSize(shorthand.left)
+        formatSize(shorthand.top, { loose: true }),
+        formatSize(shorthand.right, { loose: true }),
+        formatSize(shorthand.bottom, { loose: true }),
+        formatSize(shorthand.left, { loose: true })
       ].join(' ');
     }
   }
-};
+});

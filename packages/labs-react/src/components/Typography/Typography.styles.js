@@ -19,5 +19,10 @@ export const useTypographyStyles = makeStyles(theme => ({
   }),
   margin: ({ margin }) => ({
     margin: theme.utils.formatShorthandSpacing(margin)
-  })
+  }),
+  link: {
+    '&:hover': {
+      color: theme.palette[theme.palette.type].primary.main
+    }
+  }
 }));

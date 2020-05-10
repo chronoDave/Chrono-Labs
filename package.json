@@ -5,6 +5,7 @@
   "author": "Chronocide",
   "scripts": {
     "start": "yarn workspace @labs/server start",
+    "lint": "eslint --ext .js --ext .jsx",
     "start:server": "yarn workspace @labs/server start:dev",
     "start:react": "yarn workspace @labs/react start",
     "build": "yarn workspace @labs/react build"

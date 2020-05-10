@@ -24,12 +24,20 @@ const Box = props => {
     alignSelf,
     flexGrow,
     flexShrink,
+    wrap,
     // Size
+    width,
+    height,
     minHeight,
+    minWidth,
+    maxHeight,
+    maxWidth,
     // Spacing
     margin,
     padding,
     // Misc
+    display,
+    className,
     children
   } = props;
 
@@ -41,10 +49,16 @@ const Box = props => {
     alignSelf,
     flexGrow,
     flexShrink,
+    flexWrap: wrap
   };
 
   const size = {
-    minHeight
+    minHeight,
+    minWidth,
+    maxHeight,
+    maxWidth,
+    width,
+    height
   };
 
   const spacing = {
@@ -53,6 +67,7 @@ const Box = props => {
   };
 
   const classes = useBoxStyles({
+    display,
     flex,
     size,
     spacing
@@ -66,7 +81,8 @@ const Box = props => {
           [classes.flex]: shouldRenderClass(flex),
           [classes.size]: shouldRenderClass(size),
           [classes.spacing]: shouldRenderClass(spacing)
-        }
+        },
+        className
       )}
     >
       {children}
@@ -81,32 +97,71 @@ Box.propTypes = {
     'row-reverse',
     'column-reverse'
   ]),
+  display: PropTypes.oneOf([
+    'block',
+    'inline-flex',
+    'flex'
+  ]),
   justifyContent: propFlexAxis,
   alignItems: propFlexAxis,
   justifySelf: propFlexAxis,
   alignSelf: propFlexAxis,
   flexGrow: PropTypes.number,
   flexShrink: PropTypes.number,
+  wrap: PropTypes.oneOf([
+    'wrap',
+    'nowrap',
+    'wrapreverse'
+  ]),
   minHeight: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  minWidth: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  maxHeight: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  maxWidth: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  width: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
+  height: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]),
   margin: propSpacingShorthand,
   padding: propSpacingShorthand,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired
 };
 
 Box.defaultProps = {
+  display: 'flex',
   flexDirection: null,
   justifyContent: null,
+  wrap: null,
   alignItems: null,
   minHeight: null,
+  minWidth: null,
+  maxHeight: null,
+  maxWidth: null,
+  width: null,
+  height: null,
   margin: null,
   padding: null,
   justifySelf: null,
   alignSelf: null,
   flexGrow: null,
   flexShrink: null,
+  className: null
 };
 
 export default Box;

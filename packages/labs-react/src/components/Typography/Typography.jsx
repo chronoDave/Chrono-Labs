@@ -7,7 +7,12 @@ import { useTypographyStyles } from './Typography.styles';
 
 // Utils
 import { shouldRenderClass } from '../../utils';
-import { theme } from '../../utils/theme';
+
+// Validation
+import {
+  propSpacingShorthand,
+  propTypographyVariant
+} from '../../validation/propTypes';
 
 const Typography = props => {
   const {
@@ -39,7 +44,8 @@ const Typography = props => {
         {
           [classes[color]]: color !== 'inherit',
           [classes.padding]: shouldRenderClass({ padding }),
-          [classes.margin]: shouldRenderClass({ margin })
+          [classes.margin]: shouldRenderClass({ margin }),
+          [classes.link]: href
         },
         className
       )
@@ -49,19 +55,25 @@ const Typography = props => {
 };
 
 Typography.propTypes = {
-  variant: PropTypes.oneOf(Object.keys(theme.typography)),
+  variant: propTypographyVariant,
   color: PropTypes.oneOf([
     'inherit',
     'primary',
     'secondary',
     'disabled'
   ]),
+  padding: propSpacingShorthand,
+  margin: propSpacingShorthand,
+  href: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.node.isRequired
 };
 
 Typography.defaultProps = {
   className: null,
+  href: null,
+  padding: null,
+  margin: null,
   variant: 'body1',
   color: 'inherit'
 };

@@ -1,4 +1,8 @@
 export { Box } from './Box';
-export { Button } from './Button';
+export {
+  ButtonBase,
+  Button
+} from './Button';
 export { CssBaseline } from './CssBaseline';
 export { Typography } from './Typography';
+export { Logo } from './Logo';
