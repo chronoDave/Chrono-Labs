@@ -1,0 +1,17 @@
+{
+  "name": "@portfolio/express",
+  "version": "1.0.0",
+  "author": "Chronocide",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon --config .nodemon.json"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {}
+}
