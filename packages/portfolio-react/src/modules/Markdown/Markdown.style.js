@@ -14,6 +14,6 @@ export const useMarkdownStyle = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    objectFit: 'cover'
+    objectPosition: 'center'
   }
 }));

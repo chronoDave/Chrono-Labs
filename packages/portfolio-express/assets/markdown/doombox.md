@@ -1,10 +1,12 @@
+![Banner Doombox](/assets/images/header_doombox.jpg)
+
 ##### Description
 
 <box>
 
-Doombox is a music player designed and built for large music libraries. It's highly customizable, works on small screens and is completely free.
+Doombox is a music player designed and built for large music libraries. It's open-source, highly customizable, works on small screens and is completely free.
 
-You can find it on [GitHub](https://github.com/chronoDave/Doombox).
+For more technical details, see [GitHub](https://github.com/chronoDave/Doombox).
 
 </box>
 
@@ -16,7 +18,7 @@ You can find it on [GitHub](https://github.com/chronoDave/Doombox).
 
 Before Doombox, I used a program called [foobar2000](https://www.foobar2000.org/) as my music player. It's fast, it works well, but it simply didn't work for me as my music collection grew. This, combined with the fact that it doesn't work as well on Mac, made me create Doombox.
 
-The goal? To create a cross-platform, easily customizable free audio player that doesn't compromise on UX. If browsing through a physical collection of CD's can be enjoyable, why can't browsing through a digital collection be the same? 
+The goal? To create a cross-platform, open-source, easily customizable free audio player that doesn't compromise on UX. If browsing through a physical collection of CD's can be enjoyable, why can't browsing through a digital collection be? 
 
 <b>0.x.x - Prototyping phase</b>
 

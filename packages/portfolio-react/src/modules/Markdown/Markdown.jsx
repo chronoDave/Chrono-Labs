@@ -16,7 +16,7 @@ const Markdown = ({ id }) => {
   const [file, setFile] = useState('');
 
   useEffect(() => {
-    get(path.resolve('assets', `${id}.md`), res => {
+    get(path.resolve('assets/markdown', `${id}.md`), res => {
       const { statusCode } = res;
 
       if (statusCode === 200) {
