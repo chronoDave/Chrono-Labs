@@ -9,10 +9,10 @@ import NavigationMobile from './NavigationMobile/NavigationMobile';
 
 const Navigation = () => (
   <Fragment>
-    <Hidden mdUp>
+    <Hidden lgUp>
       <NavigationMobile />
     </Hidden>
-    <Hidden smDown>
+    <Hidden mdDown>
       <NavigationDesktop />
     </Hidden>
   </Fragment>
