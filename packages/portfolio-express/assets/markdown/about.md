@@ -15,6 +15,7 @@ I'm a 23 year old Dutch multimedia designer and I'm currently working as a front
 As a multimedia designer, I keep a couple things in mind when I create something:
 
  - <b>Respect privacy and embrace transparency</b>. Every user has the right to know how their data is being collected and used.
+ - <b>Iterate</b>. Nothing is perfect after the first attempt. Iterate often to make sure you're making the _right_ thing.
  - <b>Embrace individuality</b>. Every users has their own desires. It's the role of the designer to make sure those desires are fullfilled, meaning customization and accesibility should be readibly available.
  - <b>Form follows function</b>. Everything must be designed for a reason.
  - <b>Less is more</b>. More often than not, the simplest solution is the best solution. Don't overcomplicate things if you don't have to.
