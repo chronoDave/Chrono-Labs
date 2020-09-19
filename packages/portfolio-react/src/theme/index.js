@@ -1,22 +1,20 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core';
 
 export const theme = createMuiTheme({
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        body: {
-          padding: '0 !important'
-        }
-      }
-    }
-  },
   palette: {
     text: {
-      primary: '#010101'
+      primary: '#575757'
+    },
+    background: {
+      default: '#f0f0f0'
     }
   },
   typography: {
-    fontFamily: 'sans-serif'
+    fontFamily: ['Heebo', 'sans-serif'].join(','),
+    body1: {
+      lineHeight: 1.5,
+      letterSpacing: '0.01em'
+    }
   },
   component: {
     sidebar: 240,

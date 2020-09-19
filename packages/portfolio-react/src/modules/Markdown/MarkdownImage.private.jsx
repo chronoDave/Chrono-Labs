@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Style
-import { useMarkdownStyle } from './Markdown.style';
+import { useMarkdownStyles } from './Markdown.style';
 
 const MarkdownImage = ({ title, alt, src }) => {
-  const classes = useMarkdownStyle();
+  const classes = useMarkdownStyles();
 
   return (
     <img

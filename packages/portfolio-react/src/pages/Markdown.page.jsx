@@ -8,7 +8,13 @@ import { Box } from '@material-ui/core';
 import { Markdown } from '../modules';
 
 const MarkdownPage = ({ id }) => (
-  <Box pt={1} p={4} mx="auto" maxWidth={{ xs: '100%', lg: 720 }}>
+  <Box
+    px={2}
+    pb={2}
+    maxWidth={{ md: 720 }}
+    mt={{ md: '-8px' }}
+    mx={{ md: 'auto' }}
+  >
     <Markdown id={id} />
   </Box>
 );

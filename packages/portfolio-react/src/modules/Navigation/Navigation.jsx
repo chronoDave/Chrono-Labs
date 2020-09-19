@@ -3,17 +3,17 @@ import React, { Fragment } from 'react';
 // Core
 import { Hidden } from '@material-ui/core';
 
-// Private
-import NavigationDesktop from './NavigationDesktop/NavigationDesktop';
-import NavigationMobile from './NavigationMobile/NavigationMobile';
+// Modules
+import { NavigationDesktop } from '../NavigationDesktop';
+import { NavigationMobile } from '../NavigationMobile';
 
 const Navigation = () => (
   <Fragment>
-    <Hidden lgUp>
-      <NavigationMobile />
-    </Hidden>
-    <Hidden mdDown>
+    <Hidden smDown>
       <NavigationDesktop />
+    </Hidden>
+    <Hidden mdUp>
+      <NavigationMobile />
     </Hidden>
   </Fragment>
 );

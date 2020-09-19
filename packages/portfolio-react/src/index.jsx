@@ -2,10 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // Core
-import {
-  ThemeProvider,
-  CssBaseline
-} from '@material-ui/core';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
 
 // Modules
 import { App } from './modules';

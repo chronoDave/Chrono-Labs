@@ -5,7 +5,9 @@ import path from 'path';
 import PropTypes from 'prop-types';
 
 // Core
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
+
+import { LinkText, Avatar } from '../../components';
 
 // Private
 import MarkdownHeader from './MarkdownHeader.private';
@@ -58,10 +60,16 @@ const Markdown = ({ id }) => {
             component: MarkdownHeader,
             props: { variant: 'h6' }
           },
+          p: {
+            component: Typography,
+            props: { paragraph: true }
+          },
+          a: LinkText,
           img: MarkdownImage,
-          box: {
-            component: Box,
-            props: { p: 2 }
+          box: Box,
+          avatar: {
+            component: Avatar,
+            props: { size: 'md' }
           },
           li: MarkdownListItem
         }

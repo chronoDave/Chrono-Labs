@@ -2,21 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Core
-import { Typography } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 // Style
-import { useMarkdownStyle } from './Markdown.style';
+import { useMarkdownStyles } from './Markdown.style';
 
 const MarkdownHeader = ({ variant, children }) => {
-  const classes = useMarkdownStyle();
+  const classes = useMarkdownStyles();
 
   return (
-    <Typography
-      variant={variant}
-      classes={{ root: classes.header }}
+    <Box
+      py={4}
+      my={3}
+      display="flex"
+      justifyContent="center"
+      borderTop={1}
+      borderBottom={1}
+      borderColor="text.primary"
     >
-      {children}
-    </Typography>
+      <Typography variant={variant}>
+        {children}
+      </Typography>
+    </Box>
   );
 };
 

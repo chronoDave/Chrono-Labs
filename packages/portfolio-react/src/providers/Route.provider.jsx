@@ -2,10 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'wouter';
 
 // Pages
-import {
-  MarkdownPage,
-  PageNotFound
-} from '../pages';
+import { MarkdownPage, PageNotFound } from '../pages';
 
 // Utils
 import { PATHS } from '../utils/const';
@@ -18,8 +15,8 @@ const RouteProvider = () => (
     <Route path={PATHS.THESIS}>
       <MarkdownPage id="thesis" />
     </Route>
-    <Route path={PATHS.UNMEI_NO_HOSHI}>
-      <MarkdownPage id="unh" />
+    <Route path={PATHS.KIZUNA_AI}>
+      <MarkdownPage id="kai" />
     </Route>
     <Route path={PATHS.ABOUT}>
       <MarkdownPage id="about" />
