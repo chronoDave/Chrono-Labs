@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 // Core
 import { Box, Typography } from '@material-ui/core';
 
-// Style
-import { useMarkdownStyles } from './Markdown.style';
-
 const MarkdownHeader = ({ variant, children }) => {
-  const classes = useMarkdownStyles();
+  const id = children
+    .join('-')
+    .toLowerCase()
+    .replace(/\s/g, '-')
+    .replace(/()\?/g, '');
 
   return (
     <Box
@@ -19,8 +20,12 @@ const MarkdownHeader = ({ variant, children }) => {
       borderTop={1}
       borderBottom={1}
       borderColor="text.primary"
+      id={id}
     >
-      <Typography variant={variant}>
+      <Typography
+        variant={variant}
+        align="center"
+      >
         {children}
       </Typography>
     </Box>
@@ -29,7 +34,7 @@ const MarkdownHeader = ({ variant, children }) => {
 
 MarkdownHeader.propTypes = {
   variant: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default MarkdownHeader;

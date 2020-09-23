@@ -9,7 +9,7 @@ import { Markdown } from '../modules';
 
 const MarkdownPage = ({ id }) => (
   <Box
-    px={2}
+    px={{ xs: 1, sm: 3 }}
     pb={2}
     maxWidth={{ md: 720 }}
     mt={{ md: '-8px' }}
