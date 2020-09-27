@@ -15,8 +15,8 @@ const RouteProvider = () => (
     <Route path={PATHS.THESIS}>
       <MarkdownPage id="thesis" />
     </Route>
-    <Route path={PATHS.KIZUNA_AI}>
-      <MarkdownPage id="kai" />
+    <Route path={PATHS.TECH_LAB}>
+      <MarkdownPage id="techlab" />
     </Route>
     <Route path={PATHS.ABOUT}>
       <MarkdownPage id="about" />

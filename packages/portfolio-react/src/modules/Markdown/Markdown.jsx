@@ -13,6 +13,7 @@ import { LinkText, Avatar } from '../../components';
 import MarkdownHeader from './MarkdownHeader.private';
 import MarkdownImage from './MarkdownImage.private';
 import MarkdownListItem from './MarkdownListItem.private';
+import MarkdownInfo from './MarkdownInfo.private';
 
 const Markdown = ({ id }) => {
   const [file, setFile] = useState('');
@@ -67,6 +68,7 @@ const Markdown = ({ id }) => {
           a: LinkText,
           img: MarkdownImage,
           box: Box,
+          info: MarkdownInfo,
           avatar: {
             component: Avatar,
             props: { size: 'md' }

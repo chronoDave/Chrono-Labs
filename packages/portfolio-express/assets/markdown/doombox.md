@@ -1,14 +1,20 @@
-###### About
+![Doombox header](/assets/images/banner_doombox.jpg)
 
-Doombox is a music player designed and built to support a large, personal music library. It's [open source](https://github.com/chronoDave/Doombox), free and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac computers.
+<info
+  primary="Doombox"
+  secondary="Personal project"
+  date="2019.04.17 - Current"
+/>
+
+Doombox is a music player designed and built to support a large, personal music library. It's free, [open source](https://github.com/chronoDave/Doombox) and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac computers.
 
 You can download it for free on [GitHub](https://github.com/chronoDave/Doombox/releases).
 
 ###### Humble Beginnings
 
-Before I started working on Doombox, I used a program called [foobar2000](https://www.foobar2000.org/) as my music player. It's great software but as my collection grew, the UX experience diminished. This, combined with the fact that foobar2000 doesn't work as well on Mac, made me think about creating Doombox.
+Before I started working on Doombox, I used a program called [foobar2000](https://www.foobar2000.org/) as my music player. It's great software but as my collection grew, the UX experience diminished. This, combined with the fact that foobar2000 doesn't work as well on Mac, made me consider making Doombox.
 
-Now, creating an application is by no means easy, especially with lack of experience. To make sure it was even possible to create something like foobar2000, I created a simple proof-of-concept (PoC) application using just Electron.
+Now, creating an application is by no means easy (especially with lack of experience). To make sure it was even possible to create something like foobar2000, I created a simple proof-of-concept (PoC) application using just Electron.
 
 ![Doombox proof of concept comparison](/assets/images/doombox_2.jpg)
 
@@ -29,15 +35,17 @@ With the PoC working, the next step would be designing the UI.
 
 As Doombox was meant to replace foobar2000, designing the initial version of the UI was relatively straightforward. When I want to improve an already existing UI, I ask myself the following questions:
 
- 1) Which elements work?
- 2) Why do these elements so well, and do these elements affect other elements?
- 3) Which elements don't work?
- 4) Why don't theese elements work, and do these elements affect other elements?
- 5) If I create and / or modify an element, will it fit in with the other elements?
+ - Which elements work?
+ - Why do these elements so well, and do these elements affect other elements?
+ - Which elements don't work?
+ - Why don't these elements work, and do these elements affect other elements?
+ - If I create and / or modify an element, will it fit in with the other elements?
 
 As foobar2000 already had a lot of things I _did_ like, all I needed to do was change the things I _didn't_ like.
 
 One of the things I didn't like was the relatively large player at the bottom of the screen. As I didn't use the drag-to-scroll feature often, it made sense to make the player smaller. Moving it into the sidebar creates more vertical space, allowing for more albums on screen.
+
+![foorbar2000 ui](/assets/images/doombox_5.jpg)
 
 ![Doombox ui concept](/assets/images/doombox_3.jpg)
 
@@ -57,7 +65,7 @@ I wrote the code as-is, without much thinking. It was by no means scalable or co
 
 ###### UI Concept Redesign
 
-To accomdate for smaller screens, a lot of blank space has been removed from the design.
+To accomdate for smaller screens, a lot of blank space has been removed from the design. It also features more actions, 
 
 ###### Second version
 
@@ -85,4 +93,8 @@ Another idea was remote databases. In theory, it would make sense to have a sing
 
 ###### Conclusion
 
-<i>Last updated September 19, 2020</i>
+<box pt="8px">
+
+<i>Last updated September 26, 2020</i>
+
+</box>

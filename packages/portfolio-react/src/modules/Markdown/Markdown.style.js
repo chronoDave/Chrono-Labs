@@ -20,7 +20,9 @@ export const useMarkdownStyles = makeStyles(theme => ({
     margin: theme.spacing(1, 0)
   },
   image: {
+    maxHeight: '100%',
     width: '100%',
-    objectPosition: 'center'
+    objectFit: 'contain',
+    borderRadius: theme.shape.borderRadius
   }
 }));

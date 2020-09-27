@@ -1,4 +1,10 @@
-### Meaningful Interaction in Narrative-driven Games
+![Doombox header](/assets/images/banner_thesis.png)
+
+<info
+  primary="Meaningful Interaction in Narrative-driven Games"
+  secondary="Thesis (4th year)"
+  date="2020.01.06 - 2020.08.27"
+/>
 
  - [Introduction](#introduction)
  - [Context](#context)
@@ -99,6 +105,6 @@ Another problem with TIC-80 is the lack of file bundling. As the game grew bigge
 
 <box pt="8px">
 
-<i>Last updated September 23, 2020</i>
+<i>Last updated September 26, 2020</i>
 
 </box>

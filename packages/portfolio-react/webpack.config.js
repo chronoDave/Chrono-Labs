@@ -45,7 +45,12 @@ module.exports = ({
     }, {
       test: /\.(json|jpg)$/,
       include: path.resolve(__dirname, 'assets'),
-      use: 'file-loader'
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      }
     }]
   },
   plugins: [

@@ -2,7 +2,7 @@ export const PATHS = {
   HOME: '/',
   DOOMBOX: '/doombox',
   THESIS: '/thesis',
-  KIZUNA_AI: '/kai',
+  TECH_LAB: '/techlab',
   ABOUT: '/about',
   EXTERNAL: {
     TWITTER: 'https://twitter.com/ChronoDave',
@@ -17,6 +17,6 @@ export const PATH_NAMES = {
   [PATHS.HOME]: 'Home',
   [PATHS.DOOMBOX]: 'Doombox',
   [PATHS.THESIS]: 'Thesis',
-  [PATHS.KIZUNA_AI]: 'Kizunai AI',
+  [PATHS.TECH_LAB]: 'Tech Lab',
   [PATHS.ABOUT]: 'About'
 };

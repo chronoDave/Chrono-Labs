@@ -12,7 +12,7 @@ const MarkdownPage = ({ id }) => (
     px={{ xs: 1, sm: 3 }}
     pb={2}
     maxWidth={{ md: 720 }}
-    mt={{ md: '-8px' }}
+    mt={{ md: '-8px', sm: 3, xs: 1 }}
     mx={{ md: 'auto' }}
   >
     <Markdown id={id} />

@@ -80,9 +80,9 @@ const NavigationMobile = () => {
         onClose={() => setOpen(false)}
       >
         <MenuLink href={PATHS.HOME} />
-        <MenuLink href={PATHS.DOOMBOX} />
+        <MenuLink href={PATHS.TECH_LAB} />
         <MenuLink href={PATHS.THESIS} />
-        <MenuLink href={PATHS.KIZUNA_AI} />
+        <MenuLink href={PATHS.DOOMBOX} />
         <MenuLink href={PATHS.ABOUT} />
       </Menu>
     </Fragment>

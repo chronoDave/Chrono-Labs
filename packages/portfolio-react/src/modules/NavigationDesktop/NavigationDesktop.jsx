@@ -20,9 +20,9 @@ const NavigationDesktop = () => {
     <div className={classes.root}>
       <Box display="flex" alignItems="flex-start">
         <NavigationDesktopItem href={PATHS.HOME} />
-        <NavigationDesktopItem href={PATHS.DOOMBOX} />
+        <NavigationDesktopItem href={PATHS.TECH_LAB} />
         <NavigationDesktopItem href={PATHS.THESIS} />
-        <NavigationDesktopItem href={PATHS.KIZUNA_AI} />
+        <NavigationDesktopItem href={PATHS.DOOMBOX} />
         <NavigationDesktopItem href={PATHS.ABOUT} />
       </Box>
       <Box
