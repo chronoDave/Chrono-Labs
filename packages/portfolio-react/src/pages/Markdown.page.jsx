@@ -11,7 +11,7 @@ const MarkdownPage = ({ id }) => (
   <Box
     px={{ xs: 1, sm: 3 }}
     pb={2}
-    maxWidth={{ md: 720 }}
+    maxWidth={{ md: 800 }}
     mt={{ md: '-8px', sm: 3, xs: 1 }}
     mx={{ md: 'auto' }}
   >

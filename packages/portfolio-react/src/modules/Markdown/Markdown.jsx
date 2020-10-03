@@ -14,6 +14,7 @@ import MarkdownHeader from './MarkdownHeader.private';
 import MarkdownImage from './MarkdownImage.private';
 import MarkdownListItem from './MarkdownListItem.private';
 import MarkdownInfo from './MarkdownInfo.private';
+import MarkdownCaption from './MarkdownCaption.private';
 
 const Markdown = ({ id }) => {
   const [file, setFile] = useState('');
@@ -65,6 +66,7 @@ const Markdown = ({ id }) => {
             component: Typography,
             props: { paragraph: true }
           },
+          caption: MarkdownCaption,
           a: LinkText,
           img: MarkdownImage,
           box: Box,

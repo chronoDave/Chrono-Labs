@@ -1,4 +1,6 @@
-![Doombox header](/assets/images/banner_thesis.png)
+![Thesis banner](/assets/images/thesis/banner.png)
+
+<caption>ITFE gameplay screenshot</caption>
 
 <info
   primary="Meaningful Interaction in Narrative-driven Games"
@@ -16,10 +18,11 @@
    - [How difficult can it be to write an AI?](#how-difficult-can-it-be-to-write-an-ai)
    - [The importance of debugging](#the-importance-of-debugging)
    - [The importance of tooling](#the-importance-of-tooling)
+   - [Images](#images)
 
 #### Introduction
 
-The way stories are told within narrative-driven games is inherently flawed. The past few years the industry has seen a surge of so-called "cinamtic games" which primarily focus on telling a story using techniques commonly found in cinema. We ([Danilo van den Beemt](linkedin.com/in/danilovandenbeemt) and I) feel that games have the ability to tell stories in a way no other medium can; by means of interaction.
+The way stories are told within narrative-driven games is inherently flawed. The past few years the industry has seen a surge of so-called "cinemtic games" which primarily focus on telling a story using techniques commonly found in cinema. We ([Danilo van den Beemt](linkedin.com/in/danilovandenbeemt) and I) feel that games have the ability to tell stories in a way no other medium can; by means of interaction.
 
 Whilst Danilo focused on the research concerning the nature of interaction, I focused on applying both his and my own research in the shape of a game. A Dutch version of Danilo's research can be found on our website, [ludumstercore.com](https://ludumstercore.com/).
 
@@ -105,6 +108,28 @@ Another problem with TIC-80 is the lack of file bundling. As the game grew bigge
 
 <box pt="8px">
 
-<i>Last updated September 26, 2020</i>
+<i>Last updated October 03, 2020</i>
 
 </box>
+
+##### Images
+
+![ITFE UI mockup](/assets/images/thesis/mockup.png)
+
+<caption>UI mockup</caption>
+
+![ITFE terrain generation demo](/assets/images/thesis/terrain.gif)
+
+<caption>Terrain generation demo</caption>
+
+![ITFE pathfinding demo](/assets/images/thesis/pathfinding.gif)
+
+<caption>Pathfinding demo</caption>
+
+![ITFE gameplay footage](/assets/images/thesis/gameplay.gif)
+
+<caption>Gameplay footage</caption>
+
+![ITFE spritesheet](/assets/images/thesis/spritesheet.png)
+
+<caption>Spritesheet</caption>

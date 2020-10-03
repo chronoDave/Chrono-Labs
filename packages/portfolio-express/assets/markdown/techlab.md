@@ -1,4 +1,6 @@
-![Tech lab header](/assets/images/banner_labs.jpg)
+![Tech lab header](/assets/images/tech/banner.jpg)
+
+<caption>Installation photo</caption>
 
 <info
   primary="Companion AI & You"
@@ -49,11 +51,13 @@ To make these questions more provocative, I created a game which purpose is to r
 
 #### Game
 
-![Development screenshot](/assets/images/tech_1.png)
+![Concept screenshot](/assets/images/tech/concept.jpg)
 
-![Concept screenshot](/assets/images/tech_6.jpg)
+<caption>Proof of concept</caption>
 
-![Title screen](/assets/images/tech_7.png)
+![Title screen](/assets/images/tech/title.png)
+
+<caption>Title screen</caption>
 
 The game, called <b>Virtual Dating Action Shangri LA</b>, is a speed-dating game where you date various human characters and a single chatbot. The goal of the game is to find a match within 3 in-game days. The game is [free to download for windows](https://drive.google.com/file/d/1P_NlrkheXVCK5hfO8QF27nR4Zr9ZnADp/view?usp=sharing).
 
@@ -61,18 +65,28 @@ The game was made with [GameMaker Studio 2](https://www.yoyogames.com/gamemaker)
 
 #### Extra
 
-![Booklet - Cover](/assets/images/tech_2.png)
+![Proof of concept screenshot](/assets/images/tech/poc.png)
 
-![Booklet - Page 1](/assets/images/tech_3.png)
+<caption>Proof of concept</caption>
 
-![Booklet - Page 2](/assets/images/tech_4.png)
+![Booklet - Cover](/assets/images/tech/booklet_cover.png)
 
-![Booklet - Page 2](/assets/images/tech_4.png)
+<caption>Booklet cover</caption>
 
-![Tech Lab poster](/assets/images/tech_5.jpg)
+![Booklet - Page 1](/assets/images/tech/booklet_1.png)
+
+<caption>Booklet page 1</caption>
+
+![Booklet - Page 2](/assets/images/tech/booklet_2.png)
+
+<caption>Booklet page 2</caption>
+
+![Tech Lab poster](/assets/images/tech/poster.jpg)
+
+<caption>Poster</caption>
 
 <box pt="8px">
 
-<i>Last updated September 27, 2020</i>
+<i>Last updated October 03, 2020</i>
 
 </box>
