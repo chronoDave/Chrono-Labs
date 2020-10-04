@@ -13,7 +13,7 @@
 
 Companion AI & You is an experimental project I've done during Tech Lab, a 3rd year self-exploration assignment that lasted for half a year. The goal is to ask you, the reader, various questions regarding AI with the main question being:
 
-> "Is it possible to have a relationship with an AI?".
+> Is it possible to have a relationship with an AI?
 
 #### Context
 
@@ -33,13 +33,13 @@ The Tech Lab assignment is as follows:
 
 > <b>Innovation</b> What makes your design a novelty?
 
-I chose <b>machine learning</b> as my context as they fascinate me. Especially now, looking back, it's crazy how quickly things are advancing. For example,  anybody with a good enough pc can now create [real-time](https://github.com/alew3/faceit_live) [deepfakes](https://github.com/9of9/avatarify-windows), which wasn't possible when I started with this project.
+I chose <b>machine learning</b> as my context as it fascinates me. Especially now, looking back, it's crazy how quickly things are advancing. For example,  anybody with a good enough pc can now create [real-time](https://github.com/alew3/faceit_live) [deepfakes](https://github.com/9of9/avatarify-windows) which wasn't possible when I started this project.
 
-I believed then (and still do now) that machine learning will be a very important technology that will raise a lot of philosophical questions. This isn't new, of course. People have been thinking about advanced AI for [quite](https://en.wikipedia.org/wiki/I,_Robot) [some](https://en.wikipedia.org/wiki/Do_Androids_Dream_of_Electric_Sheep%3F) [time](https://en.wikipedia.org/wiki/Neuromancer).
+I believed then (and still do now) that machine learning will be a very important technology that will raise a lot of philosophical questions. This isn't new, of course; people have been thinking about AI for [quite](https://en.wikipedia.org/wiki/I,_Robot) [some](https://en.wikipedia.org/wiki/Do_Androids_Dream_of_Electric_Sheep%3F) [time](https://en.wikipedia.org/wiki/Neuromancer).
 
-As machine learning is quite a broad topic, I specialized myself in <b>chatbots</b>.
+As machine learning is quite a broad topic, I decided to specialize myself in <b>chatbots</b>.
 
-I find the idea of advanced chatbots very interesting and I asked myself (and the audience) the following questions:
+I find the idea of advanced chatbots very interesting and I asked myself the following questions:
 
  - <b>Is it possible to have a relationship with a chatbot and if so, what kind of relationship would it be?</b>
 
@@ -59,7 +59,7 @@ To make these questions more provocative, I created a game which purpose is to r
 
 <caption>Title screen</caption>
 
-The game, called <b>Virtual Dating Action Shangri LA</b>, is a speed-dating game where you date various human characters and a single chatbot. The goal of the game is to find a match within 3 in-game days. The game is [free to download for windows](https://drive.google.com/file/d/1P_NlrkheXVCK5hfO8QF27nR4Zr9ZnADp/view?usp=sharing).
+The game, called <b>Virtual Dating Action Shangri LA</b>, is a speed-dating game where you date various human characters and a single chatbot. The goal of the game is to find a match within 3 in-game days. The game is [free to download for Windows](https://drive.google.com/file/d/1P_NlrkheXVCK5hfO8QF27nR4Zr9ZnADp/view?usp=sharing).
 
 The game was made with [GameMaker Studio 2](https://www.yoyogames.com/gamemaker) and written in their proprierty language, [GML](https://docs2.yoyogames.com/source/_build/3_scripting/3_gml_overview/index.html).
 

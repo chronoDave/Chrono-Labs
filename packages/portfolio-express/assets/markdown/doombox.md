@@ -12,15 +12,15 @@
  - [Conclusion](#conclusion)
  - [Extra](#extra)
 
-Doombox is a music player designed and built to support a large, personal music collection. It's free, [open source](https://github.com/chronoDave/Doombox) and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac computers.
+Doombox is a music player designed and built to support a large, personal music collection. It's free, [open source](https://github.com/chronoDave/Doombox) and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac operating systems.
 
 You can download it for free on [GitHub](https://github.com/chronoDave/Doombox/releases).
 
 #### Introduction
 
-Before I started working on Doombox, I used a program called [foobar2000](https://www.foobar2000.org/) as my music player. It's great software but as my collection grew, the UX experience diminished. This, combined with the fact that foobar2000 doesn't work as well on Mac, made me consider making Doombox.
+Before I started working on Doombox, I used a program called [foobar2000](https://www.foobar2000.org/) as my music player. It's a great piece of software but as my collection grew, the UX experience diminished. This, combined with the fact that foobar2000 doesn't work as well on Mac, made me consider making Doombox.
 
-Now, creating an application is by no means easy (especially with lack of experience). To make sure it was even possible to create something like foobar2000, I created a simple proof-of-concept (PoC) application using just Electron.
+Now, creating an application is by no means easy (especially with little experience), so to make sure it was even possible to create something like foobar2000, I created a simple proof-of-concept (PoC) application using just Electron.
 
 ![Doombox proof of concept comparison](/assets/images/doombox/comparison.jpg)
 
@@ -30,7 +30,7 @@ Now, creating an application is by no means easy (especially with lack of experi
 
 <caption>PoC close-up</caption>
 
-The PoC includes the following things:
+The PoC includes the following:
 
  - Allow the user to select a folder containing music
  - Scan mp3 files within the selected folder for metadata
@@ -43,7 +43,7 @@ With the PoC working, the next step would be designing the UI.
 
 #### Concept
 
-As Doombox was meant to replace foobar2000, designing the initial version of the UI was relatively straightforward. When I want to improve an already existing UI, I ask myself the following questions:
+As Doombox was meant to replace foobar2000, designing the initial version of the UI was relatively straightforward. When improving an already existing UI, I ask myself the following questions:
 
  - Which elements work?
  - Why do these elements so well, and do these elements affect other elements?
@@ -73,13 +73,13 @@ The first official release version of Doombox is [0.7.0-alpha](https://github.co
 
 **The UI did not work as well as I thought it would**
 
-The mockups were made at 1920 x 1080 resolution, but in reality I only used small resolutions. As the design wasn't made for smaller resolutions, it didn't work as well as I hoped it would.
+The mockups were made at 1920 x 1080 resolution, but in reality I only used smaller resolutions. As the design wasn't made for smaller resolutions, it didn't work as well as I hoped.
 
 **The code structure wouldn't allow me to iterate easily**
 
-I wrote the code as-is, without much thinking. It was by no means scalable or consistent, so I quickly ran into issues when trying to add new features.
+I wrote the code as-is, without much thinking about scaling, so I quickly ran into issues when trying to add new features.
 
-To solve these problems, I scrapped most of the code from 0.7.0-alpha and started on 1.x.x. It would feature better code structure and better support for smaller screens
+To solve these problems, I scrapped most of the code from 0.7.0-alpha and started working on 1.x.x. It would have a better code structure and more support for smaller screens
 
 #### Version 1.x.x
 
@@ -91,17 +91,17 @@ To solve these problems, I scrapped most of the code from 0.7.0-alpha and starte
  - [1.1.0-alpha](https://github.com/chronoDave/Doombox/releases/tag/1.1.0-alpha)
  - [1.1.0-beta](https://github.com/chronoDave/Doombox/releases/tag/1.1.0-beta)
 
-The first publicly usable release of Doombox, 1.x.x has more features and better UX compared to 0.7.0. Although this release is far better than 0.7.0, it still has a couple problems.
+The first publicly usable release of Doombox. 1.x.x has more features and better UX compared to 0.7.0. Although this release is far better than 0.7.0, it still has a couple problems.
 
 ##### Performance
 
-Arguably one of the hardest problems to solve, performance is something I have struggled with for quite some time. As the library grows, the performance decreases. The struggles with performance can be broken down in two distinct parts, **storage** and **rendering**
+Arguably one of the hardest problems to solve, performance is something I have struggled with for quite some time. As my music collection grows, Doombox' performance decreases. The struggles with performance can be broken down in two distinct parts, **storage** and **rendering**
 
 **Storage**
 
 Storing things (like metadata) is quite simple in Doombox. Music gets scanned for metadata, which gets stored in a database. However, things get tricky when you're scanning 10k+ songs. Suddenly, that 16ms scan seems to take forever. When dealing with a large quantity of items like this, every millisecond counts.
 
-With no (proper) way to benchmark the performance of the database, I spent a lot of time figuring out how to make Doombox faster.
+With no (proper) way to benchmark the performance of the database, I spent a lot of time figuring out how to make Doombox faster. I quickly realized that for the next release benchmarks would be mandatory if I wanted more control over Doombox' performance.
 
 **Rendering**
 
@@ -117,11 +117,11 @@ For the final release, 1.1.0-beta, I settled on infinite scrolling, similar to w
 
 <caption>Doombox 2.x.x (wip)</caption>
 
-Version 2.x.x is (as of writing) the version I'm currently working on. Similar to 0.7.0 and 1.x.x, it's a complete rewrite of the previous version. For 2.x.x, I'm planning on doing the following things different:
+Version 2.x.x is (as of writing) the version I'm currently working on. Similar to 0.7.0 and 1.x.x, it's a complete rewrite of the previous version. For 2.x.x, I'm planning on doing the following things different.
 
 **Stricter IPC typing (possibly with TypeScript)**
 
-Version 1.x.x does have an [IPC standard](https://github.com/chronoDave/Doombox/blob/v1.x.x/SPEC.md), but the prop `options` often gets abused. To me, this prop indicates that the IPC standard doesn't work correctly, so for 2.x.x, I wish to avoid using this prop altogether.
+Version 1.x.x does have an [IPC standard](https://github.com/chronoDave/Doombox/blob/v1.x.x/SPEC.md), but the prop "options" often gets abused. To me, this indicates that the IPC standard doesn't work correctly, so for 2.x.x, I wish to avoid using this prop altogether.
 
 **Less external dependencies**
 
@@ -133,13 +133,13 @@ Pretty much a no-brainer, native support is always a good thing.
 
 **Better testing coverage**
 
-Throughout developing Doombox, I've realized the strengths of automated testing. It's something often overlooked and sometimes seen as a waste of time, but I personally cannot imagine doing a large-scale project without it.
+Throughout developing Doombox, I've come to realize the strength of automated testing. It's something often overlooked and sometimes seen as a waste of time, but I personally cannot imagine doing a large-scale project without it.
 
-I don't have a coverage percentage or something similar in mind, however. My approach is simply, write tests for things that will either break often or should never break.
+I don't have a coverage percentage or something similar in mind, however. My approach is simple: Write tests for things that will either break often or should never break.
 
 **Removal of linked packages**
 
-Doombox is a pseudo monorepo and uses [linking](https://classic.yarnpkg.com/en/docs/cli/link/) to import local packages. This is quite a pain to set-up (and remove), so this will be replaced with something else.
+Doombox is a pseudo [monorepo](https://en.wikipedia.org/wiki/Monorepo) and uses [linking](https://classic.yarnpkg.com/en/docs/cli/link/) to import local packages. This is quite a pain to set-up (and remove), so this will be replaced with something else.
 
 **Compact-first design**
 
