@@ -123,7 +123,7 @@ Version 2.x.x is (as of writing) the version I'm currently working on. Similar t
 
 Version 1.x.x does have an [IPC standard](https://github.com/chronoDave/Doombox/blob/v1.x.x/SPEC.md), but the prop `options` often gets abused. To me, this prop indicates that the IPC standard doesn't work correctly, so for 2.x.x, I wish to avoid using this prop altogether.
 
-**Less external depedencies**
+**Less external dependencies**
 
 This is a very personal desire, but I believe that having less external code makes your project easier to maintain. Ideally, you gain more freedom within your own project, but in reality it's often not that simple, but I strive to remove redundant code either way.
 
@@ -147,7 +147,7 @@ Unlike previous version, 2.x.x will be designed compact-first, meaning it'll be 
 
 **Better performance on both front- and back-end**
 
-Related to less external depedencies, testing coverage and stricter IPC typing, the goal is to create a more performant version of Doombox.
+Related to less external dependencies, testing coverage and stricter IPC typing, the goal is to create a more performant version of Doombox.
 
 One of the big steps I've taken so far is replacing [NeDB](https://github.com/louischatriot/nedb) with my own database, [leaf-db](https://github.com/chronoDave/leaf-db).
 

@@ -18,7 +18,7 @@ As a multimedia designer, I keep a couple things in mind when I create something
 
  - <b>Respect privacy and embrace transparency</b>. Every user has the right to know how their data is being collected and used. I'm a big supporter of [open source software](https://github.com/chronoDave).
  - <b>Iterate</b>. Nothing is perfect after the first attempt. Iterate often to make sure you're making the _right_ thing.
- - <b>Embrace individuality</b>. Every users has their own desires and it's the role of the designer to make sure those desires are fullfilled, meaning customization and accesibility should be readibly available.
+ - <b>Embrace individuality</b>. Every users has their own desires and it's the role of the designer to make sure those desires are fulfilled, meaning customization and accessibility should be readily available.
  - <b>Form follows function</b>. Everything must be designed for a reason. Remove things that don't have functional value.
  - <b>Less is more</b>. More often than not, the simplest solution is the best solution. Don't overcomplicate things if you don't have to.
  - <b>Physical over digital</b>. If possible, hardware should be physical instead of digital. Tactility matters.

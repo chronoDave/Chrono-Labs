@@ -11,7 +11,7 @@
 
 #### Introduction
 
-Companion AI & You is an experimental project I've done during Tech Lab, a 3rd year self-exploration assignment that lasted for half a year. It aims to ask you, the reader, several questions regarding AI with the main question being:
+Companion AI & You is an experimental project I've done during Tech Lab, a 3rd year self-exploration assignment that lasted for half a year. The goal is to ask you, the reader, various questions regarding AI with the main question being:
 
 > "Is it possible to have a relationship with an AI?".
 
@@ -35,7 +35,7 @@ The Tech Lab assignment is as follows:
 
 I chose <b>machine learning</b> as my context as they fascinate me. Especially now, looking back, it's crazy how quickly things are advancing. For example,  anybody with a good enough pc can now create [real-time](https://github.com/alew3/faceit_live) [deepfakes](https://github.com/9of9/avatarify-windows), which wasn't possible when I started with this project.
 
-I believed then (and still do now) that machine learning will be a very important technology that will raise a lot of philosphical questions. This isn't new, of course. People have been thinking about advanced AI for [quite](https://en.wikipedia.org/wiki/I,_Robot) [some](https://en.wikipedia.org/wiki/Do_Androids_Dream_of_Electric_Sheep%3F) [time](https://en.wikipedia.org/wiki/Neuromancer).
+I believed then (and still do now) that machine learning will be a very important technology that will raise a lot of philosophical questions. This isn't new, of course. People have been thinking about advanced AI for [quite](https://en.wikipedia.org/wiki/I,_Robot) [some](https://en.wikipedia.org/wiki/Do_Androids_Dream_of_Electric_Sheep%3F) [time](https://en.wikipedia.org/wiki/Neuromancer).
 
 As machine learning is quite a broad topic, I specialized myself in <b>chatbots</b>.
 
@@ -43,7 +43,7 @@ I find the idea of advanced chatbots very interesting and I asked myself (and th
 
  - <b>Is it possible to have a relationship with a chatbot and if so, what kind of relationship would it be?</b>
 
- - <b>How do we respond to people who emphatize with chatbots?</b>
+ - <b>How do we respond to people who emphasize with chatbots?</b>
 
  - <b>Who's responsible for the things a chatbot says?</b>
 
