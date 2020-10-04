@@ -6,7 +6,7 @@
 
 **Hey there, I'm Dave!**
 
-I'm a 23 year old Dutch multimedia designer and I'm currently working as a front-end developer. In my free time I like to [write software](https://github.com/chronoDave), [create games](https://chrono-dave.itch.io/unh) and [push pixels](https://nightoblane.neocities.org/).
+I'm a 23 year old Dutch multimedia designer and I'm currently working as a front-end developer. In my free time I enjoy [writing software](https://github.com/chronoDave), [creating games](https://chrono-dave.itch.io/unh) and [pushing pixels](https://nightoblane.neocities.org/).
 
 </box>
 
