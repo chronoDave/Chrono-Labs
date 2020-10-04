@@ -4,6 +4,7 @@
   "private": true,
   "license": "GPL-3.0",
   "author": "Chronocide",
+  "homepage": "https://chronodave.com",
   "scripts": {
     "start": "yarn workspace @portfolio/express start",
     "start:server": "yarn workspace @portfolio/express start:dev",
