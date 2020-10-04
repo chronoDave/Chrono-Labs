@@ -8,12 +8,12 @@ export const useMenuStyles = makeStyles(theme => ({
     ...theme.typography.body1,
     color: 'inherit',
     padding: theme.spacing(1, 2),
+    textDecoration: 'none',
     transition: theme.transitions.create(
       ['background-color', 'color'],
       { duration: theme.transitions.duration.shortest }
     ),
     '&:hover': {
-      textDecoration: 'none',
       color: theme.palette.text.primary,
       backgroundColor: darken(
         theme.palette.background.paper,

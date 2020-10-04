@@ -2,11 +2,7 @@
 
 <caption>ITFE gameplay screenshot</caption>
 
-<info
-  primary="Meaningful Interaction in Narrative-driven Games"
-  secondary="Thesis (4th year)"
-  date="2020.01.06 - 2020.08.27"
-/>
+<info id="thesis" />
 
  - [Introduction](#introduction)
  - [Context](#context)
@@ -106,12 +102,6 @@ One of the biggest issues of working with TIC-80 was the lack of a good debugger
 
 Another problem with TIC-80 is the lack of file bundling. As the game grew bigger in size, it become increasingly more difficult to maintain the code. To solve this problem, I wrote a bundler myself, called [tic-bundle](https://github.com/chronoDave/tic-bundle).
 
-<box pt="8px">
-
-<i>Last updated October 03, 2020</i>
-
-</box>
-
 ##### Images
 
 ![ITFE UI mockup](/assets/images/thesis/mockup.png)
@@ -133,3 +123,9 @@ Another problem with TIC-80 is the lack of file bundling. As the game grew bigge
 ![ITFE spritesheet](/assets/images/thesis/spritesheet.png)
 
 <caption>Spritesheet</caption>
+
+<box pt="8px">
+
+<i>Last updated October 4, 2020</i>
+
+</box>

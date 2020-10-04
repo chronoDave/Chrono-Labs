@@ -35,14 +35,15 @@ Oh, and check out [Subset Games](https://subsetgames.com/) and [Zachtronics](htt
 
 ##### Links
 
+ - [Nightoblane.neocities.org](https://nightoblane.neocities.org/)
  - [GitHub (chronoDave)](https://github.com/chronoDave)
  - [npm (chronocide)](https://www.npmjs.com/~chronocide)
  - [itch.io (chronoDave)](https://chrono-dave.itch.io)
  - [Twitter (@ChronoDave)](https://twitter.com/ChronoDave)
- - [Nightoblane.neocities.org](https://nightoblane.neocities.org/)
+ - [LinkedIn (David Wolters)](https://www.linkedin.com/in/david-wolters-8b426012a/)
 
 <box pt="8px">
 
-<i>Last updated September 19, 2020</i>
+<i>Last updated October 4, 2020</i>
 
 </box>

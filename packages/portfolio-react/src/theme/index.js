@@ -16,9 +16,5 @@ export const theme = createMuiTheme({
       letterSpacing: '0.01em'
     }
   },
-  component: {
-    sidebar: 240,
-    topbar: 72
-  },
   border: (color, width = '1px', type = 'solid') => `${typeof width === 'number' ? `${width}px` : width} ${type} ${color}`
 });

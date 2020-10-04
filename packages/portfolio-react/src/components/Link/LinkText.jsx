@@ -7,12 +7,13 @@ import { Tooltip, Typography } from '@material-ui/core';
 // Styles
 import { useLinkStyles } from './Link.style';
 
-const LinkText = ({ children, href, ...rest }) => {
+const LinkText = ({ children, disableTooltip, href, ...rest }) => {
   const classes = useLinkStyles();
 
   return (
     <Tooltip
       placement="top"
+      disableHoverListener={disableTooltip}
       title={href}
       classes={{ tooltipPlacementTop: classes.textTooltip }}
     >
@@ -28,8 +29,13 @@ const LinkText = ({ children, href, ...rest }) => {
   );
 };
 
+LinkText.defaultProps = {
+  disableTooltip: false
+};
+
 LinkText.propTypes = {
   href: PropTypes.string.isRequired,
+  disableTooltip: PropTypes.bool,
   children: PropTypes.node.isRequired
 };
 

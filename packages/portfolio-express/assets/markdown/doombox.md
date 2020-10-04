@@ -2,11 +2,7 @@
 
 <caption>Doombox v1.1.0-beta</caption>
 
-<info
-  primary="Doombox"
-  secondary="Personal project"
-  date="2019.04.17 - Current"
-/>
+<info id="doombox" />
 
  - [Introduction](#introduction)
  - [Concept](#concept)
@@ -16,7 +12,7 @@
  - [Conclusion](#conclusion)
  - [Extra](#extra)
 
-Doombox is a music player designed and built to support a large, personal music library. It's free, [open source](https://github.com/chronoDave/Doombox) and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac computers.
+Doombox is a music player designed and built to support a large, personal music collection. It's free, [open source](https://github.com/chronoDave/Doombox) and high customizable. It's built with [Electron](https://www.electronjs.org/) and [React](https://reactjs.org/) and supports both Windows and Mac computers.
 
 You can download it for free on [GitHub](https://github.com/chronoDave/Doombox/releases).
 
@@ -179,6 +175,6 @@ Doombox is a personal project I love working on. So far, I've been working on it
 
 <box pt="8px">
 
-<i>Last updated October 03, 2020</i>
+<i>Last updated October 4, 2020</i>
 
 </box>

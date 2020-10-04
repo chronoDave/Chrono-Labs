@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core';
 // Assets
 import bg from '../../../assets/bg.jpg';
 
-export const useAppStyles = makeStyles(() => ({
-  background: {
+export const useBackgroundStyles = makeStyles(() => ({
+  root: {
     top: 0,
     zIndex: -1,
     position: 'fixed',

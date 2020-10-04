@@ -12,6 +12,7 @@ module.exports = ({
     filename: '[name].bundle.js'
   },
   devServer: {
+    host: '0.0.0.0',
     port: 3000,
     historyApiFallback: true,
     proxy: {

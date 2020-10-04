@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Core
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
-import { LinkText } from '../../components';
+import { LinkIcon, Icon } from '../../components';
 
 // Utils
 import { PATHS } from '../../utils/const';
@@ -25,21 +25,13 @@ const NavigationDesktop = () => {
         <NavigationDesktopItem href={PATHS.DOOMBOX} />
         <NavigationDesktopItem href={PATHS.ABOUT} />
       </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
-        alignItems="flex-end"
-      >
-        <Typography
-          component="a"
-          href={PATHS.EXTERNAL.TWITTER}
-          classes={{ root: classes.logo }}
-        >
-          @ChronoDave
-        </Typography>
-        <LinkText href={PATHS.EXTERNAL.GITHUB.REPO}>
-          Source (GitHub)
-        </LinkText>
+      <Box display="flex">
+        <LinkIcon href={PATHS.EXTERNAL.TWITTER}>
+          <Icon type="twitter" />
+        </LinkIcon>
+        <LinkIcon href={PATHS.EXTERNAL.GITHUB.REPO}>
+          <Icon type="github" />
+        </LinkIcon>
       </Box>
     </div>
   );

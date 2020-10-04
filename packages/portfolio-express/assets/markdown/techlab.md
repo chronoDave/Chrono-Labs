@@ -2,11 +2,7 @@
 
 <caption>Installation photo</caption>
 
-<info
-  primary="Companion AI & You"
-  secondary="Tech Lab (3rd year)"
-  date="2018.08.30 - 2019.01.24"
-/>
+<info id="techlab" />
 
  - [Introduction](#introduction)
  - [Context](#context)
@@ -15,7 +11,13 @@
 
 #### Introduction
 
-Companion AI & You is a project I've worked on during Tech Lab. The briefing of the Tech Lab was as follows:
+Companion AI & You is an experimental project I've done during Tech Lab, a 3rd year self-exploration assignment that lasted for half a year. It aims to ask you, the reader, several questions regarding AI with the main question being:
+
+> "Is it possible to have a relationship with an AI?".
+
+#### Context
+
+The Tech Lab assignment is as follows:
 
 > Tech lab develops new applications of technology by producing prototypes that are based on future or present based scenarios which demonstrate a desired effect on systems and people within a multidisciplinary context.
 
@@ -30,8 +32,6 @@ Companion AI & You is a project I've worked on during Tech Lab. The briefing of 
 > <b>Effect</b> In what way should your design influence people or society?
 
 > <b>Innovation</b> What makes your design a novelty?
-
-#### Context
 
 I chose <b>machine learning</b> as my context as they fascinate me. Especially now, looking back, it's crazy how quickly things are advancing. For example,  anybody with a good enough pc can now create [real-time](https://github.com/alew3/faceit_live) [deepfakes](https://github.com/9of9/avatarify-windows), which wasn't possible when I started with this project.
 
@@ -87,6 +87,6 @@ The game was made with [GameMaker Studio 2](https://www.yoyogames.com/gamemaker)
 
 <box pt="8px">
 
-<i>Last updated October 03, 2020</i>
+<i>Last updated October 4, 2020</i>
 
 </box>
