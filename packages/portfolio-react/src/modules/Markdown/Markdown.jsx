@@ -15,6 +15,7 @@ import MarkdownImage from './MarkdownImage.private';
 import MarkdownListItem from './MarkdownListItem.private';
 import MarkdownInfo from './MarkdownInfo.private';
 import MarkdownCaption from './MarkdownCaption.private';
+import MarkdownQuote from './MarkdownQuote.private';
 
 const Markdown = ({ id }) => {
   const [file, setFile] = useState('');
@@ -70,6 +71,7 @@ const Markdown = ({ id }) => {
           a: LinkText,
           img: MarkdownImage,
           box: Box,
+          blockquote: MarkdownQuote,
           info: MarkdownInfo,
           avatar: {
             component: Avatar,

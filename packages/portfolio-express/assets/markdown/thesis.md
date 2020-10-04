@@ -28,7 +28,7 @@ Whilst Danilo focused on the research concerning the nature of interaction, I fo
 
 Within the context of our thesis, the objects described are the user (the person playing the game) and a computer. Computers have the unique ability to receive, process and respond to information from the user. The fidelity and speed of the interaction is what we define as the quality of interaction.
 
-Game designer [Chris Crawford](https://en.wikipedia.org/wiki/Chris_Crawford_(game_designer)) defines interaction as follows:
+Game designer [Chris Crawford](https://en.wikipedia.org/wiki/Chris_Crawford_(game_designer) defines interaction as follows:
 
 > A Cyclic process between two or more active agents in which each agent alternately listens, thinks and speaks—a conversation of sorts.
 
