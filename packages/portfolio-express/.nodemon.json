@@ -1,7 +1,0 @@
-{
-  "watch": "packages/portfolio-express/src/**",
-  "env": {
-    "NODE_ENV": "development"
-  },
-  "exec": "node src/index.js"
-}

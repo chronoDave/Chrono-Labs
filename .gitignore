@@ -1,4 +1,5 @@
 node_modules
-client
-.bundle.json
-.vscode
+/dist
+/build
+/src/server/cert/cert.pem
+/src/server/cert/key.pem

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "module": "es6",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src",
+    ".eslintrc.js",
+    "webpack.client.js",
+    "webpack.server.js",
+    "webpack.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist"
+  ]
+}
