@@ -13,9 +13,7 @@
     "noUnusedParameters": true,
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true,
     "esModuleInterop": true,
-    "outDir": "./dist"
   },
   "include": [
     "src",

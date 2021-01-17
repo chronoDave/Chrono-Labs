@@ -49,7 +49,7 @@ module.exports = [{
   optimization,
   module: {
     rules: [{
-      test: /\.ts?x$/,
+      test: /\.tsx?$/,
       loader: 'ts-loader',
       include: path.resolve(__dirname, 'src/client')
     }]

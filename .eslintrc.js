@@ -12,6 +12,16 @@ module.exports = {
     // Typescript
     '@typescript-eslint/comma-dangle': 'off',
     // General
-    'linebreak-style': 'off'
+    'linebreak-style': 'off',
+    'operator-linebreak': ['error', 'after'],
+    'arrow-parens': ['error', 'as-needed'],
+    'no-console': ['error', {
+      allow: ['warn']
+    }],
+    // Import
+    'import/prefer-default-export': 'off',
+    // React
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off'
   }
 };
