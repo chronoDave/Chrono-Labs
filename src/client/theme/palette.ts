@@ -38,8 +38,20 @@ const alpha = (hex: string, n: number | keyof typeof opacity) => {
 export default {
   opacity,
   alpha,
-  white: '#ffffff',
-  black: '#282828',
-  grey: '#d8d8d8',
-  primary: '#c14158'
+  0: '#000000',
+  1: '#1D2B53',
+  2: '#7E2553',
+  3: '#008751',
+  4: '#AB5236',
+  5: '#5F574F',
+  6: '#C2C3C7',
+  7: '#FFF1E8',
+  8: '#FF004D',
+  9: '#FFA300',
+  10: '#FFEC27',
+  11: '#00E436',
+  12: '#29ADFF',
+  13: '#83769C',
+  14: '#FF77A8',
+  15: '#FFCCAA'
 };

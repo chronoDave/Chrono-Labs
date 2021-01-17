@@ -5,18 +5,18 @@ export default makeStyles(theme => ({
     textDecoration: 'none',
     fontWeight: 500,
     letterSpacing: 1,
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(4),
     fontSize: theme.pxToRem(12),
     color: theme.palette.alpha(
-      theme.palette.white,
+      theme.palette[7],
       'disabled'
     ),
     transition: theme.transitions.create(['color']),
     '&:hover': {
-      color: theme.palette.white
+      color: theme.palette[7]
     }
   },
   active: {
-    color: theme.palette.white
+    color: theme.palette[7]
   }
 }), 'link');

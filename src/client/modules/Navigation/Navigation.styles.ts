@@ -4,8 +4,10 @@ export default makeStyles(theme => ({
   root: {
     display: 'flex',
     justifyContent: 'flex-end',
-    backgroundColor: theme.palette.black,
+    alignItems: 'center',
+    height: theme.mixins.navigation,
+    backgroundColor: theme.palette[0],
     boxShadow: theme.shadows[4],
-    padding: theme.spacing(2)
+    padding: theme.spacing(0, 4)
   }
 }), 'navigation');

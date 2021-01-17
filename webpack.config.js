@@ -49,9 +49,17 @@ module.exports = [{
   optimization,
   module: {
     rules: [{
-      test: /\.tsx?$/,
+      test: /\.(ts|tsx)$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src/client')
+      include: path.resolve(__dirname, 'src/client'),
+      exclude: path.resolve(__dirname, 'src/client/assets')
+    }, {
+      test: /\.(png|jpg|jpeg|gif)$/,
+      loader: 'file-loader',
+      include: path.resolve(__dirname, 'src/client/assets'),
+      options: {
+        name: '[name].[ext]'
+      }
     }]
   },
   plugins: [
