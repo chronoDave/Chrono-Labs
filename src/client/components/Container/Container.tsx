@@ -2,14 +2,14 @@ import React from 'react';
 import { cx } from '@emotion/css';
 
 // Theme
-import { theme } from '../../theme';
+import { Theme } from '../../theme';
 
 // Styles
 import classes from './Container.styles';
 
 export interface ContainerProps {
   children: React.ReactNode,
-  maxWidth: keyof typeof theme['breakpoints']['value'],
+  maxWidth: keyof Theme['breakpoints']['value'],
   className?: {
     root?: string,
     body?: string

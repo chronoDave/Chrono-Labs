@@ -5,6 +5,8 @@ import bg from '../../assets/bg@5x.png';
 
 export default makeStyles(theme => ({
   root: {
+    display: 'flex',
+    justifyContent: 'center',
     height: `calc(100vh - ${theme.mixins.navigation}px)`,
     background: `url(${bg})`,
     backgroundPosition: 'bottom',
@@ -12,34 +14,26 @@ export default makeStyles(theme => ({
   },
   body: {
     display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     flexWrap: 'wrap',
-    maxWidth: 1540,
-    justifyContent: 'space-between'
+    width: '100%',
+    maxWidth: theme.breakpoints.value.xl + theme.breakpoints.value.xs,
+    padding: theme.spacing(4, 8),
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      padding: theme.spacing(2, 4)
+    }
   },
-  header: {
+  containerCarousel: {
     display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'center',
-    color: theme.palette[7],
-    padding: theme.spacing(4)
-  },
-  containerRoot: {
     flexGrow: 1
   },
-  containerBody: {
+  titleButtons: {
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  carousel: {
-    border: theme.border(theme.palette[7], 4),
     marginTop: theme.spacing(2)
   },
-  carouselBar: {
-    margin: theme.spacing(2, 0)
-  },
-  description: {
-    height: 105
+  button: {
+    marginRight: theme.spacing(2)
   }
 }), 'home');

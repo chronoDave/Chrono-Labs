@@ -11,7 +11,7 @@ const spacing = (...args: number[]) => (args.length === 0 ?
   args.map(toPx).join(' ')
 );
 
-export default {
+const theme = {
   transitions,
   breakpoints,
   palette,
@@ -28,3 +28,6 @@ export default {
     n: keyof typeof palette['opacity'] = 'disabled'
   ) => `${spacing(x)} ${spacing(y)} ${palette.alpha(palette[0], palette.opacity[n])}`
 };
+
+export type Theme = typeof theme;
+export default theme;

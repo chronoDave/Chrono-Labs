@@ -1,15 +1,14 @@
 import React from 'react';
+import { useLocation } from 'wouter';
 
 // Core
-import {
-  Typography,
-  Carousel,
-  CarouselBar,
-  Container
-} from '../../components';
+import { Typography, Button } from '../../components';
 
-// Hooks
-import { useCarousel } from '../../hooks';
+// Modules
+import { CarouselHome } from '../../modules';
+
+// Utils
+import { ROUTES } from '../../utils/const';
 
 // Assets
 import gifTuhn2x from '../../assets/tunh@2x.gif';
@@ -23,76 +22,58 @@ const HomePage = () => {
   const images = [{
     key: 'tuhn',
     src: gifTuhn2x,
-    alt: 'Touhou Unmei no Hoshi'
+    alt: 'Touhou: Star of Destiny',
+    description: '東方運命の星 (Touhou: Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.'
   }, {
     key: 'doombox',
     src: pngDoombox2x,
-    alt: 'Doombox'
+    alt: 'Doombox',
+    description: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.'
   }, {
     key: 'thesis',
     src: pngThesis2x,
-    alt: 'Thesis'
+    alt: 'Thesis',
+    description: 'How can a game be developed where the story makes use of the interactivity the medium provides?'
   }];
-  const descriptions = [
-    '東方運命の星 (Touhou Unmei no Hoshi) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
-    'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable. It\'s built with Electron and React and supports both Windows and Mac operating systems.',
-    'How can a game be developed where the story makes use of the interactivity the medium provides?'
-  ];
 
-  const {
-    index,
-    handleClick,
-    handleNext,
-    handlePrevious
-  } = useCarousel(images.length);
+  const [, setLocation] = useLocation();
 
   return (
-    <Container
-      maxWidth="xl"
-      className={{
-        root: classes.root,
-        body: classes.body
-      }}
-    >
-      <div className={classes.header}>
-        <Typography color="inherit" variant="h1">
-          CHRONODAVE
-        </Typography>
-        <Typography color="inherit" variant="h4">
-          DESIGNER &amp; DEVELOPER
-        </Typography>
+    <div className={classes.root}>
+      <div className={classes.body}>
+        <div>
+          <Typography variant="h1">
+            CHRONODAVE
+          </Typography>
+          <Typography variant="h4">
+            MULTIMEDIA DESIGNER
+          </Typography>
+          <div className={classes.titleButtons}>
+            <Button
+              label="ABOUT"
+              variant="h6"
+              onClick={() => setLocation(ROUTES.ABOUT)}
+              className={classes.button}
+            />
+            <Button
+              label="WORKS"
+              variant="h6"
+              onClick={() => setLocation(ROUTES.WORKS)}
+              className={classes.button}
+            />
+            <Button
+              label="CONTACT"
+              variant="h6"
+              onClick={() => setLocation(ROUTES.CONTACT)}
+              className={classes.button}
+            />
+          </div>
+        </div>
+        <div className={classes.containerCarousel}>
+          <CarouselHome images={images} />
+        </div>
       </div>
-      <Container
-        maxWidth="sm"
-        className={{
-          root: classes.containerRoot,
-          body: classes.containerBody
-        }}
-      >
-        <Typography variant="h4" align="center">
-          {images[index].alt}
-        </Typography>
-        <Carousel
-          width={512}
-          height={512}
-          index={index}
-          className={classes.carousel}
-          images={images}
-          onClick={handleClick}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-        />
-        <CarouselBar
-          keys={images.map(({ key }) => key)}
-          active={images[index].key}
-          onClick={(_, newIndex) => handleClick(newIndex)}
-          className={classes.carouselBar}
-        />
-        <Typography align="center" variant="h6" className={classes.description}>
-          {descriptions[index]}
-        </Typography>
-      </Container>
-    </Container>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import { makeStyles } from '../../theme';
 
 export default makeStyles(theme => ({
   root: {
-    fontFamily: 'NotoSansJP, sans-serif',
+    fontFamily: '"Open Sans", sans-serif',
     fontWeight: 400,
     margin: 0
   },
@@ -10,23 +10,25 @@ export default makeStyles(theme => ({
   h1: {
     fontSize: theme.pxToRem(96),
     letterSpacing: 4,
+    lineHeight: 1,
     fontWeight: 700
   },
   h2: {},
   h3: {},
   h4: {
     fontSize: theme.pxToRem(32),
-    letterSpacing: 2,
+    letterSpacing: 1,
     fontWeight: 700
   },
   h5: {},
   h6: {
     fontSize: theme.pxToRem(18),
-    letterSpacing: 1,
-    fontWeight: 500
+    letterSpacing: 0.5,
+    lineHeight: 1.4,
+    fontWeight: 600
   },
   body: {
-    fontSize: theme.pxToRem(14)
+    fontSize: theme.pxToRem(16)
   },
   subtitle: {},
   caption: {},

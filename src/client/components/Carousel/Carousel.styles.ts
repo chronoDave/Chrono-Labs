@@ -17,7 +17,7 @@ export default makeStyles(theme => ({
   bars: {
     width: '100%',
     position: 'absolute',
-    bottom: theme.spacing(0.5)
+    bottom: theme.spacing()
   },
   icon: {
     color: theme.palette.alpha(theme.palette[7], 0),

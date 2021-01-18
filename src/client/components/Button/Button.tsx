@@ -10,6 +10,7 @@ import classes from './Button.styles';
 
 export interface ButtonProps extends Omit<ButtonBaseProps, 'children'> {
   label: string,
+  color?: 'white' | 'black',
   variant?: TypographyProps['variant']
 }
 
@@ -18,15 +19,14 @@ const Button = forwardRef((props: ButtonProps, ref: React.ForwardedRef<HTMLButto
     className,
     variant,
     label,
+    color = 'white',
     ...rest
   } = props;
 
   return (
     <ButtonBase
       ref={ref}
-      className={cx(classes.root, {
-        [classes.large]: variant?.includes('h')
-      }, className)}
+      className={cx(classes.root, classes[color], className)}
       {...rest}
     >
       <Typography color="inherit" variant={variant}>
