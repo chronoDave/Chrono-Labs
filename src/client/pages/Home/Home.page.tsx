@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Core
 import {
@@ -8,16 +8,18 @@ import {
   Container
 } from '../../components';
 
+// Hooks
+import { useCarousel } from '../../hooks';
+
 // Assets
 import gifTuhn2x from '../../assets/tunh@2x.gif';
 import pngDoombox2x from '../../assets/doombox@2x.png';
-import pngThesis2x from '../../assets/thesis_alt@2x.png';
+import pngThesis2x from '../../assets/thesis@2x.png';
 
 // Styles
 import classes from './Home.styles';
 
 const HomePage = () => {
-  const [index, setIndex] = useState(0);
   const images = [{
     key: 'tuhn',
     src: gifTuhn2x,
@@ -36,6 +38,13 @@ const HomePage = () => {
     'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable. It\'s built with Electron and React and supports both Windows and Mac operating systems.',
     'How can a game be developed where the story makes use of the interactivity the medium provides?'
   ];
+
+  const {
+    index,
+    handleClick,
+    handleNext,
+    handlePrevious
+  } = useCarousel(images.length);
 
   return (
     <Container
@@ -67,14 +76,16 @@ const HomePage = () => {
           width={512}
           height={512}
           index={index}
-          setIndex={setIndex}
           className={classes.carousel}
           images={images}
+          onClick={handleClick}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
         />
         <CarouselBar
           keys={images.map(({ key }) => key)}
           active={images[index].key}
-          onClick={(_, newIndex) => setIndex(newIndex)}
+          onClick={(_, newIndex) => handleClick(newIndex)}
           className={classes.carouselBar}
         />
         <Typography align="center" variant="h6" className={classes.description}>

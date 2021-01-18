@@ -1,7 +1,7 @@
 import { makeStyles } from '../../theme';
 
 export default makeStyles(theme => ({
-  carousel: {
+  root: {
     overflow: 'hidden',
     position: 'relative',
     display: 'flex',
@@ -19,7 +19,7 @@ export default makeStyles(theme => ({
     position: 'absolute',
     bottom: theme.spacing(0.5)
   },
-  navigationIcon: {
+  icon: {
     color: theme.palette.alpha(theme.palette[7], 0),
     transition: theme.transitions.create(['color']),
     '&:hover': {

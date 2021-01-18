@@ -1,13 +1,9 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { cx } from '@emotion/css';
 
 // Core
-import { ButtonBase } from '../ButtonBase';
 import { ButtonIcon } from '../ButtonIcon';
 import { CarouselBar } from '../CarouselBar';
-
-// Hooks
-import { useInterval } from '../../hooks';
 
 // Styles
 import classes from './Carousel.styles';
@@ -19,49 +15,33 @@ type Image = {
 };
 
 export interface CarouselProps {
+  images: Image[],
   width: number,
   height: number,
-  images: Image[],
-  delay?: number,
   className?: string,
-  displayBars?: boolean,
+  showBars?: boolean,
   index: number,
-  setIndex: React.Dispatch<React.SetStateAction<number>>
+  onPrevious: () => void,
+  onNext: () => void,
+  onClick: (index: number) => void
 }
 
 const Carousel = (props: CarouselProps) => {
   const {
     images,
     width,
-    delay = 10000,
     height,
     className,
-    setIndex,
     index,
-    displayBars = false
+    onPrevious,
+    onNext,
+    onClick,
+    showBars = false
   } = props;
-
-  const next = useCallback(() => {
-    setIndex(prevIndex => {
-      const newIndex = prevIndex + 1;
-      return newIndex > images.length - 1 ?
-        0 :
-        newIndex;
-    });
-  }, [images.length, setIndex]);
-
-  const previous = () => setIndex(prevIndex => {
-    const newIndex = prevIndex - 1;
-
-    if (newIndex < 0) return images.length - 1;
-    return newIndex;
-  });
-
-  const [create] = useInterval(next, delay);
 
   return (
     <div
-      className={cx(classes.carousel, className)}
+      className={cx(classes.root, className)}
       style={{ width, height }}
     >
       {images.map((image, i) => (
@@ -78,46 +58,25 @@ const Carousel = (props: CarouselProps) => {
         />
       ))}
       <ButtonIcon
-        onClick={() => {
-          previous();
-          create();
-        }}
+        onClick={onPrevious}
         icon="chevronLeft"
         size="large"
-        className={cx(classes.navigationIcon, classes.previous)}
+        className={cx(classes.icon, classes.previous)}
       />
       <ButtonIcon
-        onClick={() => {
-          next();
-          create();
-        }}
+        onClick={onNext}
         icon="chevronRight"
         size="large"
-        className={cx(classes.navigationIcon, classes.next)}
+        className={cx(classes.icon, classes.next)}
       />
-      {displayBars && (
+      {showBars && (
         <CarouselBar
           className={classes.bars}
           keys={images.map(({ key }) => key)}
           active={images[index].key}
-          onClick={(_, newIndex: number) => {
-            setIndex(newIndex);
-            create();
-          }}
+          onClick={(_, newIndex: number) => onClick(newIndex)}
         />
       )}
-      <div className={classes.bars}>
-        {images.map(({ key }, i) => (
-          <ButtonBase
-            key={key}
-            className={cx(classes.bar, { [classes.barActive]: i === index })}
-            onClick={() => {
-              setIndex(i);
-              create();
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 };

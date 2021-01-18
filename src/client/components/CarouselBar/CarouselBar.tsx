@@ -22,11 +22,11 @@ const CarouselBar = (props: CarouselBarProps) => {
 
   return (
     <div className={cx(classes.root, className)}>
-      {keys.map(key => (
+      {keys.map((key, i) => (
         <ButtonBase
           key={key}
           className={cx(classes.item, { [classes.active]: active === key })}
-          onClick={event => onClick(event, key)}
+          onClick={event => onClick(event, i)}
         />
       ))}
     </div>
