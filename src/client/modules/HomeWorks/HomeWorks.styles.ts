@@ -17,19 +17,19 @@ export default makeStyles(theme => ({
   work: {
     display: 'flex',
     flexDirection: 'column',
-    width: theme.mixins.carousel.xs,
+    width: theme.mixins.carousel['1x'],
     margin: theme.spacing(4, 2),
     [theme.breakpoints.create('minWidth', 'md')]: {
-      width: theme.mixins.carousel.md
+      width: theme.mixins.carousel['2x']
     }
   },
   image: {
-    width: theme.mixins.carousel.xs,
-    height: theme.mixins.carousel.xs,
+    width: theme.mixins.carousel['1x'],
+    height: theme.mixins.carousel['1x'],
     border: theme.border(theme.palette[7], theme.unit(0.5)),
     [theme.breakpoints.create('minWidth', 'md')]: {
-      width: theme.mixins.carousel.md,
-      height: theme.mixins.carousel.md,
+      width: theme.mixins.carousel['2x'],
+      height: theme.mixins.carousel['2x'],
     }
   },
   workTitle: {

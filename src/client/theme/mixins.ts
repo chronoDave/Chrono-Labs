@@ -1,8 +1,8 @@
 export default {
   navigation: 64,
   carousel: {
-    xs: 256,
-    md: 512
+    '1x': 256,
+    '2x': 512
   },
   persona: 240
 };

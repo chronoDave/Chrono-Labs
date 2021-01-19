@@ -31,18 +31,38 @@ const HomeLanding = ({ works }: HomeLandingProps) => {
     handleNext,
     handlePrevious
   } = useCarousel(works.length);
-  const isMd = useMediaQuery(({ create }) => create('minWidth', 'md'));
   const { mixins } = useTheme();
   const [, setLocation] = useLocation();
 
+  const isMd = useMediaQuery(({ create }) => create('minWidth', 'md'));
+  const isLg = useMediaQuery(({ create }) => create('minWidth', 'lg'));
+
+  const breakpoint = (() => {
+    if (isLg) return 'lg';
+    if (isMd) return 'md';
+    return 'xs';
+  })();
+
   return (
     <div className={classes.root}>
-      <div className={classes.title}>
-        <div>
-          <Typography variant="h1">
+      <div className={classes.header}>
+        <div className={classes.title}>
+          <Typography
+            variant={{
+              lg: 'h1',
+              md: 'h3',
+              xs: 'h4'
+            }[breakpoint]}
+          >
             {TEXT.HOME.TITLE}
           </Typography>
-          <Typography variant="h4">
+          <Typography
+            variant={{
+              lg: 'h4',
+              md: 'h6',
+              xs: 'body'
+            }[breakpoint]}
+          >
             {TEXT.HOME.DESCRIPTION}
           </Typography>
           <div className={classes.buttons}>
@@ -54,7 +74,7 @@ const HomeLanding = ({ works }: HomeLandingProps) => {
               <Button
                 key={key}
                 label={key}
-                variant="h6"
+                variant={isMd ? 'h6' : 'body'}
                 onClick={() => setLocation(location)}
                 className={classes.button}
               />
@@ -64,12 +84,12 @@ const HomeLanding = ({ works }: HomeLandingProps) => {
         <div className={classes.body}>
           <Carousel
             width={(isMd ?
-              mixins.carousel.md :
-              mixins.carousel.xs
+              mixins.carousel['2x'] :
+              mixins.carousel['1x']
             )}
             height={(isMd ?
-              mixins.carousel.md :
-              mixins.carousel.xs
+              mixins.carousel['2x'] :
+              mixins.carousel['1x']
             )}
             className={classes.carousel}
             images={works}
@@ -80,7 +100,7 @@ const HomeLanding = ({ works }: HomeLandingProps) => {
             onNext={handleNext}
           />
           <Typography
-            variant="h4"
+            variant={isMd ? 'h4' : 'h6'}
             align="center"
             component="a"
             href="/"

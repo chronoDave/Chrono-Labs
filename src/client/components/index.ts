@@ -9,3 +9,4 @@ export { ButtonIcon, ButtonIconProps } from './ButtonIcon';
 export { Container, ContainerProps } from './Container';
 export { Box, BoxProps } from './Box';
 export { BackgroundDither, BackgroundDitherProps } from './BackgroundDither';
+export { Hidden, HiddenProps } from './Hidden';

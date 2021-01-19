@@ -19,7 +19,11 @@ export default makeStyles(theme => ({
     lineHeight: 1,
     fontWeight: 600
   },
-  h3: {},
+  h3: {
+    fontSize: theme.pxToRem(48),
+    letterSpacing: 1,
+    fontWeight: 700
+  },
   h4: {
     fontSize: theme.pxToRem(32),
     letterSpacing: 1,
