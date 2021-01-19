@@ -3,5 +3,6 @@ export default {
   carousel: {
     xs: 256,
     md: 512
-  }
+  },
+  persona: 240
 };

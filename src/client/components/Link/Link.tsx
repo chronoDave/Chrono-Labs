@@ -16,6 +16,7 @@ const Link = (props: LinkProps) => {
   const {
     children,
     href,
+    className,
     ...rest
   } = props;
   const [location] = useLocation();
@@ -26,7 +27,7 @@ const Link = (props: LinkProps) => {
       href={href}
       className={cx(classes.root, {
         [classes.active]: location === href
-      })}
+      }, className)}
       {...rest}
     >
       {children}

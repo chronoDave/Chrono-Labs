@@ -7,3 +7,5 @@ export { CarouselBar, CarouselBarProps } from './CarouselBar';
 export { Icon, IconProps } from './Icon';
 export { ButtonIcon, ButtonIconProps } from './ButtonIcon';
 export { Container, ContainerProps } from './Container';
+export { Box, BoxProps } from './Box';
+export { BackgroundDither, BackgroundDitherProps } from './BackgroundDither';

@@ -1,2 +1,2 @@
-export { HomePage } from './Home';
-export { AboutPage } from './About';
+export { default as HomePage } from './Home.page';
+export { default as AboutPage } from './About.page';

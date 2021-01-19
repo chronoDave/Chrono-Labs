@@ -1,18 +1,18 @@
 import { makeStyles } from '../../theme';
 
 // Assets
-import bg from '../../assets/bg@5x.png';
+import bg5x from '../../assets/bg@5x.png';
 
 export default makeStyles(theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
     height: `calc(100vh - ${theme.mixins.navigation}px)`,
-    background: `url(${bg})`,
+    background: `url(${bg5x})`,
     backgroundPosition: 'bottom',
     backgroundRepeat: 'repeat-x'
   },
-  body: {
+  title: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -24,16 +24,27 @@ export default makeStyles(theme => ({
       padding: theme.spacing(2, 4)
     }
   },
-  containerCarousel: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexGrow: 1
-  },
-  titleButtons: {
+  buttons: {
     display: 'flex',
     marginTop: theme.spacing(2)
   },
   button: {
     marginRight: theme.spacing(2)
+  },
+  body: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    flexGrow: 1
+  },
+  carousel: {
+    border: theme.border(theme.palette[7], 4),
+    margin: theme.spacing(1.5, 0)
+  },
+  link: {
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline'
+    }
   }
-}), 'home');
+}), 'homeLanding');

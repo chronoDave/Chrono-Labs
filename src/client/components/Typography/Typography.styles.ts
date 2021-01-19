@@ -13,14 +13,24 @@ export default makeStyles(theme => ({
     lineHeight: 1,
     fontWeight: 700
   },
-  h2: {},
+  h2: {
+    fontSize: theme.pxToRem(72),
+    letterSpacing: 3,
+    lineHeight: 1,
+    fontWeight: 600
+  },
   h3: {},
   h4: {
     fontSize: theme.pxToRem(32),
     letterSpacing: 1,
     fontWeight: 700
   },
-  h5: {},
+  h5: {
+    fontSize: theme.pxToRem(24),
+    letterSpacing: 0.5,
+    lineHeight: 1.4,
+    fontWeight: 600
+  },
   h6: {
     fontSize: theme.pxToRem(18),
     letterSpacing: 0.5,
