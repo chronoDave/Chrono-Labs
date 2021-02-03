@@ -1,58 +1,81 @@
 import React from 'react';
 
 // Core
-import { Typography, Link } from '../../components';
+import { BlockHome, Typography, LinkButton } from '../../components';
+
+// Hooks
+import { useMediaQuery } from '../../hooks';
+
+// Utils
+import { TEXT, WORKS } from '../../utils/const';
+
+// Assets
+import gifTuhn2x from '../../assets/tunh@2x.gif';
+import gifTuhn from '../../assets/tunh.gif';
+import pngDoombox2x from '../../assets/doombox@2x.png';
+import pngDoombox from '../../assets/doombox.png';
+import pngThesis2x from '../../assets/thesis@2x.png';
+import pngThesis from '../../assets/thesis.png';
 
 // Styles
 import classes from './HomeWorks.styles';
 
-type Work = {
-  src: string,
-  alt: string,
-  key: string,
-  description: string
-};
+const HomeWorks = () => {
+  const isMd = useMediaQuery('minWidth', 'md');
 
-export interface HomeWorksProps {
-  works: Work[]
-}
+  const works = [{
+    key: 'tuhn',
+    src: isMd ?
+      gifTuhn2x :
+      gifTuhn,
+    title: WORKS.TUHN.title,
+    description: WORKS.TUHN.description,
+    href: WORKS.TUHN.href
+  }, {
+    key: 'doombox',
+    src: isMd ?
+      pngDoombox2x :
+      pngDoombox,
+    title: WORKS.DOOMBOX.title,
+    description: WORKS.DOOMBOX.description,
+    href: WORKS.DOOMBOX.href
+  }, {
+    key: 'thesis',
+    src: isMd ?
+      pngThesis2x :
+      pngThesis,
+    title: WORKS.THESIS.title,
+    description: WORKS.THESIS.description,
+    href: WORKS.THESIS.href
+  }];
 
-const HomeWorks = ({ works }: HomeWorksProps) => (
-  <div className={classes.root}>
-    <Typography
-      variant="h2"
-      align="center"
-      className={classes.title}
-    >
-      WORKS
-    </Typography>
-    <div className={classes.body}>
-      {works.map(work => (
-        <div key={work.key} className={classes.work}>
-          <Typography
-            variant="h4"
-            align="center"
-            className={classes.workTitle}
-          >
-            {work.alt}
-          </Typography>
-          <img
-            src={work.src}
-            alt={work.alt}
-            className={classes.image}
-          />
-          <Typography variant="h6" className={classes.description}>
-            {work.description}
-          </Typography>
-          <div className={classes.linkContainer}>
-            <Link href="/about" className={classes.link}>
+  return (
+    <BlockHome background="fade" className={classes.root} disableSpacer>
+      <Typography variant={isMd ? 'h2' : 'h4'} className={classes.title}>
+        {TEXT.HOME.WORKS.TITLE}
+      </Typography>
+      <div className={classes.body}>
+        {works.map(work => (
+          <div key={work.key} className={classes.item}>
+            <Typography variant={isMd ? 'h4' : 'h6'} className={classes.itemTitle}>
+              {work.title}
+            </Typography>
+            <img src={work.src} alt={work.title} className={classes.itemImage} />
+            <Typography variant={isMd ? 'h6' : 'body'} className={classes.itemDescription}>
+              {work.description}
+            </Typography>
+            <LinkButton
+              href={work.href}
+              variant={isMd ? 'h6' : 'body'}
+              className={classes.itemButton}
+            >
               Read more
-            </Link>
+            </LinkButton>
           </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+        ))}
+      </div>
+    </BlockHome>
+  );
+};
 
 export default HomeWorks;

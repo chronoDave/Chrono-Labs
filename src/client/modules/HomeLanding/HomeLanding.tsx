@@ -1,116 +1,135 @@
 import React from 'react';
-import { useLocation } from 'wouter';
 
 // Core
-import { Carousel, Button, Typography } from '../../components';
+import {
+  Typography,
+  Hidden,
+  Block,
+  Carousel,
+  Link,
+  LinkButton
+} from '../../components';
 
 // Hooks
-import { useTheme, useCarousel, useMediaQuery } from '../../hooks';
+import { useMediaQuery, useTheme, useCarousel } from '../../hooks';
 
 // Utils
-import { TEXT, ROUTES } from '../../utils/const';
+import { WORKS, ROUTES, TEXT } from '../../utils/const';
+
+// Assets
+import gifTuhn2x from '../../assets/tunh@2x.gif';
+import gifTuhn from '../../assets/tunh.gif';
+import pngDoombox2x from '../../assets/doombox@2x.png';
+import pngDoombox from '../../assets/doombox.png';
+import pngThesis2x from '../../assets/thesis@2x.png';
+import pngThesis from '../../assets/thesis.png';
 
 // Styles
 import classes from './HomeLanding.styles';
 
-type Work = {
-  src: string,
-  alt: string,
-  key: string,
-  description: string
-};
+const HomeLanding = () => {
+  const { mixins } = useTheme();
+  const isMd = useMediaQuery('minWidth', 'md');
+  const isLg = useMediaQuery('minWidth', 'lg');
 
-export interface HomeLandingProps {
-  works: Work[]
-}
+  const links = [
+    { key: 'ABOUT', href: ROUTES.ABOUT },
+    { key: 'WORKS', href: ROUTES.WORKS },
+    { key: 'CONTACT', href: ROUTES.CONTACT }
+  ];
 
-const HomeLanding = ({ works }: HomeLandingProps) => {
+  const images = [{
+    key: 'tuhn',
+    src: isMd ?
+      gifTuhn2x :
+      gifTuhn,
+    alt: WORKS.TUHN.title,
+    href: WORKS.TUHN.href
+  }, {
+    key: 'doombox',
+    src: isMd ?
+      pngDoombox2x :
+      pngDoombox,
+    alt: WORKS.DOOMBOX.title,
+    href: WORKS.DOOMBOX.href
+  }, {
+    key: 'thesis',
+    src: isMd ?
+      pngThesis2x :
+      pngThesis,
+    alt: WORKS.THESIS.title,
+    href: WORKS.THESIS.href
+  }];
+
   const {
     index,
     handleClick,
     handleNext,
     handlePrevious
-  } = useCarousel(works.length);
-  const { mixins } = useTheme();
-  const [, setLocation] = useLocation();
+  } = useCarousel(images.length);
 
-  const isMd = useMediaQuery(({ create }) => create('minWidth', 'md'));
-  const isLg = useMediaQuery(({ create }) => create('minWidth', 'lg'));
-
-  const breakpoint = (() => {
-    if (isLg) return 'lg';
-    if (isMd) return 'md';
-    return 'xs';
-  })();
+  const getTitleVariant = () => {
+    if (isLg) return 'h1';
+    if (isMd) return 'h2';
+    return 'h4';
+  };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.header}>
-        <div className={classes.title}>
-          <Typography
-            variant={{
-              lg: 'h1',
-              md: 'h3',
-              xs: 'h4'
-            }[breakpoint]}
-          >
-            {TEXT.HOME.TITLE}
-          </Typography>
-          <Typography
-            variant={{
-              lg: 'h4',
-              md: 'h6',
-              xs: 'body'
-            }[breakpoint]}
-          >
-            {TEXT.HOME.DESCRIPTION}
-          </Typography>
-          <div className={classes.buttons}>
-            {[
-              { key: 'ABOUT', location: ROUTES.ABOUT },
-              { key: 'WORKS', location: ROUTES.WORKS },
-              { key: 'CONTACT', location: ROUTES.CONTACT }
-            ].map(({ key, location }) => (
-              <Button
-                key={key}
-                label={key}
-                variant={isMd ? 'h6' : 'body'}
-                onClick={() => setLocation(location)}
-                className={classes.button}
-              />
+    <Block
+      className={classes.root}
+      background="fade"
+      width="fs"
+      disableSpacer
+    >
+      <div className={classes.titleRoot}>
+        <Typography variant={getTitleVariant()}>
+          {TEXT.HOME.TITLE}
+        </Typography>
+        <Typography variant={isMd ? 'h4' : 'h6'}>
+          {TEXT.HOME.DESCRIPTION}
+        </Typography>
+        <Hidden on={({ create }) => create('maxWidth', 'xl')}>
+          <div className={classes.titleLinks}>
+            {links.map(link => (
+              <LinkButton
+                key={link.key}
+                href={link.href}
+                className={classes.titleLink}
+                variant="h6"
+              >
+                {link.key}
+              </LinkButton>
             ))}
           </div>
-        </div>
-        <div className={classes.body}>
-          <Carousel
-            width={(isMd ?
-              mixins.carousel['2x'] :
-              mixins.carousel['1x']
-            )}
-            height={(isMd ?
-              mixins.carousel['2x'] :
-              mixins.carousel['1x']
-            )}
-            className={classes.carousel}
-            images={works}
-            showBars
-            index={index}
-            onClick={handleClick}
-            onPrevious={handlePrevious}
-            onNext={handleNext}
-          />
-          <Typography
-            variant={isMd ? 'h4' : 'h6'}
-            align="center"
-            component="a"
-            href="/"
-            className={classes.link}
-          >
-            {works[index].alt}
-          </Typography>
-        </div>
+        </Hidden>
       </div>
-    </div>
+      <div className={classes.carouselRoot}>
+        <Carousel
+          width={(isMd ?
+            mixins.carousel['2x'] :
+            mixins.carousel['1x']
+          )}
+          height={(isMd ?
+            mixins.carousel['2x'] :
+            mixins.carousel['1x']
+          )}
+          className={classes.carouselBody}
+          images={images}
+          index={index}
+          onClick={handleClick}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          showBars
+        />
+        <Link
+          variant={isMd ? 'h4' : 'h6'}
+          align="center"
+          href={images[index].href}
+        >
+          {images[index].alt}
+        </Link>
+      </div>
+    </Block>
   );
 };
 

@@ -16,7 +16,7 @@ module.exports = {
     'operator-linebreak': ['error', 'after'],
     'arrow-parens': ['error', 'as-needed'],
     'no-console': ['error', {
-      allow: ['warn']
+      allow: ['warn', 'info']
     }],
     // Import
     'import/prefer-default-export': 'off',

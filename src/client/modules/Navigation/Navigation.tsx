@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Core
-import { Link } from '../../components';
+import { LinkNavigation } from '../../components';
 
 // Utils
 import { ROUTES } from '../../utils/const';
@@ -11,18 +11,18 @@ import classes from './Navigation.styles';
 
 const Navigation = () => (
   <div className={classes.root}>
-    <Link href={ROUTES.HOME}>
+    <LinkNavigation href={ROUTES.HOME} className={classes.link}>
       HOME
-    </Link>
-    <Link href={ROUTES.ABOUT}>
+    </LinkNavigation>
+    <LinkNavigation href={ROUTES.ABOUT} className={classes.link}>
       ABOUT
-    </Link>
-    <Link href={ROUTES.WORKS}>
+    </LinkNavigation>
+    <LinkNavigation href={ROUTES.WORKS} className={classes.link}>
       WORKS
-    </Link>
-    <Link href={ROUTES.CONTACT}>
+    </LinkNavigation>
+    <LinkNavigation href={ROUTES.CONTACT} className={classes.link}>
       CONTACT
-    </Link>
+    </LinkNavigation>
   </div>
 );
 

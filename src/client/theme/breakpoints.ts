@@ -3,7 +3,8 @@ const value = {
   sm: 480,
   md: 720,
   lg: 960,
-  xl: 1280
+  xl: 1280,
+  fs: 1920
 };
 
 const query = {

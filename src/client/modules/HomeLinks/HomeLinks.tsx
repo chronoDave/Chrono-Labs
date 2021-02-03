@@ -1,86 +1,82 @@
 import React from 'react';
-import { useLocation } from 'wouter';
 
 // Core
-import { Icon, ButtonBase, Typography } from '../../components';
+import {
+  BlockHome,
+  Persona,
+  Icon,
+  LinkButton,
+  Typography
+} from '../../components';
 
-// Modules
-import { HomeBlock } from '../HomeBlock';
+// Hooks
+import { useMediaQuery } from '../../hooks';
 
 // Utils
-import { TEXT, ROUTES } from '../../utils/const';
+import { TEXT, EXTERNAL } from '../../utils/const';
 
 // Styles
 import classes from './HomeLinks.styles';
 
 const HomeLinks = () => {
-  const [, setLocation] = useLocation();
+  const isMd = useMediaQuery('minWidth', 'md');
 
   const links = {
     Personal: [
-      ROUTES.EXTERNAL.FFXIV,
-      ROUTES.EXTERNAL.TWITTER,
-      ROUTES.EXTERNAL.NIGHTOBLANE,
-      ROUTES.EXTERNAL.LINKEDIN
+      EXTERNAL.TWITTER,
+      EXTERNAL.NIGHTOBLANE,
+      EXTERNAL.FFXIV,
+      EXTERNAL.LINKEDIN
     ],
     Software: [
-      ROUTES.EXTERNAL.GITHUB,
-      ROUTES.EXTERNAL.NPM,
-      ROUTES.EXTERNAL.ITCH
+      EXTERNAL.GITHUB,
+      EXTERNAL.NPM,
+      EXTERNAL.ITCH
     ],
     Music: [
-      ROUTES.EXTERNAL.BANDCAMP,
-      ROUTES.EXTERNAL.SOUNDCLOUD
+      EXTERNAL.BANDCAMP,
+      EXTERNAL.SOUNDCLOUD
     ]
   };
 
   return (
-    <HomeBlock
-      className={classes.root}
-      title={TEXT.HOME.LINKS.TITLE}
-      persona={{
-        variant: 'wink',
-        primary: 'Links',
-        secondary: TEXT.HOME.LINKS.DESCRIPTION
-      }}
-    >
+    <BlockHome background="fadeInverse">
+      {isMd && (
+        <Persona
+          type="smug"
+          primary={TEXT.HOME.LINKS.TITLE}
+          secondary={TEXT.HOME.LINKS.DESCRIPTION}
+        />
+      )}
       <div className={classes.body}>
-        {(Object
-          .entries(links)
-          .map(([category, routes]) => (
+        <Typography variant={isMd ? 'h2' : 'h4'} className={classes.title}>
+          {TEXT.HOME.LINKS.TITLE}
+        </Typography>
+        <div className={classes.links}>
+          {Object.entries(links).map(([category, items]) => (
             <div key={category} className={classes.category}>
-              <Typography variant="h4">
+              <Typography variant={isMd ? 'h4' : 'h6'}>
                 {category}
               </Typography>
-              <div className={classes.links}>
-                {routes.map(({
-                  NAME,
-                  HANDLE,
-                  HREF,
-                  ICON
-                }) => (
-                  <ButtonBase
-                    key={NAME}
-                    onClick={() => setLocation(HREF)}
-                    className={classes.button}
+              <div className={classes.categoryItems}>
+                {items.map(item => (
+                  <LinkButton
+                    key={item.name}
+                    href={item.href}
+                    className={classes.categoryItem}
                   >
-                    <Icon type={ICON} className={classes.icon} />
-                    <div className={classes.text}>
-                      <Typography variant="h6" color="inherit">
-                        {NAME}
-                      </Typography>
-                      <Typography color="inherit">
-                        {HANDLE}
-                      </Typography>
-                    </div>
-                  </ButtonBase>
+                    <Icon type={item.icon} className={classes.categoryIcon} />
+                    <Typography color="inherit">
+                      {item.name}
+                    </Typography>
+                  </LinkButton>
                 ))}
               </div>
             </div>
-          ))
-        )}
+          ))}
+        </div>
       </div>
-    </HomeBlock>
+    </BlockHome>
   );
 };
 

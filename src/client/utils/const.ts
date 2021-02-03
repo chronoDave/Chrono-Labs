@@ -2,63 +2,82 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about',
   WORKS: '/works',
-  CONTACT: '/contact',
-  EXTERNAL: {
-    TWITTER: {
-      NAME: 'Twitter',
-      HANDLE: '@ChronoDave',
-      HREF: 'https://twitter.com/ChronoDave',
-      ICON: 'twitter'
-    },
-    ITCH: {
-      NAME: 'itch.io',
-      HANDLE: 'chronoDave',
-      HREF: 'https://chrono-dave.itch.io/',
-      ICON: 'itchio'
-    },
-    GITHUB: {
-      NAME: 'GitHub',
-      HANDLE: 'Chronocide',
-      HREF: 'https://github.com/chronoDave',
-      ICON: 'github'
-    },
-    NPM: {
-      NAME: 'npm',
-      HANDLE: 'chronocide',
-      HREF: 'https://www.npmjs.com/~chronocide',
-      ICON: 'npm'
-    },
-    BANDCAMP: {
-      NAME: 'Bandcamp',
-      HANDLE: 'Chronocide',
-      HREF: 'https://chronodave.bandcamp.com/releases',
-      ICON: 'bandcamp'
-    },
-    NIGHTOBLANE: {
-      NAME: 'Nightoblane',
-      HANDLE: 'NIGHTOBLANE',
-      HREF: 'https://nightoblane.neocities.org',
-      ICON: 'nightoblane'
-    },
-    LINKEDIN: {
-      NAME: 'LinkedIn',
-      HANDLE: 'David Wolters',
-      HREF: 'https://www.linkedin.com/in/david-wolters-8b426012a/',
-      ICON: 'linkedin'
-    },
-    FFXIV: {
-      NAME: 'Final Fantasy XIV',
-      HANDLE: 'Jun Nanase',
-      HREF: 'https://eu.finalfantasyxiv.com/lodestone/character/20489291/#profile',
-      ICON: 'ffxiv'
-    },
-    SOUNDCLOUD: {
-      NAME: 'SoundCloud',
-      HANDLE: 'Chronocide',
-      HREF: 'https://soundcloud.com/chronocidebit',
-      ICON: 'soundcloud'
-    }
+  CONTACT: '/contact'
+};
+
+export const EXTERNAL = {
+  TWITTER: {
+    name: 'Twitter',
+    handle: '@ChronoDave',
+    href: 'https://twitter.com/ChronoDave',
+    icon: 'twitter'
   },
+  ITCH: {
+    name: 'itch.io',
+    handle: 'chronoDave',
+    href: 'https://chrono-dave.itch.io/',
+    icon: 'itchio'
+  },
+  GITHUB: {
+    name: 'GitHub',
+    handle: 'Chronocide',
+    href: 'https://github.com/chronoDave',
+    icon: 'github'
+  },
+  NPM: {
+    name: 'npm',
+    handle: 'chronocide',
+    href: 'https://www.npmjs.com/~chronocide',
+    icon: 'npm'
+  },
+  BANDCAMP: {
+    name: 'Bandcamp',
+    handle: 'Chronocide',
+    href: 'https://chronodave.bandcamp.com/releases',
+    icon: 'bandcamp'
+  },
+  NIGHTOBLANE: {
+    name: 'Nightoblane',
+    handle: 'NIGHTOBLANE',
+    href: 'https://nightoblane.neocities.org',
+    icon: 'nightoblane'
+  },
+  LINKEDIN: {
+    name: 'LinkedIn',
+    handle: 'David Wolters',
+    href: 'https://www.linkedin.com/in/david-wolters-8b426012a/',
+    icon: 'linkedin'
+  },
+  FFXIV: {
+    name: 'Final Fantasy XIV',
+    handle: 'Jun Nanase',
+    href: 'https://eu.finalfantasyxiv.com/lodestone/character/20489291/#profile',
+    icon: 'ffxiv'
+  },
+  SOUNDCLOUD: {
+    name: 'SoundCloud',
+    handle: 'Chronocide',
+    href: 'https://soundcloud.com/chronocidebit',
+    icon: 'soundcloud'
+  }
+};
+
+export const WORKS = {
+  TUHN: {
+    title: 'Touhou: Star of Destiny',
+    description: '東方運命の星 (Touhou: Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
+    href: '/'
+  },
+  DOOMBOX: {
+    title: 'Doombox',
+    description: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.',
+    href: '/'
+  },
+  THESIS: {
+    title: 'Thesis',
+    description: 'How can a game be developed where the story makes use of the interactivity the medium provides?',
+    href: '/'
+  }
 };
 
 export const TEXT = {
@@ -75,23 +94,12 @@ export const TEXT = {
         'NIGHTOBLANE'
       ]
     },
+    WORKS: {
+      TITLE: 'WORKS'
+    },
     LINKS: {
       TITLE: 'LINKS',
       DESCRIPTION: 'You can find me and my works in these places'
-    }
-  },
-  WORKS: {
-    TUHN: {
-      TITLE: 'Touhou: Star of Destiny',
-      DESCRIPTION: '東方運命の星 (Touhou: Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.'
-    },
-    DOOMBOX: {
-      TITLE: 'Doombox',
-      DESCRIPTION: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.'
-    },
-    THESIS: {
-      TITLE: 'Thesis',
-      DESCRIPTION: 'How can a game be developed where the story makes use of the interactivity the medium provides?'
     }
   }
 };

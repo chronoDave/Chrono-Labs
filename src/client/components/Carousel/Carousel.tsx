@@ -8,14 +8,14 @@ import { CarouselBar } from '../CarouselBar';
 // Styles
 import classes from './Carousel.styles';
 
-type Image = {
+export type CarouselImage = {
   src: string,
   alt: string,
   key: string
 };
 
 export interface CarouselProps {
-  images: Image[],
+  images: CarouselImage[],
   width: number,
   height: number,
   className?: string,

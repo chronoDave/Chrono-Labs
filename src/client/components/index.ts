@@ -1,12 +1,14 @@
 export { Typography, TypographyProps } from './Typography';
 export { Link, LinkProps } from './Link';
+export { LinkNavigation, LinkNavigationProps } from './LinkNavigation';
+export { LinkButton, LinkButtonProps } from './LinkButton';
 export { ButtonBase, ButtonBaseProps } from './ButtonBase';
 export { Button, ButtonProps } from './Button';
-export { Carousel, CarouselProps } from './Carousel';
+export { Carousel, CarouselImage, CarouselProps } from './Carousel';
 export { CarouselBar, CarouselBarProps } from './CarouselBar';
 export { Icon, IconProps } from './Icon';
 export { ButtonIcon, ButtonIconProps } from './ButtonIcon';
-export { Container, ContainerProps } from './Container';
-export { Box, BoxProps } from './Box';
-export { BackgroundDither, BackgroundDitherProps } from './BackgroundDither';
+export { Block, BlockProps } from './Block';
+export { BlockHome, BlockHomeProps } from './BlockHome';
 export { Hidden, HiddenProps } from './Hidden';
+export { Persona, PersonaProps } from './Persona';

@@ -1,22 +1,12 @@
 import { makeStyles } from '../../theme';
 
-export default makeStyles(theme => ({
+export default makeStyles(() => ({
   root: {
     textDecoration: 'none',
-    fontWeight: 500,
-    letterSpacing: 1,
-    marginLeft: theme.spacing(4),
-    fontSize: theme.pxToRem(12),
-    color: theme.palette.alpha(
-      theme.palette[7],
-      'disabled'
-    ),
-    transition: theme.transitions.create(['color']),
+    cursor: 'pointer',
+    display: 'inline-flex',
     '&:hover': {
-      color: theme.palette[7]
+      textDecoration: 'underline'
     }
-  },
-  active: {
-    color: theme.palette[7]
   }
 }), 'link');

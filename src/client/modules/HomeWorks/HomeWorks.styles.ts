@@ -4,50 +4,54 @@ export default makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    padding: theme.spacing(8, 32)
+    alignItems: 'center'
   },
   title: {
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.create('minWidth', 'xl')]: {
+      marginBottom: theme.spacing(8),
+    },
   },
   body: {
     display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   },
-  work: {
+  item: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
+    margin: theme.spacing(2),
     width: theme.mixins.carousel['1x'],
-    margin: theme.spacing(4, 2),
-    [theme.breakpoints.create('minWidth', 'md')]: {
-      width: theme.mixins.carousel['2x']
-    }
-  },
-  image: {
-    width: theme.mixins.carousel['1x'],
-    height: theme.mixins.carousel['1x'],
-    border: theme.border(theme.palette[7], theme.unit(0.5)),
     [theme.breakpoints.create('minWidth', 'md')]: {
       width: theme.mixins.carousel['2x'],
-      height: theme.mixins.carousel['2x'],
+      margin: theme.spacing(4)
+    },
+    [theme.breakpoints.create('minWidth', 'lg')]: {
+      margin: theme.spacing(8)
     }
   },
-  workTitle: {
-    marginBottom: theme.spacing(2)
+  itemTitle: {
+    marginBottom: theme.spacing(),
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      marginBottom: theme.spacing(2)
+    }
   },
-  description: {
-    padding: theme.spacing(2)
+  itemImage: {
+    border: theme.border(theme.palette[7], 4),
+    height: theme.mixins.carousel['1x'],
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      height: theme.mixins.carousel['2x']
+    }
   },
-  linkContainer: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '100%'
+  itemDescription: {
+    padding: theme.spacing(1, 0.5),
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      padding: theme.spacing(2, 1)
+    }
   },
-  link: {
-    fontSize: theme.pxToRem(18),
-    letterSpacing: 0.5,
-    lineHeight: 1.4,
-    fontWeight: 600,
-    marginRight: theme.spacing()
+  itemButton: {
+    alignSelf: 'flex-end',
+    marginTop: theme.spacing()
   }
 }), 'homeWorks');

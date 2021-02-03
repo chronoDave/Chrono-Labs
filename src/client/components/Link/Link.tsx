@@ -1,6 +1,5 @@
 import React from 'react';
 import { cx } from '@emotion/css';
-import { useLocation } from 'wouter';
 
 // Core
 import { Typography, TypographyProps } from '../Typography';
@@ -14,20 +13,17 @@ export interface LinkProps extends TypographyProps {
 
 const Link = (props: LinkProps) => {
   const {
-    children,
     href,
+    children,
     className,
     ...rest
   } = props;
-  const [location] = useLocation();
 
   return (
     <Typography
       component="a"
       href={href}
-      className={cx(classes.root, {
-        [classes.active]: location === href
-      }, className)}
+      className={cx(classes.root, className)}
       {...rest}
     >
       {children}

@@ -1,56 +1,43 @@
 import { makeStyles } from '../../theme';
 
-// Assets
-import bg5x from '../../assets/bg@5x.png';
-
 export default makeStyles(theme => ({
   root: {
     display: 'flex',
-    justifyContent: 'center',
-    minHeight: `calc(100vh - ${theme.mixins.navigation + theme.unit(4)}px)`,
-    background: `url(${bg5x})`,
-    backgroundPosition: 'bottom',
-    backgroundRepeat: 'repeat-x',
-    padding: theme.spacing(2)
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
     alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  title: {
-    padding: theme.spacing(2),
-    [theme.breakpoints.create('minWidth', 'md')]: {
-      padding: theme.spacing(8)
-    },
+    justifyContent: 'space-evenly',
+    minHeight: `calc(100vh - ${theme.mixins.navigation + theme.unit(4)}px)`,
+    marginTop: theme.mixins.navigation,
+    padding: theme.spacing(2, 0),
     [theme.breakpoints.create('minWidth', 'xl')]: {
-      padding: theme.spacing(12)
+      padding: theme.spacing(2, 4),
+      flexDirection: 'row',
+      flexWrap: 'wrap'
     }
   },
-  buttons: {
-    display: 'flex',
-    marginTop: theme.spacing(2)
-  },
-  button: {
-    marginRight: theme.spacing(2)
-  },
-  body: {
+  titleRoot: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    [theme.breakpoints.create('minWidth', 'lg')]: {
-      flexGrow: 1
+    margin: theme.spacing(4, 0),
+    [theme.breakpoints.create('minWidth', 'xl')]: {
+      padding: theme.spacing(0, 4)
     }
   },
-  carousel: {
+  titleLinks: {
+    display: 'flex',
+    marginTop: theme.spacing(2)
+  },
+  titleLink: {
+    margin: theme.spacing(0, 1)
+  },
+  carouselRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  carouselBody: {
     border: theme.border(theme.palette[7], 4),
-    margin: theme.spacing(1.5, 0)
-  },
-  link: {
-    textDecoration: 'none',
-    '&:hover': {
-      textDecoration: 'underline'
-    }
+    marginBottom: theme.spacing(1.5)
   }
 }), 'homeLanding');

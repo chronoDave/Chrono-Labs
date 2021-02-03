@@ -6,7 +6,7 @@ import theme, { Theme } from './theme';
 // Utils
 import { capitalize } from '../utils';
 
-type Style = { [key: string]: number | string | Style };
+type Style = { [key: string]: string | number | undefined | Style };
 type Styles = (theme: Theme) => { [key: string]: Style };
 type Classes = { [key: string]: string };
 

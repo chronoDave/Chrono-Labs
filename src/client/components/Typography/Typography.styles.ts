@@ -44,8 +44,12 @@ export default makeStyles(theme => ({
   body: {
     fontSize: theme.pxToRem(16)
   },
-  subtitle: {},
-  caption: {},
+  subtitle: {
+    fontSize: theme.pxToRem(14)
+  },
+  caption: {
+    fontSize: theme.pxToRem(12)
+  },
   // Colors
   inherit: {
     color: 'inherit'
@@ -58,15 +62,5 @@ export default makeStyles(theme => ({
   },
   primary: {
     color: theme.palette[2]
-  },
-  // Align
-  left: {
-    textAlign: 'left'
-  },
-  right: {
-    textAlign: 'right'
-  },
-  center: {
-    textAlign: 'center'
   }
 }), 'typography');

@@ -10,4 +10,4 @@ const pathClient = path.resolve(__dirname, '../client');
 express()
   .use(express.static(pathClient))
   .use('/', (_, res) => res.sendFile('index.html', { root: pathClient }))
-  .listen(port, host, () => console.log(`Listening on: ${host}:${port}`));
+  .listen(port, host, () => console.info(`Listening on: ${host}:${port}`));

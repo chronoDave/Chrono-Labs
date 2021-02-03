@@ -9,7 +9,6 @@ export interface TypographyProps {
   style?: { [key: string]: string | number },
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'subtitle' | 'caption',
   color?: 'inherit' | 'textPrimary' | 'primary',
-  align?: 'left' | 'right' | 'center',
   className?: string,
   children: React.ReactNode,
   [key: string]: unknown
@@ -21,7 +20,6 @@ const Typography = forwardRef((props: TypographyProps, ref) => {
     variant = 'body',
     color = 'textPrimary',
     style,
-    align = 'left',
     className,
     children,
     ...rest
@@ -38,7 +36,6 @@ const Typography = forwardRef((props: TypographyProps, ref) => {
     {
       className: cx(
         classes.root,
-        classes[align],
         classes[color],
         classes[variant],
         className

@@ -1,40 +1,48 @@
 import { makeStyles } from '../../theme';
 
 export default makeStyles(theme => ({
-  root: {
-    backgroundColor: theme.palette[2]
-  },
   body: {
-    display: 'flex'
+    display: 'flex',
+    flexDirection: 'column',
+    padding: theme.spacing(0, 2),
+    [theme.breakpoints.create('minWidth', 'sm')]: {
+      padding: theme.spacing(0, 4),
+    },
+    [theme.breakpoints.create('minWidth', 'lg')]: {
+      padding: theme.spacing(0, 8),
+    },
+    [theme.breakpoints.create('minWidth', 'xl')]: {
+      padding: theme.spacing(0, 16),
+    }
+  },
+  title: {
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.create('minWidth', 'lg')]: {
+      marginBottom: theme.spacing(4),
+    },
   },
   links: {
     display: 'flex',
-    flexDirection: 'column',
-    marginTop: theme.spacing(2)
+    flexWrap: 'wrap'
   },
   category: {
-    marginRight: theme.spacing(4)
+    display: 'flex',
+    flexDirection: 'column',
+    margin: theme.spacing(2)
   },
-  button: {
-    color: theme.palette[7],
+  categoryItems: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: theme.spacing()
+  },
+  categoryItem: {
     display: 'flex',
     alignItems: 'center',
-    border: theme.border(theme.palette[7]),
-    padding: theme.spacing(1, 2),
-    paddingRight: theme.spacing(3),
-    marginBottom: theme.spacing(2),
-    marginLeft: theme.spacing(),
-    transition: theme.transitions.create(['color', 'background-color']),
-    '&:hover': {
-      backgroundColor: theme.palette[7],
-      color: theme.palette[0]
-    }
+    color: theme.palette[7],
+    margin: theme.spacing(),
+    minWidth: theme.spacing(20)
   },
-  text: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  icon: {
-    marginRight: theme.spacing(2)
+  categoryIcon: {
+    marginRight: theme.spacing()
   }
 }), 'homeLinks');

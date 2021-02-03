@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route } from 'wouter';
 
 // Modules
 import { Navigation } from '../Navigation';
+import { Footer } from '../Footer';
+import { HomeLanding } from '../HomeLanding';
+import { HomeAbout } from '../HomeAbout';
+import { HomeWorks } from '../HomeWorks';
+import { HomeLinks } from '../HomeLinks';
 
-// Pages
-import { HomePage } from '../../pages';
-
-const App = () => {
-  return (
-    <div>
-      <Navigation />
-      <Route path="/">
-        <HomePage />
-      </Route>
-    </div>
-  );
-};
+const App = () => (
+  <Fragment>
+    <Navigation />
+    <Route path="/">
+      <HomeLanding />
+      <HomeAbout />
+      <HomeWorks />
+      <HomeLinks />
+      <Footer />
+    </Route>
+  </Fragment>
+);
 
 export default App;

@@ -1,1 +1,1 @@
-export { default as HomeLanding, HomeLandingProps } from './HomeLanding';
+export { default as HomeLanding } from './HomeLanding';
