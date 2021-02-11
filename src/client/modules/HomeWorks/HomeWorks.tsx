@@ -10,12 +10,12 @@ import { useMediaQuery } from '../../hooks';
 import { TEXT, WORKS } from '../../utils/const';
 
 // Assets
-import gifTuhn2x from '../../assets/tunh@2x.gif';
-import gifTuhn from '../../assets/tunh.gif';
-import pngDoombox2x from '../../assets/doombox@2x.png';
-import pngDoombox from '../../assets/doombox.png';
-import pngThesis2x from '../../assets/thesis@2x.png';
-import pngThesis from '../../assets/thesis.png';
+import gifTuhn2x from '../../assets/images/tunh@2x.gif';
+import gifTuhn from '../../assets/images/tunh.gif';
+import pngDoombox2x from '../../assets/images/doombox@2x.png';
+import pngDoombox from '../../assets/images/doombox.png';
+import pngThesis2x from '../../assets/images/thesis@2x.png';
+import pngThesis from '../../assets/images/thesis.png';
 
 // Styles
 import classes from './HomeWorks.styles';

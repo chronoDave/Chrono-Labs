@@ -23,6 +23,7 @@ module.exports = {
     // React
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-fragments': 'off'
+    'react/jsx-fragments': 'off',
+    'react/prop-types': 'off'
   }
 };

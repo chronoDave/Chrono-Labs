@@ -1,8 +1,8 @@
 import { makeStyles, theme } from '../../theme';
 
 // Assets
-import bg5x from '../../assets/bg@5x.png';
-import bgFlip5x from '../../assets/bgFlip@5x.png';
+import bg5x from '../../assets/images/bg@5x.png';
+import bgFlip5x from '../../assets/images/bgFlip@5x.png';
 
 export default makeStyles(() => ({
   root: {

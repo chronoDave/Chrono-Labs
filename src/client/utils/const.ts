@@ -37,7 +37,7 @@ export const EXTERNAL = {
     icon: 'bandcamp'
   },
   NIGHTOBLANE: {
-    name: 'Nightoblane',
+    name: 'NIGHTOBLANE',
     handle: 'NIGHTOBLANE',
     href: 'https://nightoblane.neocities.org',
     icon: 'nightoblane'

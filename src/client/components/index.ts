@@ -12,3 +12,4 @@ export { Block, BlockProps } from './Block';
 export { BlockHome, BlockHomeProps } from './BlockHome';
 export { Hidden, HiddenProps } from './Hidden';
 export { Persona, PersonaProps } from './Persona';
+export { Markdown, MarkdownProps } from './Markdown';

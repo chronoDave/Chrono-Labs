@@ -8,7 +8,8 @@ import { Typography, TypographyProps } from '../Typography';
 import classes from './Link.styles';
 
 export interface LinkProps extends TypographyProps {
-  href: string
+  href: string,
+  underline?: boolean
 }
 
 const Link = (props: LinkProps) => {
@@ -16,6 +17,7 @@ const Link = (props: LinkProps) => {
     href,
     children,
     className,
+    underline = false,
     ...rest
   } = props;
 
@@ -23,7 +25,9 @@ const Link = (props: LinkProps) => {
     <Typography
       component="a"
       href={href}
-      className={cx(classes.root, className)}
+      className={cx(classes.root, {
+        [classes.underline]: underline
+      }, className)}
       {...rest}
     >
       {children}

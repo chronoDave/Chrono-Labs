@@ -8,5 +8,8 @@ export default makeStyles(() => ({
     '&:hover': {
       textDecoration: 'underline'
     }
+  },
+  underline: {
+    textDecoration: 'underline'
   }
 }), 'link');
