@@ -20,8 +20,8 @@ const Navigation = () => (
     <LinkNavigation href={ROUTES.WORKS} className={classes.link}>
       WORKS
     </LinkNavigation>
-    <LinkNavigation href={ROUTES.CONTACT} className={classes.link}>
-      CONTACT
+    <LinkNavigation href={ROUTES.LINKS} className={classes.link}>
+      LINKS
     </LinkNavigation>
   </div>
 );

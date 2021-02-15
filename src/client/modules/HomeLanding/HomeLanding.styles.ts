@@ -7,7 +7,6 @@ export default makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'space-evenly',
     minHeight: `calc(100vh - ${theme.mixins.navigation + theme.unit(4)}px)`,
-    marginTop: theme.mixins.navigation,
     padding: theme.spacing(2, 0),
     [theme.breakpoints.create('minWidth', 'xl')]: {
       padding: theme.spacing(2, 4),
@@ -21,7 +20,7 @@ export default makeStyles(theme => ({
     alignItems: 'center',
     margin: theme.spacing(4, 0),
     [theme.breakpoints.create('minWidth', 'xl')]: {
-      padding: theme.spacing(0, 4)
+      padding: theme.spacing(0, 8)
     }
   },
   titleLinks: {

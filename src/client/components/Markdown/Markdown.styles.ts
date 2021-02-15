@@ -27,6 +27,9 @@ export default makeStyles(theme => ({
     }
   },
   personaBody: {
-    marginLeft: theme.spacing(2)
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      marginLeft: theme.spacing(4)
+    }
   }
 }), 'markdown');

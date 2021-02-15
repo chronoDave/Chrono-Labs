@@ -2,7 +2,7 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about',
   WORKS: '/works',
-  CONTACT: '/contact'
+  LINKS: '/links'
 };
 
 export const EXTERNAL = {
@@ -77,6 +77,11 @@ export const WORKS = {
     title: 'Thesis',
     description: 'How can a game be developed where the story makes use of the interactivity the medium provides?',
     href: '/'
+  },
+  PORTFOLIO: {
+    title: 'Portfolio',
+    description: 'Source (GitHub)',
+    href: 'https://github.com/chronoDave/Portfolio'
   }
 };
 

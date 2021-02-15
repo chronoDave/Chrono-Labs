@@ -28,7 +28,11 @@ export default makeStyles(theme => ({
   category: {
     display: 'flex',
     flexDirection: 'column',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    width: '100%',
+    [theme.breakpoints.create('minWidth', 'xl')]: {
+      width: 'initial'
+    }
   },
   categoryItems: {
     display: 'flex',

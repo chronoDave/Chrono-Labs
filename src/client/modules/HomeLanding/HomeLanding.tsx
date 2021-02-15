@@ -35,7 +35,7 @@ const HomeLanding = () => {
   const links = [
     { key: 'ABOUT', href: ROUTES.ABOUT },
     { key: 'WORKS', href: ROUTES.WORKS },
-    { key: 'CONTACT', href: ROUTES.CONTACT }
+    { key: 'LINKS', href: ROUTES.LINKS }
   ];
 
   const images = [{
