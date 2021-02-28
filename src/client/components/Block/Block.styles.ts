@@ -30,6 +30,22 @@ export default makeStyles(() => ({
     width: '100%',
     height: 365
   },
+  padding: {
+    padding: theme.spacing(4, 2),
+    [theme.breakpoints.create('minWidth', 'md')]: {
+      padding: theme.spacing(8, 2)
+    }
+  },
+  // Flex
+  row: {
+    display: 'flex'
+  },
+  column: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   // Background
   xs: {
     maxWidth: theme.breakpoints.value.xs

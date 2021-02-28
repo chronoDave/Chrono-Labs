@@ -64,8 +64,8 @@ export const EXTERNAL = {
 
 export const WORKS = {
   TUHN: {
-    title: 'Touhou: Star of Destiny',
-    description: '東方運命の星 (Touhou: Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
+    title: 'Touhou Star of Destiny',
+    description: '東方運命の星 (Touhou Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
     href: '/'
   },
   DOOMBOX: {
@@ -75,7 +75,7 @@ export const WORKS = {
   },
   THESIS: {
     title: 'Thesis',
-    description: 'How can a game be developed where the story makes use of the interactivity the medium provides?',
+    description: 'Can a game be developed where the story makes use of the interactivity the medium provides?',
     href: '/'
   },
   PORTFOLIO: {
@@ -86,6 +86,10 @@ export const WORKS = {
 };
 
 export const TEXT = {
+  NOT_FOUND: {
+    TITLE: '404.',
+    DESCRIPTION: 'Error. Page not Found, mismatch.'
+  },
   HOME: {
     TITLE: 'CHRONODAVE',
     DESCRIPTION: 'MULTIMEDIA DESIGNER',

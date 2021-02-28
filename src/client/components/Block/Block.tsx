@@ -12,21 +12,29 @@ export interface BlockProps {
   background: 'fill' | 'fillInverse' | 'fade' | 'fadeInverse',
   width?: keyof Theme['breakpoints']['value']
   className?: string,
-  disableSpacer?: boolean
+  disableSpacer?: boolean,
+  disablePadding?: boolean,
+  flex?: 'row' | 'column'
 }
 
 const Block = (props: BlockProps) => {
   const {
     disableSpacer,
+    disablePadding,
     children,
     className,
     width = 'xl',
-    background = 'fill'
+    background = 'fill',
+    flex = 'row'
   } = props;
 
   return (
     <div className={cx(classes.root, classes[background])}>
-      <div className={cx(classes[width], className)}>
+      <div
+        className={cx(classes[width], classes[flex], {
+          [classes.padding]: !disablePadding
+        }, className)}
+      >
         {children}
       </div>
       {!disableSpacer && (

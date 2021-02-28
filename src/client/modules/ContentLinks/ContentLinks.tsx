@@ -16,9 +16,9 @@ import { useMediaQuery } from '../../hooks';
 import { TEXT, EXTERNAL } from '../../utils/const';
 
 // Styles
-import classes from './HomeLinks.styles';
+import classes from './ContentLinks.styles';
 
-const HomeLinks = () => {
+const ContentLinks = () => {
   const isMd = useMediaQuery('minWidth', 'md');
 
   const links = {
@@ -80,4 +80,4 @@ const HomeLinks = () => {
   );
 };
 
-export default HomeLinks;
+export default ContentLinks;

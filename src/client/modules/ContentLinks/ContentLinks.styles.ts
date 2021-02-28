@@ -49,4 +49,4 @@ export default makeStyles(theme => ({
   categoryIcon: {
     marginRight: theme.spacing()
   }
-}), 'homeLinks');
+}), 'contentLinks');

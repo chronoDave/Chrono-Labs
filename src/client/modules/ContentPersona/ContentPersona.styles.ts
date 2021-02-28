@@ -1,7 +1,7 @@
 import { makeStyles } from '../../theme';
 
 export default makeStyles(theme => ({
-  body: {
+  root: {
     display: 'flex',
     flexDirection: 'column',
     padding: theme.spacing(0, 2),
@@ -21,14 +21,11 @@ export default makeStyles(theme => ({
       marginBottom: theme.spacing(8),
     },
   },
-  button: {
+  action: {
     marginTop: theme.spacing(4),
     width: 'fit-content',
     [theme.breakpoints.create('minWidth', 'xl')]: {
       marginTop: theme.spacing(8),
     },
-  },
-  persona: {
-    padding: theme.spacing(1, 1.5)
   }
-}), 'homeAbout');
+}), 'contentPersona');

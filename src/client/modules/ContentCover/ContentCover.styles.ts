@@ -39,4 +39,4 @@ export default makeStyles(theme => ({
     border: theme.border(theme.palette[7], 4),
     marginBottom: theme.spacing(1.5)
   }
-}), 'homeLanding');
+}), 'contentCover');

@@ -25,9 +25,9 @@ import pngThesis2x from '../../assets/images/thesis@2x.png';
 import pngThesis from '../../assets/images/thesis.png';
 
 // Styles
-import classes from './HomeLanding.styles';
+import classes from './ContentCover.styles';
 
-const HomeLanding = () => {
+const ContentCover = () => {
   const { mixins } = useTheme();
   const isMd = useMediaQuery('minWidth', 'md');
   const isLg = useMediaQuery('minWidth', 'lg');
@@ -80,6 +80,7 @@ const HomeLanding = () => {
       background="fade"
       width="fs"
       disableSpacer
+      disablePadding
     >
       <div className={classes.titleRoot}>
         <Typography variant={getTitleVariant()}>
@@ -133,4 +134,4 @@ const HomeLanding = () => {
   );
 };
 
-export default HomeLanding;
+export default ContentCover;

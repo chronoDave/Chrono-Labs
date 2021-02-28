@@ -8,6 +8,7 @@ import { Typography } from '../Typography';
 import gifSmug6x from '../../assets/images/smug@6x.gif';
 import gifWink6x from '../../assets/images/wink@6x.gif';
 import gifHappy6x from '../../assets/images/happy@6x.gif';
+import gifSad6x from '../../assets/images/sad@6x.gif';
 
 // Styles
 import classes from './Persona.styles';
@@ -15,7 +16,8 @@ import classes from './Persona.styles';
 const images = {
   smug: gifSmug6x,
   wink: gifWink6x,
-  happy: gifHappy6x
+  happy: gifHappy6x,
+  sad: gifSad6x
 };
 
 export interface PersonaProps {
