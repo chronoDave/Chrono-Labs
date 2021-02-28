@@ -43,7 +43,7 @@ const ContentLinks = () => {
     <BlockHome background="fadeInverse">
       {isMd && (
         <Persona
-          type="smug"
+          type="wink"
           primary={TEXT.HOME.LINKS.TITLE}
           secondary={TEXT.HOME.LINKS.DESCRIPTION}
         />

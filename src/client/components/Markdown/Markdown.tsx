@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Mdsx from 'markdown-to-jsx';
+import { cx } from '@emotion/css';
 
 // Core
 import { Typography } from '../Typography';
@@ -83,9 +84,21 @@ const Markdown = ({ id }: MarkdownProps) => {
             props: { component: 'i', variant: 'caption' }
           },
           img: {
-            component: ({ title, alt, src }) => (
+            component: ({
+              title,
+              alt,
+              src,
+              className,
+              ...rest
+            }) => (
               <div className={classes.imgRoot}>
-                <img className={classes.img} title={title} alt={alt} src={src} />
+                <img
+                  className={cx(classes.img, className)}
+                  title={title}
+                  alt={alt}
+                  src={src}
+                  {...rest}
+                />
                 {alt && (
                   <Typography variant="caption" gutterBottom className={classes.imgCaption}>
                     {alt}

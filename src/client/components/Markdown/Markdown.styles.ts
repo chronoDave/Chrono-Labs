@@ -5,6 +5,7 @@ export default makeStyles(theme => ({
     marginTop: theme.spacing(2)
   },
   hr: {
+    color: theme.palette[7],
     margin: theme.spacing(4, 0)
   },
   imgRoot: {
