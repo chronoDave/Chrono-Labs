@@ -43,7 +43,7 @@ module.exports = [{
   },
   entry: path.resolve(__dirname, 'src/client/index.tsx'),
   output: {
-    path: path.resolve(__dirname, 'build/client'),
+    path: path.resolve(__dirname, 'dist/client'),
     filename: '[name].bundle.js'
   },
   optimization,
@@ -51,22 +51,13 @@ module.exports = [{
     rules: [{
       test: /\.(ts|tsx)$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src/client'),
-      exclude: path.resolve(__dirname, 'src/client/assets')
-    }, {
-      test: /\.(png|jpg|jpeg|gif)$/,
-      loader: 'file-loader',
-      include: path.resolve(__dirname, 'src/client/assets/images'),
-      options: {
-        name: '[folder]/[name].[ext]',
-        outputPath: 'assets'
-      }
+      include: path.resolve(__dirname, 'src/client')
     }]
   },
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'build/client'
+      files: 'dist/client'
     }], { verbose: true }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/client/index.html'),
@@ -81,7 +72,7 @@ module.exports = [{
   },
   entry: path.resolve(__dirname, 'src/server/index.ts'),
   output: {
-    path: path.resolve(__dirname, 'build/server'),
+    path: path.resolve(__dirname, 'dist/server'),
     filename: '[name].bundle.js'
   },
   optimization,
@@ -95,7 +86,7 @@ module.exports = [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'build/server'
+      files: 'dist/server'
     }], { verbose: true })
   ]
 }];

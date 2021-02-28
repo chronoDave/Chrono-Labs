@@ -1,7 +1,7 @@
 {
-  "watch": ["build/server/main.bundle.js"],
+  "watch": ["dist/server/main.bundle.js"],
   "env": {
     "NODE_ENV": "development"
   },
-  "exec": "node build/server/main.bundle.js"
+  "exec": "node dist/server/main.bundle.js"
 }

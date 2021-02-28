@@ -6,6 +6,9 @@ export default makeStyles(theme => ({
     fontWeight: 400,
     margin: 0
   },
+  gutterBottom: {
+    marginBottom: theme.spacing(2)
+  },
   // Variants
   h1: {
     fontSize: theme.pxToRem(96),
@@ -42,7 +45,8 @@ export default makeStyles(theme => ({
     fontWeight: 600
   },
   body: {
-    fontSize: theme.pxToRem(16)
+    fontSize: theme.pxToRem(16),
+    lineHeight: 1.6
   },
   subtitle: {
     fontSize: theme.pxToRem(14)

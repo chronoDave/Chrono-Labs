@@ -1,45 +1,27 @@
 import { makeStyles } from '../../theme';
 
 export default makeStyles(theme => ({
-  p: {
-    marginBottom: theme.spacing(2)
-  },
-  h3: {
-    marginBottom: theme.spacing(2)
-  },
-  h5: {
-    marginBottom: theme.spacing(2)
-  },
-  h6: {
-    marginBottom: theme.spacing(2)
-  },
   li: {
     marginTop: theme.spacing(2)
   },
   hr: {
     margin: theme.spacing(4, 0)
   },
+  imgRoot: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  imgCaption: {
+    marginTop: theme.spacing()
+  },
   img: {
     border: theme.border(theme.palette[7], 4),
-    maxWidth: '100%'
+    maxWidth: '100%',
   },
   video: {
     border: theme.border(theme.palette[7], 4),
     maxWidth: '100%',
-    marginBottom: theme.spacing(2)
-  },
-  persona: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    [theme.breakpoints.create('minWidth', 'md')]: {
-      flexDirection: 'row',
-    }
-  },
-  personaBody: {
-    marginLeft: theme.spacing(2),
-    [theme.breakpoints.create('minWidth', 'md')]: {
-      marginLeft: theme.spacing(4)
-    }
+    marginBottom: theme.spacing(0.5)
   }
 }), 'markdown');

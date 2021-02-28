@@ -11,14 +11,6 @@ import { useMediaQuery } from '../../hooks';
 // Utils
 import { TEXT, WORKS } from '../../utils/const';
 
-// Assets
-import gifTuhn2x from '../../assets/images/tunh@2x.gif';
-import gifTuhn from '../../assets/images/tunh.gif';
-import pngDoombox2x from '../../assets/images/doombox@2x.png';
-import pngDoombox from '../../assets/images/doombox.png';
-import pngThesis2x from '../../assets/images/thesis@2x.png';
-import pngThesis from '../../assets/images/thesis.png';
-
 // Styles
 import classes from './ContentWorks.styles';
 
@@ -28,24 +20,24 @@ const ContentWorks = () => {
   const works = [{
     key: 'tuhn',
     src: isMd ?
-      gifTuhn2x :
-      gifTuhn,
+      'assets/images/tunh@2x.gif' :
+      'assets/images/tunh.gif',
     title: WORKS.TUHN.title,
     description: WORKS.TUHN.description,
     href: WORKS.TUHN.href
   }, {
     key: 'doombox',
     src: isMd ?
-      pngDoombox2x :
-      pngDoombox,
+      'assets/images/doombox@2x.png' :
+      'assets/images/doombox.png',
     title: WORKS.DOOMBOX.title,
     description: WORKS.DOOMBOX.description,
     href: WORKS.DOOMBOX.href
   }, {
     key: 'thesis',
     src: isMd ?
-      pngThesis2x :
-      pngThesis,
+      'assets/images/thesis@2x.png' :
+      'assets/images/thesis.png',
     title: WORKS.THESIS.title,
     description: WORKS.THESIS.description,
     href: WORKS.THESIS.href

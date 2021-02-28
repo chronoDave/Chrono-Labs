@@ -11,6 +11,7 @@ export interface TypographyProps {
   color?: 'inherit' | 'textPrimary' | 'primary',
   className?: string,
   children: React.ReactNode,
+  gutterBottom?: boolean
   [key: string]: unknown
 }
 
@@ -22,6 +23,7 @@ const Typography = forwardRef((props: TypographyProps, ref) => {
     style,
     className,
     children,
+    gutterBottom = false,
     ...rest
   } = props;
 
@@ -38,6 +40,7 @@ const Typography = forwardRef((props: TypographyProps, ref) => {
         classes.root,
         classes[color],
         classes[variant],
+        { [classes.gutterBottom]: gutterBottom },
         className
       ),
       ref,

@@ -16,14 +16,6 @@ import { useMediaQuery, useTheme, useCarousel } from '../../hooks';
 // Utils
 import { WORKS, ROUTES, TEXT } from '../../utils/const';
 
-// Assets
-import gifTuhn2x from '../../assets/images/tunh@2x.gif';
-import gifTuhn from '../../assets/images/tunh.gif';
-import pngDoombox2x from '../../assets/images/doombox@2x.png';
-import pngDoombox from '../../assets/images/doombox.png';
-import pngThesis2x from '../../assets/images/thesis@2x.png';
-import pngThesis from '../../assets/images/thesis.png';
-
 // Styles
 import classes from './ContentCover.styles';
 
@@ -41,22 +33,22 @@ const ContentCover = () => {
   const images = [{
     key: 'tuhn',
     src: isMd ?
-      gifTuhn2x :
-      gifTuhn,
+      'assets/images/tunh@2x.gif' :
+      'assets/images/tunh.gif',
     alt: WORKS.TUHN.title,
     href: WORKS.TUHN.href
   }, {
     key: 'doombox',
     src: isMd ?
-      pngDoombox2x :
-      pngDoombox,
+      'assets/images/doombox@2x.png' :
+      'assets/images/doombox.png',
     alt: WORKS.DOOMBOX.title,
     href: WORKS.DOOMBOX.href
   }, {
     key: 'thesis',
     src: isMd ?
-      pngThesis2x :
-      pngThesis,
+      'assets/images/thesis@2x.png' :
+      'assets/images/thesis.png',
     alt: WORKS.THESIS.title,
     href: WORKS.THESIS.href
   }];

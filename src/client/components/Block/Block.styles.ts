@@ -1,9 +1,5 @@
 import { makeStyles, theme } from '../../theme';
 
-// Assets
-import bg5x from '../../assets/images/bg@5x.png';
-import bgFlip5x from '../../assets/images/bgFlip@5x.png';
-
 export default makeStyles(() => ({
   root: {
     display: 'flex',
@@ -17,12 +13,12 @@ export default makeStyles(() => ({
     backgroundColor: theme.palette[2]
   },
   fade: {
-    background: `url(${bg5x}), ${theme.palette[1]}`,
+    background: `url('assets/images/bg@5x.png'), ${theme.palette[1]}`,
     backgroundRepeat: 'repeat-x',
     backgroundPosition: 'bottom'
   },
   fadeInverse: {
-    background: `url(${bgFlip5x}), ${theme.palette[2]}`,
+    background: `url('assets/images/bgFlip@5x.png'), ${theme.palette[2]}`,
     backgroundRepeat: 'repeat-x',
     backgroundPosition: 'bottom'
   },
