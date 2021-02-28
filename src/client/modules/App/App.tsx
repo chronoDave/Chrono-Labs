@@ -8,9 +8,9 @@ import { Footer } from '../Footer';
 // Pages
 import {
   HomePage,
-  AboutPage,
   LinksPage,
   NotFoundPage,
+  MarkdownPage,
   WorksPage
 } from '../../pages';
 
@@ -29,10 +29,13 @@ const App = () => (
           <HomePage />
         </Route>
         <Route path={ROUTES.ABOUT}>
-          <AboutPage />
+          <MarkdownPage id="about" />
         </Route>
         <Route path={ROUTES.WORKS}>
           <WorksPage />
+        </Route>
+        <Route path={ROUTES.WORK()}>
+          {({ id }) => <MarkdownPage id={id} />}
         </Route>
         <Route path={ROUTES.LINKS}>
           <LinksPage />

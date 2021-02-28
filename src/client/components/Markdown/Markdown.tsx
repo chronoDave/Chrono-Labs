@@ -12,7 +12,6 @@ import classes from './Markdown.styles';
 export interface MarkdownProps {
   id: string
 }
-
 const Markdown = ({ id }: MarkdownProps) => {
   const [content, setContent] = useState('');
 
@@ -54,11 +53,11 @@ const Markdown = ({ id }: MarkdownProps) => {
           },
           h5: {
             component: Typography,
-            props: { variant: 'h5' }
+            props: { variant: 'h5', className: classes.h5 }
           },
           h6: {
             component: Typography,
-            props: { variant: 'h6' }
+            props: { variant: 'h6', className: classes.h6 }
           },
           p: {
             component: Typography,
@@ -79,6 +78,14 @@ const Markdown = ({ id }: MarkdownProps) => {
           i: {
             component: Typography,
             props: { component: 'i', variant: 'caption' }
+          },
+          img: {
+            component: 'img',
+            props: { className: classes.img }
+          },
+          video: {
+            component: 'video',
+            props: { className: classes.video }
           },
           Persona: {
             component: ({ children, ...rest }) => (

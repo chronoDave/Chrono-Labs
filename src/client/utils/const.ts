@@ -2,7 +2,8 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about',
   WORKS: '/works',
-  LINKS: '/links'
+  LINKS: '/links',
+  WORK: (id = ':id') => `/works/${id}`
 };
 
 export const EXTERNAL = {
@@ -66,17 +67,17 @@ export const WORKS = {
   TUHN: {
     title: 'Touhou Star of Destiny',
     description: '東方運命の星 (Touhou Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
-    href: '/'
+    href: ROUTES.WORK('tunh')
   },
   DOOMBOX: {
     title: 'Doombox',
     description: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.',
-    href: '/'
+    href: ROUTES.WORK('doombox')
   },
   THESIS: {
     title: 'Thesis',
     description: 'Can a game be developed where the story makes use of the interactivity the medium provides?',
-    href: '/'
+    href: ROUTES.WORK('thesis')
   },
   PORTFOLIO: {
     title: 'Portfolio',

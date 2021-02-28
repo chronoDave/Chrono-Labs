@@ -19,11 +19,16 @@ const LinkNavigation = (props: LinkNavigationProps) => {
   } = props;
   const [location] = useLocation();
 
+  const getActive = () => {
+    if (location === '/') return location === href;
+    return location.includes(href) && href !== '/';
+  };
+
   return (
     <Link
       href={href}
       className={cx(classes.root, {
-        [classes.active]: location === href
+        [classes.active]: getActive()
       }, className)}
       {...rest}
     >

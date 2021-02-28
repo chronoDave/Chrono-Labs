@@ -7,6 +7,12 @@ export default makeStyles(theme => ({
   h3: {
     marginBottom: theme.spacing(2)
   },
+  h5: {
+    marginBottom: theme.spacing(2)
+  },
+  h6: {
+    marginBottom: theme.spacing(2)
+  },
   li: {
     marginTop: theme.spacing(2)
   },
@@ -14,9 +20,13 @@ export default makeStyles(theme => ({
     margin: theme.spacing(4, 0)
   },
   img: {
-    padding: theme.spacing(),
-    margin: theme.spacing(),
-    border: theme.border(theme.palette[7], 4)
+    border: theme.border(theme.palette[7], 4),
+    maxWidth: '100%'
+  },
+  video: {
+    border: theme.border(theme.palette[7], 4),
+    maxWidth: '100%',
+    marginBottom: theme.spacing(2)
   },
   persona: {
     display: 'flex',
