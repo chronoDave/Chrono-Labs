@@ -1,10 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: [
-    'airbnb-typescript',
-    'airbnb/hooks'
-  ],
+  extends: ['airbnb-typescript/base'],
   parserOptions: {
     project: './tsconfig.json'
   },
@@ -20,10 +17,5 @@ module.exports = {
     }],
     // Import
     'import/prefer-default-export': 'off',
-    // React
-    'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-fragments': 'off',
-    'react/prop-types': 'off'
   }
 };

@@ -1,5 +1,5 @@
-export { default as HomePage } from './Home.page';
-export { default as LinksPage } from './Links.page';
-export { default as NotFoundPage } from './NotFound.page';
-export { default as WorksPage } from './Works.page';
-export { default as MarkdownPage } from './Markdown.page';
+export { HomePage } from './home.page';
+export { LinksPage } from './links.page';
+export { MarkdownPage } from './markdown.page';
+export { NotFoundPage } from './not_found.page';
+export { WorksPage } from './works.page';

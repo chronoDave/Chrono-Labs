@@ -1,5 +1,2 @@
 node_modules
 /dist
-/build
-/src/server/cert/cert.pem
-/src/server/cert/key.pem
