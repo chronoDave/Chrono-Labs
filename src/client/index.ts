@@ -13,7 +13,7 @@ import {
 } from './pages';
 
 // Utils
-import { ROUTES } from './utils/const';
+import { ROUTES } from './utils';
 
 m.mount(
   document.body,

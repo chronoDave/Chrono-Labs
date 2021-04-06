@@ -1,5 +1,5 @@
 import m from 'mithril';
 
 export const HomePage = {
-  view: () => m('div', 'Home')
+  view: () => <div>Home</div>
 };

@@ -8,6 +8,7 @@ module.exports = {
   rules: {
     // Typescript
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     // General
     'linebreak-style': 'off',
     'operator-linebreak': ['error', 'after'],

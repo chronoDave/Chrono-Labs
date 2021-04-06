@@ -62,7 +62,7 @@ module.exports = [{
   name: 'client',
   target: 'web',
   resolve: {
-    extensions: ['.js', '.ts']
+    extensions: ['.js', '.ts', '.tsx']
   },
   entry: path.resolve(__dirname, 'src/client'),
   output: {
@@ -72,7 +72,7 @@ module.exports = [{
   optimization,
   module: {
     rules: [{
-      test: /\.ts$/,
+      test: /\.ts|tsx$/,
       loader: 'ts-loader',
       include: path.resolve(__dirname, 'src/client')
     }]

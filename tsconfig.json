@@ -5,6 +5,8 @@
     "module": "es6",
     "allowJs": true,
     "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "m",
     "moduleResolution": "node",
     "strict": true,
     "noImplicitAny": true,
@@ -15,7 +17,7 @@
     "outDir": "dist"
   },
   "include": [
-    "src",
+    "src/**/*",
     ".eslintrc.js",
     "webpack.config.js"
   ],
