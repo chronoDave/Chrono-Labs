@@ -11,6 +11,7 @@
     "strict": true,
     "noImplicitAny": true,
     "downlevelIteration": true,
+    "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

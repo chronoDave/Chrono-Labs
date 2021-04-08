@@ -5,6 +5,13 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.json'
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.tsx']
+      }
+    }
+  },
   rules: {
     // Typescript
     '@typescript-eslint/comma-dangle': 'off',
@@ -16,6 +23,7 @@ module.exports = {
     'no-console': ['error', {
       allow: ['warn', 'info']
     }],
+    'class-methods-use-this': 'off',
     // Import
     'import/prefer-default-export': 'off',
   }
