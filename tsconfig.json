@@ -6,7 +6,7 @@
     "allowJs": true,
     "sourceMap": true,
     "jsx": "react",
-    "jsxFactory": "m",
+    "jsxFactory": "mtx",
     "moduleResolution": "node",
     "strict": true,
     "noImplicitAny": true,
@@ -15,7 +15,12 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "mtx": ["src/client/utils/mtx"],
+      "mtx/*": ["src/client/utils/mtx/*"]
+    }
   },
   "include": [
     "src/**/*",

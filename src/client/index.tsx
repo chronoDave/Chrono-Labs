@@ -1,4 +1,5 @@
 import m from 'mithril';
+import { mtx } from 'mtx';
 
 // Modules
 import { App } from './modules';
@@ -7,32 +8,23 @@ import { App } from './modules';
 import {
   HomePage,
   LinksPage,
-  MarkdownPage,
-  NotFoundPage,
-  WorksPage
+  // MarkdownPage,
+  // NotFoundPage,
+  // WorksPage
 } from './pages';
 
 // Utils
 import { ROUTES } from './utils';
 
-// interface Base<A> extends m.Component<A> {
-//   tag: any,
-//   attrs: any,
-//   state: any
-// }
-
-// const Foo = (): Base<{}> => ({
-//   tag: 'div',
-//   attrs: {},
-//   state: {},
-//   view: () => null
-// });
-
 m.route.prefix = '';
 m.route(document.body, ROUTES.HOME, {
   [ROUTES.HOME]: {
-    onmatch: () => HomePage,
-    render: v => <App foo="string">{v}</App>
+    render: v => <App>{v}</App>,
+    onmatch: () => HomePage
+  },
+  [ROUTES.LINKS]: {
+    render: v => <App>{v}</App>,
+    onmatch: () => LinksPage
   }
 });
 

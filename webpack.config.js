@@ -62,7 +62,10 @@ module.exports = [{
   name: 'client',
   target: 'web',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
+    alias: {
+      mtx: path.resolve(__dirname, 'src/client/utils/mtx')
+    }
   },
   entry: path.resolve(__dirname, 'src/client'),
   output: {

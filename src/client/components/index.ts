@@ -1,1 +1,2 @@
-export { Typography } from './typography';
+export { Typography } from './Typography/Typography';
+export { Link } from './Link/Link';

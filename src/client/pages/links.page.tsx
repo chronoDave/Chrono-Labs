@@ -2,11 +2,11 @@ import { mtx, Mtx } from 'mtx';
 
 import { Link } from '../components';
 
-export class HomePage extends Mtx<{}> {
+export class LinksPage extends Mtx<{}> {
   view() {
     return (
-      <Link href="/links">
-        Links
+      <Link href="/">
+        Home
       </Link>
     );
   }

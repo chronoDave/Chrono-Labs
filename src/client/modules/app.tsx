@@ -1,27 +1,23 @@
 import m from 'mithril';
-import { MithrilTsxComponent as Component } from 'mithril-tsx-component';
+import { Mtx, mtx } from 'mtx';
 import { injectGlobal } from '@emotion/css';
 
 // Theme
-import { palette } from '../theme';
+import { theme } from '../theme';
 
-export interface AppProps {}
-
-type Vnode = m.Vnode<AppProps, App>;
-
-export class App extends Component<AppProps> {
+export class App extends Mtx {
   oninit() {
     injectGlobal({
       body: {
-        backgroundColor: palette[7],
+        backgroundColor: theme.palette[7],
         margin: 0
       }
     });
   }
 
-  view({ children }: Vnode) {
+  view({ children }: m.Vnode) {
     return (
-      <div>
+      <div className="app">
         {children}
       </div>
     );
