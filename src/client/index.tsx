@@ -2,37 +2,40 @@ import m from 'mithril';
 import { mtx } from 'mtx';
 
 // Modules
-import { App } from './modules';
+import { Page } from './modules';
 
 // Pages
 import {
   HomePage,
   LinksPage,
-  // MarkdownPage,
-  // NotFoundPage,
-  // WorksPage
+  AboutPage,
+  WorksPage,
+  MarkdownPage,
 } from './pages';
 
 // Utils
 import { ROUTES } from './utils';
 
 m.route.prefix = '';
-m.route(document.body, ROUTES.HOME, {
-  [ROUTES.HOME]: {
-    render: v => <App>{v}</App>,
+m.route(document.body, ROUTES.HOME.href, {
+  [ROUTES.HOME.href]: {
+    render: v => <Page>{v}</Page>,
     onmatch: () => HomePage
   },
-  [ROUTES.LINKS]: {
-    render: v => <App>{v}</App>,
+  [ROUTES.ABOUT.href]: {
+    render: v => <Page>{v}</Page>,
+    onmatch: () => AboutPage
+  },
+  [ROUTES.WORKS.href]: {
+    render: v => <Page>{v}</Page>,
+    onmatch: () => WorksPage
+  },
+  [ROUTES.WORK.href()]: {
+    render: v => <Page>{v}</Page>,
+    onmatch: () => MarkdownPage
+  },
+  [ROUTES.LINKS.href]: {
+    render: v => <Page>{v}</Page>,
     onmatch: () => LinksPage
   }
 });
-
-// m.route.prefix = '';
-// m.route(document.body, ROUTES.HOME, {
-//   [ROUTES.HOME]: HomePage,
-//   [ROUTES.LINKS]: LinksPage,
-//   [ROUTES.MARKDOWN]: MarkdownPage,
-//   [ROUTES.WORKS]: WorksPage,
-//   [ROUTES.NOT_FOUND]: NotFoundPage,
-// });

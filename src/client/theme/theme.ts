@@ -2,6 +2,7 @@ import palette from './palette';
 import shadows from './shadows';
 import breakpoints from './breakpoints';
 import mixins from './mixins';
+import transitions from './transitions';
 
 const unit = (n = 1) => n * 8;
 const toPx = (n = 1) => `${unit(n)}px`;
@@ -16,6 +17,7 @@ const theme = {
   shadows,
   breakpoints,
   mixins,
+  transitions,
   border: (color: string, width = 1) => `${width}px solid ${color}`,
   pxToRem: (px: number) => `${px / 16}rem`
 };

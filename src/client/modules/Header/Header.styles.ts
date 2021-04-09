@@ -18,5 +18,23 @@ export default makeStyles(theme => ({
       padding: theme.spacing(0, 4),
       justifyContent: 'flex-end'
     }
+  },
+  itemRoot: {
+    textDecoration: 'none',
+    fontWeight: 500,
+    letterSpacing: 1,
+    fontSize: theme.pxToRem(12),
+    color: theme.palette.alpha(theme.palette[7], 'disabled'),
+    transition: theme.transitions.create(['color']),
+    '&:hover': {
+      textDecoration: 'none',
+      color: theme.palette[7]
+    },
+    [theme.breakpoints.create('minWidth', 'xs')]: {
+      paddingLeft: theme.spacing(4)
+    }
+  },
+  itemActive: {
+    color: theme.palette[7]
   }
 }), 'navigation');

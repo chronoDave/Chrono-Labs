@@ -6,16 +6,20 @@ import { Typography, TypographyProps } from '../Typography/Typography';
 import classes from './Link.styles';
 
 export interface LinkProps extends TypographyProps {
-  href: string
+  href: string,
+  external?: boolean,
+  key?: string
 }
 
 export class Link extends Mtx<LinkProps> {
   view({ children, attrs }: m.Vnode<LinkProps>) {
+    const { external, ...rest } = attrs;
+
     return (
       <Typography
-        component={m.route.Link}
+        component={external ? 'a' : m.route.Link}
         className={classes.root}
-        {...attrs}
+        {...rest}
       >
         {children}
       </Typography>
