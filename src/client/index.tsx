@@ -16,6 +16,9 @@ import {
 // Utils
 import { ROUTES } from './utils';
 
+// Styles
+import './theme/index.scss';
+
 m.route.prefix = '';
 m.route(document.body, ROUTES.HOME.href, {
   [ROUTES.HOME.href]: {

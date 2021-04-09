@@ -4,6 +4,7 @@ const path = require('path');
 const FsWebpackPlugin = require('fs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Shared
 const optimization = {
@@ -78,6 +79,14 @@ module.exports = [{
       test: /\.ts|tsx$/,
       loader: 'ts-loader',
       include: path.resolve(__dirname, 'src/client')
+    }, {
+      test: /\.scss$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        'sass-loader'
+      ],
+      include: path.resolve(__dirname, 'src/client')
     }]
   },
   plugins: [
@@ -85,6 +94,9 @@ module.exports = [{
       type: 'delete',
       files: 'dist/client'
     }], { verbose: true }),
+    new MiniCssExtractPlugin({
+      filename: '[name].bundle.css'
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/client/index.html'),
       filename: 'index.html'

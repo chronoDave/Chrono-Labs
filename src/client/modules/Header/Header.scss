@@ -1,0 +1,10 @@
+@import 'src/client/theme/theme.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $theme-unit * 2 $theme-unit * 3;
+  background-color: $theme-palette-0;
+  color: $theme-palette-7;
+  box-shadow: $theme-shadows-0;
+}

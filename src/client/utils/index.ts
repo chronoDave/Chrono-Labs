@@ -1,2 +1,2 @@
-export { default as capitalize } from './capitalize';
 export { ROUTES } from './const';
+export { cx } from './cx';

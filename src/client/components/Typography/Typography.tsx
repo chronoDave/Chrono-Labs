@@ -1,15 +1,16 @@
 import m from 'mithril';
 import { Mtx } from 'mtx';
-import { cx } from '@emotion/css';
 
-import classes from './Typography.styles';
+import { cx } from '../../utils';
+
+import './Typography.scss';
 
 export interface TypographyProps {
   component?: string | m.Component<any, any>,
   className?: string,
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'subtitle' | 'caption',
   color?: 'primary' | 'textPrimary' | 'textSecondary',
-  gutter?: boolean
+  paragraph?: boolean
 }
 
 export class Typography extends Mtx<TypographyProps> {
@@ -18,7 +19,7 @@ export class Typography extends Mtx<TypographyProps> {
       variant = 'body',
       component = 'p',
       color,
-      gutter,
+      paragraph,
       className,
       ...rest
     } = attrs;
@@ -27,10 +28,9 @@ export class Typography extends Mtx<TypographyProps> {
       component as string,
       {
         className: cx(
-          classes.root,
-          classes[variant],
-          color && classes[color],
-          gutter && classes.gutter,
+          'typography',
+          `typography-${variant}`,
+          color && `typography-color-${color}`,
           className
         ),
         ...rest

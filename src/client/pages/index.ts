@@ -1,6 +1,6 @@
-export { HomePage } from './home.page';
-export { LinksPage } from './links.page';
-export { MarkdownPage } from './markdown.page';
-export { NotFoundPage } from './not_found.page';
-export { WorksPage } from './works.page';
-export { AboutPage } from './about.page';
+export { HomePage } from './Home.page';
+export { LinksPage } from './Links.page';
+export { MarkdownPage } from './Markdown.page';
+export { NotFoundPage } from './NotFound.page';
+export { WorksPage } from './Works.page';
+export { AboutPage } from './About.page';

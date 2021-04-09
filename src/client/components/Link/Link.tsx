@@ -3,22 +3,23 @@ import { mtx, Mtx } from 'mtx';
 
 import { Typography, TypographyProps } from '../Typography/Typography';
 
-import classes from './Link.styles';
+import { cx } from '../../utils';
+
+import './Link.scss';
 
 export interface LinkProps extends TypographyProps {
   href: string,
-  external?: boolean,
   key?: string
 }
 
 export class Link extends Mtx<LinkProps> {
   view({ children, attrs }: m.Vnode<LinkProps>) {
-    const { external, ...rest } = attrs;
+    const { className, ...rest } = attrs;
 
     return (
       <Typography
-        component={external ? 'a' : m.route.Link}
-        className={classes.root}
+        component={/https:\/\//.test(attrs.href) ? 'a' : m.route.Link}
+        className={cx('link', className)}
         {...rest}
       >
         {children}

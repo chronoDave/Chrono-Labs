@@ -1,0 +1,34 @@
+@import 'src/client/theme/theme.scss';
+
+.navigation {
+  display: flex;
+}
+
+.navigation-ul {
+  display: flex;
+  list-style-type: none;
+
+  > .navigation-li:first-child {
+    margin-left: 0
+  }
+}
+
+.navigation-li {
+  margin-left: $theme-unit * 2
+}
+
+.navigation-a {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  color: $theme-palette-5;
+  transition: color $theme-transition-duration-shortest $theme-transition-easeInOut 0ms;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.navigation-active {
+  color: inherit;
+}

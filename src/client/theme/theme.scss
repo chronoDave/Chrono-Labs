@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+// Palette
+$theme-palette-0: #000000;
+$theme-palette-1: #1D2B53;
+$theme-palette-2: #7E2553;
+$theme-palette-3: #008751;
+$theme-palette-4: #AB5236;
+$theme-palette-5: #5F574F;
+$theme-palette-6: #C2C3C7;
+$theme-palette-7: #FFF1E8;
+$theme-palette-8: #FF004D;
+$theme-palette-9: #FFA300;
+$theme-palette-10: #FFEC27;
+$theme-palette-11: #00E436;
+$theme-palette-12: #29ADFF;
+$theme-palette-13: #83769C;
+$theme-palette-14: #FF77A8;
+$theme-palette-15: #FFCCAA;
+
+// Spacing
+$theme-unit: 8px;
+
+// Shadows
+$theme-shadows-0: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+
+// Transition
+$theme-transition-duration-shortest: 150ms;
+
+$theme-transition-easeInOut: cubic-bezier(0.4, 0, 0.2, 1);
