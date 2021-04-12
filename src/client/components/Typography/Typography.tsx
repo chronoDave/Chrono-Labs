@@ -16,8 +16,8 @@ export interface TypographyProps {
 export class Typography extends Mtx<TypographyProps> {
   view({ children, attrs }: m.Vnode<TypographyProps>) {
     const {
-      variant = 'body',
       component = 'p',
+      variant = 'body',
       color,
       paragraph,
       className,

@@ -4,15 +4,6 @@ import { mtx } from 'mtx';
 // Modules
 import { Page } from './modules';
 
-// Pages
-import {
-  HomePage,
-  AboutPage,
-  WorksPage,
-  MarkdownPage,
-  LinksPage
-} from './pages';
-
 // Utils
 import { ROUTES } from './utils';
 
@@ -23,22 +14,22 @@ m.route.prefix = '';
 m.route(document.body, ROUTES.HOME.href, {
   [ROUTES.HOME.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => HomePage
+    onmatch: () => import('./pages/Home/Home.page').then(x => x.HomePage)
   },
   [ROUTES.ABOUT.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => AboutPage
+    onmatch: () => import('./pages/About.page').then(x => x.AboutPage)
   },
   [ROUTES.WORKS.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => WorksPage
+    onmatch: () => import('./pages/Works.page').then(x => x.WorksPage)
   },
   [ROUTES.WORK.href()]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => MarkdownPage
+    onmatch: () => import('./pages/Markdown.page').then(x => x.MarkdownPage)
   },
-  [ROUTES.LINKS.href]: {
+  [ROUTES.CONTACT.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => LinksPage
+    onmatch: () => import('./pages/Contact.page').then(x => x.ContactPage)
   }
 });

@@ -1,0 +1,31 @@
+@import 'src/client/theme/theme.scss';
+
+.home {
+  display: flex;
+  color: $theme-palette-7;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-navigation {
+  display: flex;
+  padding: $theme-unit;
+
+  > ul {
+    display: flex;
+    list-style-type: none;
+
+    > li {
+      display: flex;
+
+      > a {
+        margin: $theme-unit;
+        padding: $theme-unit * 1.25 $theme-unit * 2.5;
+      }
+    }
+  }
+}

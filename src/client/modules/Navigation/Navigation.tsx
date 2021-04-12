@@ -12,13 +12,13 @@ export class Navigation extends Mtx {
   view() {
     const routes = [
       ROUTES.HOME,
-      ROUTES.ABOUT,
       ROUTES.WORKS,
-      ROUTES.LINKS,
+      ROUTES.ABOUT,
+      ROUTES.CONTACT,
     ];
 
     return (
-      <nav className="navigation">
+      <nav className="navigation" aria-label="Main Navigation">
         <ul className="navigation-ul">
           {routes.map(route => (
             <li key={route.href} className="navigation-li">

@@ -7,9 +7,9 @@ export const ROUTES = {
     title: 'About',
     href: '/about'
   },
-  LINKS: {
-    title: 'Links',
-    href: '/links',
+  CONTACT: {
+    title: 'Contact',
+    href: '/contact',
   },
   MARKDOWN: {
     title: 'Markdown',
@@ -106,5 +106,12 @@ export const WORKS = {
     title: 'Portfolio',
     description: 'Source (GitHub)',
     href: 'https://github.com/chronoDave/Portfolio'
+  }
+};
+
+export const MIXINS = {
+  CAROUSEL: {
+    '1x': 256,
+    '2x': 512
   }
 };

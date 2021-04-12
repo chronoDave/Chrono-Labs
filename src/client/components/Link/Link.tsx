@@ -9,17 +9,22 @@ import './Link.scss';
 
 export interface LinkProps extends TypographyProps {
   href: string,
-  key?: string
+  key?: string,
+  button?: boolean
 }
 
 export class Link extends Mtx<LinkProps> {
   view({ children, attrs }: m.Vnode<LinkProps>) {
-    const { className, ...rest } = attrs;
+    const { button, className, ...rest } = attrs;
 
     return (
       <Typography
         component={/https:\/\//.test(attrs.href) ? 'a' : m.route.Link}
-        className={cx('link', className)}
+        className={cx(
+          'link',
+          button && 'link-button',
+          className
+        )}
         {...rest}
       >
         {children}

@@ -71,6 +71,12 @@ module.exports = [{
   entry: path.resolve(__dirname, 'src/client'),
   output: {
     path: path.resolve(__dirname, 'dist/client'),
+    chunkFilename({ chunk: { runtime, id } }) {
+      const name = id.split('_').slice(-3, -2)[0];
+
+      if (!id.includes('page')) return '[name].chunk.js';
+      return `${runtime}.${name.toLowerCase()}.page.js`;
+    },
     filename: '[name].bundle.js'
   },
   optimization,
@@ -98,7 +104,13 @@ module.exports = [{
       files: 'dist/client'
     }], { verbose: true }),
     new MiniCssExtractPlugin({
-      filename: '[name].bundle.css'
+      filename: '[name].bundle.css',
+      chunkFilename({ chunk: { runtime, id } }) {
+        const name = id.split('_').slice(-3, -2)[0];
+
+        if (!id.includes('page')) return '[name].chunk.css';
+        return `${runtime}.${name.toLowerCase()}.page.css`;
+      },
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/client/index.html'),
