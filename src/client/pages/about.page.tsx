@@ -7,7 +7,7 @@ export class AboutPage extends Mtx {
     return (
       <div>
         <Link href="/">
-          Home
+          About
         </Link>
       </div>
     );

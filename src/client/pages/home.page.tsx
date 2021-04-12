@@ -1,13 +1,19 @@
 import { mtx, Mtx } from 'mtx';
 
-import { Link } from '../components';
+import {
+  ContentLanding,
+  ContentAbout,
+  ContentWorks,
+  ContentLinks
+} from '../content';
 
 export class HomePage extends Mtx {
   view() {
-    return (
-      <Link href="/links">
-        Links
-      </Link>
-    );
+    return [
+      <ContentLanding />,
+      <ContentAbout />,
+      <ContentWorks />,
+      <ContentLinks />
+    ];
   }
 }

@@ -4,10 +4,12 @@ import { Link } from '../../components';
 
 import { LINKS, WORKS } from '../../utils/const';
 
+import './Footer.scss';
+
 export class Footer extends Mtx {
   view() {
     return (
-      <footer>
+      <footer className="footer">
         <Link href={LINKS.TWITTER.href} variant="caption">
           {LINKS.TWITTER.handle}
         </Link>

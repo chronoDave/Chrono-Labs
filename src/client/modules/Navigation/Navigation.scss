@@ -2,6 +2,8 @@
 
 .navigation {
   display: flex;
+  align-items: center;
+  height: $theme-mixins-navigation;
 }
 
 .navigation-ul {
@@ -14,7 +16,7 @@
 }
 
 .navigation-li {
-  margin-left: $theme-unit * 2
+  margin-left: $theme-unit * 3
 }
 
 .navigation-a {

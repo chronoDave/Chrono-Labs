@@ -87,6 +87,9 @@ module.exports = [{
         'sass-loader'
       ],
       include: path.resolve(__dirname, 'src/client')
+    }, {
+      test: /\.png|jpg|gif/,
+      loader: 'url-loader'
     }]
   },
   plugins: [

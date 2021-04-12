@@ -1,0 +1,60 @@
+@import 'src/client/theme/theme.scss';
+
+.block {
+  display: flex;
+  justify-content: center;
+}
+
+.block-body {
+  width: 100%;
+}
+
+.block-landing {
+  height: calc(100vh - #{$theme-mixins-navigation})
+}
+
+// Background
+.block-fill {
+  background-color: $theme-palette-1;
+}
+
+.block-fillInverse {
+  background-color: $theme-palette-2
+}
+
+.block-fade {
+  background: url('/assets/images/bg@5x.png'), $theme-palette-1;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.block-fadeInverse {
+  background: url('/assets/images/bgFlip@5x.png'), $theme-palette-2;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+// Breakpoints
+.block-xs {
+  max-width: $theme-breakpoints-xs;
+}
+
+.block-sm {
+  max-width: $theme-breakpoints-sm;
+}
+
+.block-md {
+  max-width: $theme-breakpoints-md;
+}
+
+.block-lg {
+  max-width: $theme-breakpoints-lg;
+}
+
+.block-xl {
+  max-width: $theme-breakpoints-xl;
+}
+
+.block-fs {
+  max-width: $theme-breakpoints-fs;
+}

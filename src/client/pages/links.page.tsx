@@ -6,7 +6,7 @@ export class LinksPage extends Mtx {
   view() {
     return (
       <Link href="/">
-        Home
+        Links
       </Link>
     );
   }

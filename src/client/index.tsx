@@ -7,10 +7,10 @@ import { Page } from './modules';
 // Pages
 import {
   HomePage,
-  LinksPage,
   AboutPage,
   WorksPage,
   MarkdownPage,
+  LinksPage
 } from './pages';
 
 // Utils

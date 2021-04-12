@@ -3,8 +3,11 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: $theme-unit * 2 $theme-unit * 3;
+  align-items: center;
+  position: fixed;
+  padding: 0 $theme-unit * 3;
+  width: calc(100% - #{$theme-unit * 6});
   background-color: $theme-palette-0;
   color: $theme-palette-7;
-  box-shadow: $theme-shadows-0;
+  box-shadow: $theme-shadows-8;
 }
