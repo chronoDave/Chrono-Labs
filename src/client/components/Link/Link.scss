@@ -10,11 +10,11 @@
   border: 1px solid $theme-palette-7;
   color: $theme-palette-7;
   transition:
-    color $theme-transition-duration-shortest $theme-transition-easeInOut 0ms,
-    background-color $theme-transition-duration-shortest $theme-transition-easeInOut 0ms;
+    color $theme-transition-shortest,
+    background-color $theme-transition-shortest;
 
   &:hover {
     color: $theme-palette-0;
     background-color: $theme-palette-7;
-  }
+  }    
 }

@@ -1,0 +1,13 @@
+@import 'src/client/theme/theme.scss';
+
+.icon {
+  user-select: none;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  font-size: 2.25rem;
+}
+
+.icon-small {
+  font-size: 1.5rem
+}

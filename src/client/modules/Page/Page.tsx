@@ -40,7 +40,7 @@ export class Page extends Mtx {
     return (
       <div>
         <Header />
-        <div className="page-body">
+        <div className="page">
           {children}
         </div>
         <Footer />

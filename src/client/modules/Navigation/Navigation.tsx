@@ -26,7 +26,7 @@ export class Navigation extends Mtx {
                 href={route.href}
                 className={cx(
                   'navigation-a',
-                  m.route.get() === route.href && 'navigation-active'
+                  m.route.get() === route.href && 'navigation-a-active'
                 )}
               >
                 {route.title.toUpperCase()}

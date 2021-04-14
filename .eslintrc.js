@@ -16,6 +16,7 @@ module.exports = {
     // Typescript
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
     // General
     'linebreak-style': 'off',
     'operator-linebreak': ['error', 'after'],

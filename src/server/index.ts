@@ -66,13 +66,16 @@ const staticRouter: http.RequestListener = (req, res) => {
         res.end();
       });
 
-      fileStream.on('ready', () => {
-        cache[filePath] = [];
-      });
+      // Only cache on production
+      if (process.env.NODE_ENV !== 'development') {
+        fileStream.on('ready', () => {
+          cache[filePath] = [];
+        });
 
-      fileStream.on('data', chunk => {
-        cache[filePath].push(chunk);
-      });
+        fileStream.on('data', chunk => {
+          cache[filePath].push(chunk);
+        });
+      }
 
       res.statusCode = 200;
       res.setHeader('Content-Type', MIMEType);

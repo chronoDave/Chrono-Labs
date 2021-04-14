@@ -9,14 +9,14 @@
 .navigation-ul {
   display: flex;
   list-style-type: none;
-
-  > .navigation-li:first-child {
-    margin-left: 0
-  }
 }
 
 .navigation-li {
-  margin-left: $theme-unit * 3
+  margin-left: $theme-unit * 3;
+
+  &:first-child {
+    margin-left: 0
+  }
 }
 
 .navigation-a {
@@ -24,13 +24,14 @@
   letter-spacing: 1px;
   font-size: 0.75rem;
   color: $theme-palette-5;
-  transition: color $theme-transition-duration-shortest $theme-transition-easeInOut 0ms;
+  transition: color $theme-transition-shortest;
 
   &:hover {
     color: inherit;
   }
 }
 
-.navigation-active {
+.navigation-a-active {
+  font-weight: 400;
   color: inherit;
 }

@@ -1,6 +1,6 @@
 @import 'src/client/theme/theme.scss';
 
-.page-body {
+.page {
   padding-top: $theme-mixins-navigation;
   min-height: calc(100vh - #{$theme-mixins-navigation} - #{$theme-mixins-footer});
 }

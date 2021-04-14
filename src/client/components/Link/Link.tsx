@@ -20,11 +20,7 @@ export class Link extends Mtx<LinkProps> {
     return (
       <Typography
         component={/https:\/\//.test(attrs.href) ? 'a' : m.route.Link}
-        className={cx(
-          'link',
-          button && 'link-button',
-          className
-        )}
+        className={cx('link', button && 'link-button', className)}
         {...rest}
       >
         {children}
