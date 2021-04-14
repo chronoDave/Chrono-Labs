@@ -3,6 +3,7 @@ import { mtx, Mtx } from 'mtx';
 import { Link, Block, Typography } from '../../components';
 import { Carousel, CarouselImage } from '../../modules';
 
+import { getMediaQuery } from '../../utils';
 import { MIXINS, ROUTES } from '../../utils/const';
 
 import './Home.page.scss';
@@ -28,6 +29,11 @@ export class HomePage extends Mtx {
       src: 'assets/images/thesis@2x.png',
       alt: ''
     }];
+
+    const isMd = getMediaQuery('md');
+    const size = isMd ?
+      MIXINS.CAROUSEL['2x'] :
+      MIXINS.CAROUSEL['1x'];
 
     return (
       <Block
@@ -56,8 +62,8 @@ export class HomePage extends Mtx {
         </div>
         <div>
           <Carousel
-            width={MIXINS.CAROUSEL['1x']}
-            height={MIXINS.CAROUSEL['1x']}
+            width={size}
+            height={size}
             images={images}
           />
         </div>

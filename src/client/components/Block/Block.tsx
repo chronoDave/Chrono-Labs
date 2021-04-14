@@ -1,13 +1,13 @@
 import m from 'mithril';
 import { mtx, Mtx } from 'mtx';
 
-import { cx } from '../../utils/cx';
+import { cx, BreakpointKeys } from '../../utils';
 
 import './Block.scss';
 
 export interface BlockProps {
   className?: string
-  width?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'fs'
+  width?: BreakpointKeys
   background?: 'fill' | 'fillInverse' | 'fade' | 'fadeInverse'
   fullHeight?: boolean
 }

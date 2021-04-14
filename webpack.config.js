@@ -2,39 +2,22 @@ const path = require('path');
 
 // Plugins
 const FsWebpackPlugin = require('fs-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 // Shared
-const optimization = {
-  minimizer: [
-    new TerserPlugin({
-      terserOptions: {
-        output: {
-          comments: /@license/i
-        },
-        compress: {
-          passes: 2
-        }
-      },
-      extractComments: {
-        filename: ({ filename }) => `${filename.split('.').slice(0, -1).join('.')}.license.txt`
-      }
-    })
-  ],
-  splitChunks: {
-    cacheGroups: {
-      vendors: {
-        name: 'vendors',
-        test: /[\\/]node_modules[\\/]/,
-        chunks: 'all'
-      }
+const splitChunks = {
+  cacheGroups: {
+    vendors: {
+      name: 'vendors',
+      test: /[\\/]node_modules[\\/]/,
+      chunks: 'all'
     }
   }
 };
 
-module.exports = [{
+module.exports = env => [{
   name: 'server',
   target: 'node',
   resolve: {
@@ -45,7 +28,9 @@ module.exports = [{
     path: path.resolve(__dirname, 'dist/server'),
     filename: '[name].bundle.js'
   },
-  optimization,
+  optimization: {
+    splitChunks
+  },
   module: {
     rules: [{
       test: /\.ts$/,
@@ -71,15 +56,15 @@ module.exports = [{
   entry: path.resolve(__dirname, 'src/client'),
   output: {
     path: path.resolve(__dirname, 'dist/client'),
-    chunkFilename({ chunk: { runtime, id } }) {
-      const name = id.split('_').slice(-3, -2)[0];
-
-      if (!id.includes('page')) return '[name].chunk.js';
-      return `${runtime}.${name.toLowerCase()}.page.js`;
-    },
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[contenthash].chunk.js'
   },
-  optimization,
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin()
+    ],
+    splitChunks
+  },
   module: {
     rules: [{
       test: /\.ts|tsx$/,
@@ -105,12 +90,7 @@ module.exports = [{
     }], { verbose: true }),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
-      chunkFilename({ chunk: { runtime, id } }) {
-        const name = id.split('_').slice(-3, -2)[0];
-
-        if (!id.includes('page')) return '[name].chunk.css';
-        return `${runtime}.${name.toLowerCase()}.page.css`;
-      },
+      chunkFilename: '[chunkhash].chunk.css'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/client/index.html'),

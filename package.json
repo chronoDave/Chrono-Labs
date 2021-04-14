@@ -13,11 +13,12 @@
   "scripts": {
     "lint": "eslint src --ext .ts",
     "start": "node dist/server/main.bundle.js",
+    "start:server": "nodemon node dist/server/index.js",
     "start:webpack": "webpack -w --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "@chronocide/fs-walk": "^1.2.1",
     "mithril": "^2.0.4"
   },
   "devDependencies": {
@@ -26,16 +27,17 @@
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "css-loader": "^5.2.1",
+    "css-minimizer-webpack-plugin": "^2.0.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-plugin-import": "^2.22.1",
     "fs-webpack-plugin": "^3.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.1",
+    "nodemon": "^2.0.7",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.1.1",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.3",
     "url-loader": "^4.1.1",

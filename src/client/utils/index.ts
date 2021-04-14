@@ -1,3 +1,10 @@
 export { ROUTES } from './const';
 export { cx } from './cx';
-export { default as useMediaQuery } from './useMediaQuery';
+export { EventEmitter, EventListener } from './events';
+export {
+  breakpoints,
+  getBreakpoint,
+  getMediaQuery,
+  Breakpoints,
+  BreakpointKeys
+} from './responsive';
