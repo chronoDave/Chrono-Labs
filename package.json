@@ -12,8 +12,8 @@
   "homepage": "https://chronodave.com",
   "scripts": {
     "lint": "eslint src --ext .ts",
-    "start": "node dist/server/main.bundle.js",
-    "start:server": "nodemon node dist/server/index.js",
+    "start": "node dist/index.js",
+    "start:server": "nodemon node dist/index.js",
     "start:webpack": "webpack -w --mode development",
     "build": "webpack --mode production"
   },
@@ -42,6 +42,7 @@
     "typescript": "^4.2.3",
     "url-loader": "^4.1.1",
     "webpack": "^5.30.0",
+    "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0"
   }
 }

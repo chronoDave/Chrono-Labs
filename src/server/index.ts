@@ -1,68 +1,97 @@
 import http from 'http';
 import path from 'path';
+import fs from 'fs';
 
-import createCache from './cache';
+interface Cache {
+  [key: string]: Array<string | Buffer>
+}
 
-const port = parseInt(process.env.PORT || '7777', 10);
+const PORT = parseInt(process.env.PORT || '7777', 10);
 
-const cache = {
-  images: createCache(path.resolve(__dirname, '../../assets/images')),
-  markdown: createCache(path.resolve(__dirname, '../../assets/markdown')),
-  videos: createCache(path.resolve(__dirname, '../../assets/videos')),
-  client: createCache(path.resolve(__dirname, '../client'))
+const cache: Cache = {};
+
+const getMIMEType = (url: string) => {
+  switch (url.split('.').pop()?.toLowerCase()) {
+    case 'png':
+      return 'image/png';
+    case 'gif':
+      return 'image/gif';
+    case 'md':
+      return 'text/markdown';
+    case 'mp4':
+      return 'video/mp4';
+    case 'jpg':
+    case 'jpeg':
+      return 'image/jpeg';
+    case 'css':
+      return 'text/css';
+    case 'js':
+      return 'text/javascript';
+    default:
+      return 'text/plain';
+  }
 };
 
-const getMIMEType = (url?: string) => {
-  if (!url) return 'text/html';
+const parseUrl = (url: string) => {
+  const isResource = /\.[^/]*$/.test(url);
+  const isAsset = /^assets/.test(url);
 
-  const requestType = url.split('.').pop();
+  if (isAsset) {
+    return ({
+      filePath: path.resolve(__dirname, '../', url),
+      MIMEType: getMIMEType(url)
+    });
+  }
+  if (isResource) {
+    return ({
+      filePath: path.resolve(__dirname, 'client', url),
+      MIMEType: getMIMEType(url)
+    });
+  }
+  return ({
+    filePath: path.resolve(__dirname, 'client/index.html'),
+    MIMEType: 'text/html'
+  });
+};
 
-  if (requestType === 'js') return 'text/javascript';
-  return `text/${requestType}`;
+const staticRouter: http.RequestListener = (req, res) => {
+  if (req.url) {
+    const { filePath, MIMEType } = parseUrl(req.url.slice(1));
+
+    if (!cache[filePath]) {
+      const fileStream = fs.createReadStream(filePath);
+
+      fileStream.on('error', () => {
+        res.statusCode = 404;
+        res.end();
+      });
+
+      fileStream.on('ready', () => {
+        cache[filePath] = [];
+      });
+
+      fileStream.on('data', chunk => {
+        cache[filePath].push(chunk);
+      });
+
+      res.statusCode = 200;
+      res.setHeader('Content-Type', MIMEType);
+
+      fileStream.pipe(res);
+    } else {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', MIMEType);
+
+      cache[filePath].forEach(chunk => res.write(chunk));
+
+      res.end();
+    }
+  } else {
+    res.statusCode = 404;
+    res.end();
+  }
 };
 
 http
-  .createServer((req, res) => {
-    const reqUrl = req.url?.slice(1);
-
-    if (reqUrl) {
-      const [, directory, file] = reqUrl.split(/\\|\//);
-
-      res.setHeader('Content-Type', getMIMEType(file || reqUrl));
-      res.writeHead(200);
-
-      switch (directory) {
-        case 'images':
-          res.end(cache.images[file]);
-          break;
-        case 'markdown':
-          res.end(cache.markdown[file]);
-          break;
-        case 'videos':
-          res.end(cache.videos[file]);
-          break;
-        default:
-          res.end(cache.client[reqUrl]);
-      }
-    } else {
-      res.end(cache.client['index.html']);
-    }
-  })
-  .listen(port, '0.0.0.0', () => {
-    console.info(`Listening on: ${port}`);
-  });
-
-// http
-//   .createServer((req, res) => {
-//     fs.readFile(path.resolve(__dirname, '../client/index.html'))
-//       .then(html => {
-//         res.setHeader('Content-Type', 'text/html');
-//         res.writeHead(200);
-//         res.end(html);
-//       })
-//       .catch(err => {
-//         res.writeHead(500);
-//         res.end(err);
-//       });
-//   })
-//   .listen(port, '0.0.0.0', () => console.info(`Listening on: ${port}`));
+  .createServer(staticRouter)
+  .listen(PORT, '0.0.0.0');

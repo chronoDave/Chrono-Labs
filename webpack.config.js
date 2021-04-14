@@ -5,17 +5,7 @@ const FsWebpackPlugin = require('fs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
-// Shared
-const splitChunks = {
-  cacheGroups: {
-    vendors: {
-      name: 'vendors',
-      test: /[\\/]node_modules[\\/]/,
-      chunks: 'all'
-    }
-  }
-};
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = env => [{
   name: 'server',
@@ -25,11 +15,8 @@ module.exports = env => [{
   },
   entry: path.resolve(__dirname, 'src/server'),
   output: {
-    path: path.resolve(__dirname, 'dist/server'),
-    filename: '[name].bundle.js'
-  },
-  optimization: {
-    splitChunks
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js'
   },
   module: {
     rules: [{
@@ -41,7 +28,7 @@ module.exports = env => [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'dist/server'
+      files: 'dist/index.js'
     }], { verbose: true })
   ]
 }, {
@@ -63,7 +50,15 @@ module.exports = env => [{
     minimizer: [
       new CssMinimizerPlugin()
     ],
-    splitChunks
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all'
+        }
+      }
+    }
   },
   module: {
     rules: [{
@@ -95,6 +90,11 @@ module.exports = env => [{
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/client/index.html'),
       filename: 'index.html'
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: path.resolve(__dirname, 'report.html')
     })
   ]
 }];
