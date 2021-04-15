@@ -1,20 +1,20 @@
 import m from 'mithril';
 import { mtx, Mtx } from 'mtx';
 
-import { Link } from '../../components';
+import { STATIC_ROUTES } from '../../../routes';
 
+import { Link } from '../../components';
 import { cx } from '../../utils';
-import { ROUTES } from '../../utils/const';
 
 import './Navigation.scss';
 
 export class Navigation extends Mtx {
   view() {
     const routes = [
-      ROUTES.HOME,
-      ROUTES.WORKS,
-      ROUTES.ABOUT,
-      ROUTES.CONTACT,
+      STATIC_ROUTES.HOME,
+      STATIC_ROUTES.WORKS,
+      STATIC_ROUTES.ABOUT,
+      STATIC_ROUTES.CONTACT,
     ];
 
     return (
@@ -29,7 +29,7 @@ export class Navigation extends Mtx {
                   m.route.get() === route.href && 'navigation-a-active'
                 )}
               >
-                {route.title.toUpperCase()}
+                {route.id.toUpperCase()}
               </Link>
             </li>
           ))}

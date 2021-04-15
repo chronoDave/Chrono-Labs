@@ -2,6 +2,9 @@
 
 .home {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: $theme-palette-7;
 }
 
@@ -9,23 +12,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: $theme-unit * 6
 }
 
 .home-navigation {
   display: flex;
   padding: $theme-unit;
+}
 
-  > ul {
-    display: flex;
-    list-style-type: none;
+.home-navigation-ul {
+  display: flex;
+  list-style-type: none;
+}
 
-    > li {
-      display: flex;
+.home-navigation-li {
+  display: flex;
+}
 
-      > a {
-        margin: $theme-unit;
-        padding: $theme-unit * 1.25 $theme-unit * 2.5;
-      }
-    }
-  }
+.home-navigation-a {
+  margin: $theme-unit;
+  padding: $theme-unit * 1.25 $theme-unit * 2.5;
+}
+
+.home-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-carousel-alt {
+  margin-top: $theme-unit
 }

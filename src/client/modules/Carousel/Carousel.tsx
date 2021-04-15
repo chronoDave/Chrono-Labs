@@ -17,11 +17,16 @@ export interface CarouselProps {
   width: number
   height: number
   images: CarouselImage[]
+  autoPlay?: number
+  onChange?: (index: number) => void
 }
 
 export class Carousel extends Mtx<CarouselProps> {
   private index = 0;
   private size = 0;
+  private delay?: number;
+  private interval?: number;
+  private onChange?: (index: number) => void;
 
   constructor() {
     super();
@@ -30,12 +35,31 @@ export class Carousel extends Mtx<CarouselProps> {
     this.handlePrevious = this.handlePrevious.bind(this);
   }
 
+  destroyInterval() {
+    if (this.interval) clearInterval(this.interval);
+  }
+
+  createInterval() {
+    this.destroyInterval();
+
+    // Cast to number, as we're using the browser interval, not the node interval
+    if (this.delay && this.delay > 0) {
+      this.interval = setInterval(() => {
+        this.handleNext();
+        m.redraw();
+      }, this.delay) as unknown as number;
+    }
+  }
+
   handleNext() {
     const newIndex = this.index + 1;
 
     this.index = newIndex > this.size - 1 ?
       0 :
       newIndex;
+
+    if (this.onChange) this.onChange(this.index);
+    this.createInterval();
   }
 
   handlePrevious() {
@@ -44,10 +68,21 @@ export class Carousel extends Mtx<CarouselProps> {
     this.index = newIndex < 0 ?
       this.size - 1 :
       newIndex;
+
+    if (this.onChange) this.onChange(this.index);
+    this.createInterval();
   }
 
   oninit({ attrs }: m.Vnode<CarouselProps>) {
     this.size = attrs.images.length;
+    this.delay = attrs.autoPlay;
+    this.onChange = attrs.onChange;
+
+    this.createInterval();
+  }
+
+  onremove() {
+    this.destroyInterval();
   }
 
   view({ attrs }: m.Vnode<CarouselProps>) {
@@ -73,11 +108,13 @@ export class Carousel extends Mtx<CarouselProps> {
           id="chevronLeft"
           className={cx('carousel-icon', 'carousel-icon-previous')}
           onclick={this.handlePrevious}
+          aria-label="Previous Image"
         />
         <ButtonIcon
           id="chevronRight"
           className={cx('carousel-icon', 'carousel-icon-next')}
           onclick={this.handleNext}
+          aria-label="Next Image"
         />
         <div className="carousel-bar">
           {images.map((image, i) => (
@@ -88,6 +125,7 @@ export class Carousel extends Mtx<CarouselProps> {
                 this.index === i && 'carousel-bar-item-active'
               )}
               onclick={() => { this.index = i; }}
+              aria-label={`Go To Image ${i + 1} (${image.alt})`}
             />
           ))}
         </div>

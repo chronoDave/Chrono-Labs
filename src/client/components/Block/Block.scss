@@ -10,7 +10,7 @@
 }
 
 .block-landing {
-  height: calc(100vh - #{$theme-mixins-navigation})
+  min-height: calc(100vh - #{$theme-mixins-navigation})
 }
 
 // Background

@@ -19,13 +19,23 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 'off',
     // General
     'linebreak-style': 'off',
+    'class-methods-use-this': 'off',
     'operator-linebreak': ['error', 'after'],
     'arrow-parens': ['error', 'as-needed'],
     'no-console': ['error', {
       allow: ['warn', 'info']
     }],
-    'class-methods-use-this': 'off',
     // Import
     'import/prefer-default-export': 'off',
+    'import/order': ['error', {
+      groups: [
+        'builtin',
+        ['external', 'internal'],
+        'parent',
+        'sibling',
+        'index'
+      ],
+      'newlines-between': 'always-and-inside-groups'
+    }]
   }
 };

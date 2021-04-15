@@ -13,7 +13,7 @@ module.exports = env => [{
   resolve: {
     extensions: ['.js', '.ts']
   },
-  entry: path.resolve(__dirname, 'src/server'),
+  entry: path.resolve(__dirname, 'src/server.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
@@ -22,7 +22,7 @@ module.exports = env => [{
     rules: [{
       test: /\.ts$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src/server')
+      include: path.resolve(__dirname, 'src/server.ts')
     }]
   },
   plugins: [
@@ -47,6 +47,7 @@ module.exports = env => [{
     chunkFilename: '[contenthash].chunk.js'
   },
   optimization: {
+    moduleIds: 'deterministic',
     minimizer: [
       new CssMinimizerPlugin()
     ],
@@ -81,7 +82,8 @@ module.exports = env => [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'dist/client'
+      files: 'dist/client',
+      hooks: ['beforeRun', 'watchRun']
     }], { verbose: true }),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',

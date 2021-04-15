@@ -12,6 +12,7 @@
   "homepage": "https://chronodave.com",
   "scripts": {
     "lint": "eslint src --ext .ts",
+    "sitemap": "ts-node --project scripts/tsconfig.json scripts/sitemap.ts",
     "start": "node dist/index.js",
     "start:server": "nodemon node dist/index.js",
     "start:webpack": "webpack -w --mode development",

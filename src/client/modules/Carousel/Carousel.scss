@@ -10,7 +10,9 @@
 
 .carousel-image {
   position: absolute;
-  transition: right $theme-transition-complex;   
+  transition: right $theme-transition-complex;
+  pointer-events: none;
+  background-color: $theme-palette-0;
 }
 
 .carousel-icon {

@@ -3,30 +3,33 @@
     "target": "es5",
     "lib": ["es2019", "dom"],
     "module": "esnext",
-    "allowJs": true,
-    "sourceMap": true,
+    "moduleResolution": "node",
+
     "jsx": "react",
     "jsxFactory": "mtx",
-    "moduleResolution": "node",
-    "strict": true,
-    "noImplicitAny": true,
-    "downlevelIteration": true,
-    "noUnusedLocals": true,
-    "forceConsistentCasingInFileNames": true,
+  
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "downlevelIteration": true,
+      
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
-      "mtx": ["src/client/utils/mtx"],
-      "mtx/*": ["src/client/utils/mtx/*"]
+      "mtx": ["src/client/utils/mtx"]
     }
   },
   "include": [
     "src/**/*.tsx",
     "src/**/*.ts",
     ".eslintrc.js",
-    "webpack.config.js"
+    "webpack.config.js",
+    "scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules"

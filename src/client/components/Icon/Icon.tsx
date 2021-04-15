@@ -40,7 +40,7 @@ export class Icon extends Mtx<IconProps> {
         focusable="false"
         viewBox={getViewbox()}
         color="inherit"
-        aria-hidden
+        aria-hidden="true"
         className={cx('icon', small && 'icon-small', className)}
       >
         <path d={this.icons[id]} />
