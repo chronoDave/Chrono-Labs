@@ -48,6 +48,10 @@
   width: $theme-unit * 6;
   height: $theme-unit * 0.5;
   transition: background-color $theme-transition-shortest;
+
+  &:hover {
+    background-color: $theme-palette-7;
+  }
 }
 
 .carousel-bar-item-active {

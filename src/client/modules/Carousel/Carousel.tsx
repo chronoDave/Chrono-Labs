@@ -124,7 +124,10 @@ export class Carousel extends Mtx<CarouselProps> {
                 'carousel-bar-item',
                 this.index === i && 'carousel-bar-item-active'
               )}
-              onclick={() => { this.index = i; }}
+              onclick={() => {
+                this.index = i;
+                if (this.onChange) this.onChange(this.index);
+              }}
               aria-label={`Go To Image ${i + 1} (${image.alt})`}
             />
           ))}
