@@ -4,15 +4,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
   color: $theme-palette-7;
+
+  @media (min-width: $theme-breakpoints-xl) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .home-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: $theme-unit * 6
+  margin: $theme-unit * 4 0;
+
+  @media (min-width: $theme-breakpoints-xl) {
+    margin: 0
+  }
 }
 
 .home-navigation {
@@ -38,8 +48,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .home-carousel-alt {
-  margin-top: $theme-unit
+  margin-top: $theme-unit;
+  text-align: center;
+
+  @media (min-width: $theme-breakpoints-xl) {
+    margin-top: $theme-unit * 2;
+  }
 }

@@ -10,6 +10,7 @@ export interface TypographyProps {
   className?: string,
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'subtitle' | 'caption',
   color?: 'primary' | 'textPrimary' | 'textSecondary',
+  style?: { [key: string]: string | number | boolean }
   paragraph?: boolean
 }
 

@@ -29,13 +29,7 @@ export class Block extends Mtx<BlockProps> {
           fullHeight && 'block-landing'
         )}
       >
-        <div
-          className={cx(
-            'block-body',
-            `block-${width}`,
-            className
-          )}
-        >
+        <div className={cx(`block-${width}`, className)}>
           {children}
         </div>
       </div>

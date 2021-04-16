@@ -19,7 +19,6 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "@chronocide/fs-walk": "^1.2.1",
     "mithril": "^2.0.4"
   },
   "devDependencies": {

@@ -22,7 +22,10 @@ module.exports = env => [{
     rules: [{
       test: /\.ts$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src/server.ts')
+      include: [
+        path.resolve(__dirname, 'src/routes.ts'),
+        path.resolve(__dirname, 'src/server.ts')
+      ]
     }]
   },
   plugins: [
@@ -65,7 +68,10 @@ module.exports = env => [{
     rules: [{
       test: /\.ts|tsx$/,
       loader: 'ts-loader',
-      include: path.resolve(__dirname, 'src/client')
+      include: [
+        path.resolve(__dirname, 'src/routes.ts'),
+        path.resolve(__dirname, 'src/client')
+      ]
     }, {
       test: /\.scss$/,
       use: [
@@ -82,8 +88,7 @@ module.exports = env => [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'dist/client',
-      hooks: ['beforeRun', 'watchRun']
+      files: 'dist/client'
     }], { verbose: true }),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',

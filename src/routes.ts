@@ -2,55 +2,91 @@ export const DYNAMIC_ROUTES = {
   WORKS: (id = ':id') => `/works/${id}`
 };
 
-export const STATIC_ROUTES = {
+export interface StaticRoute {
+  id: string,
+  href: string,
+  title: string,
+  description: string,
+  images: {
+    og: string,
+    [key: string]: string
+  }
+}
+
+export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
   HOME: {
     id: 'home',
     href: '/',
-    title: 'ChronoDave - Multimedia Designer | @chronoDave',
+    title: 'ChronoDave - Multimedia Designer',
     description: 'Dutch multimedia designer currently working as a front-end web developer. I write software, create games and push pixels.',
-    image: '/assets/images/happy@6x.gif'
+    images: {
+      og: '/assets/images/happy@6x.gif',
+      '6x': '/assets/images/happy@6x.gif'
+    }
   },
   ABOUT: {
     id: 'about',
     href: '/about',
-    title: 'About Me | @chronoDave',
+    title: 'About Me',
     description: 'Hey there! I\'m chronoDave, a 23-year old Dutch multimedia designer. I currently work as a front-end web developer and in my free time I enjoy writing software, creating games and pushing pixels.',
-    image: '/assets/images/happy@6x.gif'
+    images: {
+      og: '/assets/images/happy@6x.gif',
+      '6x': '/assets/images/happy@6x.gif'
+    }
   },
   WORKS: {
     id: 'works',
     href: '/works',
-    title: 'Works | @chronoDave',
+    title: 'Works',
     description: 'An assorted collection of my projects and works.',
-    image: '/assets/images/tunh@2x.gif'
+    images: {
+      og: '/assets/images/tunh@2x.gif',
+      '1x': '/assets/images/tunh.gif',
+      '2x': '/assets/images/tunh@2x.gif'
+    }
   },
   CONTACT: {
     id: 'contact',
     href: '/contact',
-    title: 'Contact | @chronoDave',
+    title: 'Contact',
     description: 'You can find me and my works in these places.',
-    image: '/assets/images/happy@6x.gif'
+    images: {
+      og: '/assets/images/happy@6x.gif',
+      '6x': '/assets/images/happy@6x.gif'
+    }
   },
   TUHN: {
     id: 'tuhn',
     href: DYNAMIC_ROUTES.WORKS('tuhn'),
-    title: '東方運命の星 (Touhou Unmei no Hoshi) | @chronoDave',
+    title: '東方運命の星 (Touhou Unmei no Hoshi)',
     description: '東方運命の星 (Touhou Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
-    image: '/assets/images/tunh@2x.gif'
+    images: {
+      og: '/assets/images/tunh@2x.gif',
+      '1x': '/assets/images/tunh.gif',
+      '2x': '/assets/images/tunh@2x.gif'
+    }
   },
   DOOMBOX: {
     id: 'doombox',
     href: DYNAMIC_ROUTES.WORKS('doombox'),
-    title: 'Doombox | @chronoDave',
+    title: 'Doombox',
     description: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.',
-    image: '/assets/images/doombox@2x.png'
+    images: {
+      og: '/assets/images/doombox@2x.png',
+      '1x': '/assets/images/doombox.png',
+      '2x': '/assets/images/doombox@2x.png'
+    }
   },
   THESIS: {
     id: 'thesis',
     href: DYNAMIC_ROUTES.WORKS('thesis'),
-    title: 'Meaningful Interaction in Narrative-driven Games | @chronoDave',
+    title: 'Meaningful Interaction in Narrative-Driven Games',
     description: 'Can games be developed in such a way that the story within the game makes optimal usage of the inherent interactivity of the medium?',
-    image: '/assets/images/thesis@2x.png'
+    images: {
+      og: '/assets/images/thesis@2x.png',
+      '1x': '/assets/images/thesis.png',
+      '2x': '/assets/images/thesis@2x.png'
+    }
   }
 };
 

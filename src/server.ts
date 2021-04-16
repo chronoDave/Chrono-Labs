@@ -48,13 +48,13 @@ const getMetadata = (url?: string) => {
 
   if (!metadata) return '<!-- Metadata -->';
   return [
-    `<title>${metadata.title}</title>`,
+    `<title>${metadata.title} | @chronoDave</title>`,
     '<!-- Metadata -->',
-    `<meta name="title" content="${metadata.title}">`,
+    `<meta name="title" content="${metadata.title} | @chronoDave">`,
     `<meta name="description" content="${metadata.description}">`,
-    `<meta name="og:title" content="${metadata.title}">`,
+    `<meta name="og:title" content="${metadata.title} | @chronoDave">`,
     `<meta name="og:description" content="${metadata.description}">`,
-    `<meta name="og:image" content="${metadata.image}">`
+    `<meta name="og:image" content="${metadata.images.og}">`
   ].join('\n');
 };
 

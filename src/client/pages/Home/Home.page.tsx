@@ -30,8 +30,10 @@ export class HomePage extends Mtx {
       STATIC_ROUTES.THESIS
     ].map(work => ({
       key: work.title,
-      src: work.image.replace('2x', isMd ? '2x' : '1x'),
-      alt: work.title.split('|')[0].trim()
+      src: isMd ?
+        work.images?.['2x'] || work.images.og :
+        work.images?.['1x'] || work.images.og,
+      alt: work.title
     }));
 
     return (
@@ -39,21 +41,25 @@ export class HomePage extends Mtx {
         fullHeight
         background="fade"
         className="home"
+        width="fs"
       >
         <div className="home-text">
-          <Typography component="h1" variant="h2">
+          <Typography
+            component="h1"
+            variant={isXl ? 'h1' : isMd ? 'h2' : 'h3'}
+          >
             CHRONODAVE
           </Typography>
-          <Typography component="h2" variant="h4">
+          <Typography component="h2" variant={isMd ? 'h4' : 'h5'}>
             MULTIMEDIA DESIGNER
           </Typography>
-          {isXl && (
+          {isMd && (
             <nav aria-label="Home Page Navigation" className="home-navigation">
               <ul className="home-navigation-ul">
                 {links.map(link => (
                   <li key={link.href} className="home-navigation-li">
                     <Link href={link.href} button className="home-navigation-a">
-                      {link.title.toUpperCase()}
+                      {link.id.toUpperCase()}
                     </Link>
                   </li>
                 ))}
@@ -73,8 +79,9 @@ export class HomePage extends Mtx {
           />
           <Typography
             component="h2"
-            variant="h4"
+            variant="h5"
             className="home-carousel-alt"
+            style={{ width: `${size}px` }}
           >
             {images[this.carouselIndex].alt}
           </Typography>
