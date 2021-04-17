@@ -14,12 +14,13 @@
     "lint": "eslint src --ext .ts",
     "sitemap": "ts-node --project scripts/tsconfig.json scripts/sitemap.ts",
     "start": "node dist/index.js",
-    "start:server": "nodemon node dist/index.js",
+    "start:server": "nodemon",
     "start:webpack": "webpack -w --mode development",
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "mithril": "^2.0.4"
+    "mithril": "^2.0.4",
+    "snarkdown": "^2.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
@@ -44,5 +45,14 @@
     "webpack": "^5.30.0",
     "webpack-bundle-analyzer": "^4.4.1",
     "webpack-cli": "^4.6.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "dist/index.js"
+    ],
+    "exec": "node dist/index.js",
+    "env": {
+      "NODE_ENV": "development"
+    }
   }
 }

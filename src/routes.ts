@@ -1,4 +1,5 @@
 export const DYNAMIC_ROUTES = {
+  ANY: (id = ':id') => `/${id}`,
   WORKS: (id = ':id') => `/works/${id}`
 };
 

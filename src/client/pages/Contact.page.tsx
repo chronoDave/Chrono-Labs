@@ -5,9 +5,11 @@ import { Link } from '../components';
 export class ContactPage extends Mtx {
   view() {
     return (
-      <Link href="/">
-        Contact
-      </Link>
+      <div>
+        <Link href="/">
+          Contact
+        </Link>
+      </div>
     );
   }
 }
