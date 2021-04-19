@@ -83,7 +83,7 @@ const staticRouter: http.RequestListener = (req, res) => {
     const stream = fs.createReadStream(url);
 
     stream.on('error', err => {
-      console.log(err);
+      // console.log(err);
 
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end('An unknown error has occurred');
