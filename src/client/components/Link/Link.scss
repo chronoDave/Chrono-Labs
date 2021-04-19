@@ -17,5 +17,9 @@
   &:hover {
     color: $theme-palette-0;
     background-color: $theme-palette-7;
-  }    
+  }
+
+  > svg {
+    margin-right: $theme-unit;
+  }
 }

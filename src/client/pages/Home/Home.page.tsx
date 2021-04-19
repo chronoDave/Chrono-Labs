@@ -99,13 +99,16 @@ export class HomePage extends Mtx {
       </Block>
     ), (
       <ContentPersona
-        className="home-about"
+        content="body"
         persona="smug"
         alt="David Wolters (ChronoDave, Chronocide, NIGHTOBLANE)"
         title="ABOUT"
         description="ChronoDave is a minimalist multimedia designer and spends most of his time developing software and games, such as Doombox and Touhou: Star of Destiny. He values customization, transparency and privacy and is an advocate for open-source software."
-        href={STATIC_ROUTES.ABOUT.href}
-      />
+      >
+        <Link button href={STATIC_ROUTES.ABOUT.href} className="home-link-more">
+          Read more
+        </Link>
+      </ContentPersona>
     )];
   }
 }

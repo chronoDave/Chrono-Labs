@@ -8,20 +8,28 @@
   > .avatar {
     display: flex;
     flex-direction: column;
+    flex-grow: 0;
 
     > p {
       font-weight: 600;
-      padding: $theme-unit
+      padding: $theme-unit;
+      max-width: 240px;
     }
   }
 
   > .text {
+    width: 100%;
+
     @media (min-width: $theme-breakpoints-md) {
       margin-left: $theme-unit * 4
     }
-
-    > a {
-      margin-top: $theme-unit * 1.5;
-    }
   }
+}
+
+.content-persona-body {
+  margin: $theme-unit * 16 0;
+}
+
+.content-persona-header {
+  margin: $theme-unit * 8 0;
 }

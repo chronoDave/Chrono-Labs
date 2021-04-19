@@ -26,7 +26,7 @@ m.route(document.body, STATIC_ROUTES.HOME.href, {
   },
   [STATIC_ROUTES.CONTACT.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => import('./pages/Contact.page').then(x => x.ContactPage)
+    onmatch: () => import('./pages/Contact/Contact.page').then(x => x.ContactPage)
   },
   [DYNAMIC_ROUTES.WORK()]: {
     render: v => <Page>{v}</Page>,

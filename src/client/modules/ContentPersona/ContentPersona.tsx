@@ -5,31 +5,30 @@ import {
   Block,
   BlockProps,
   Typography,
-  Link,
   Persona,
   PersonaProps
 } from '../../components';
+import { ContentHeader, ContentHeaderProps } from '../ContentHeader/ContentHeader';
 
 import { cx, getMediaQuery } from '../../utils';
 
 import './ContentPersona.scss';
 
-export interface ContentPersonaProps extends BlockProps {
-  title: string
-  description: string
+export interface ContentPersonaProps extends BlockProps, ContentHeaderProps {
   persona: PersonaProps['type'],
+  content: 'body' | 'header',
+  body?: boolean
   className?: string
   alt?: string
-  href?: string
 }
 
 export class ContentPersona extends Mtx<ContentPersonaProps> {
-  view({ attrs }: m.Vnode<ContentPersonaProps>) {
+  view({ children, attrs }: m.Vnode<ContentPersonaProps>) {
     const {
       title,
       description,
-      href,
       alt,
+      content,
       className,
       persona
     } = attrs;
@@ -38,7 +37,11 @@ export class ContentPersona extends Mtx<ContentPersonaProps> {
 
     return (
       <Block
-        className={cx('content-persona', className)}
+        className={cx(
+          'content-persona',
+          `content-persona-${content}`,
+          className
+        )}
         maxWidth="md"
       >
         {isMd && (
@@ -52,21 +55,8 @@ export class ContentPersona extends Mtx<ContentPersonaProps> {
           </div>
         )}
         <div className="text">
-          <Typography
-            component="h2"
-            variant={isMd ? 'h2' : 'h3'}
-            paragraph
-          >
-            {title}
-          </Typography>
-          <Typography paragraph variant="h6">
-            {description}
-          </Typography>
-          {href && (
-            <Link button href={href}>
-              Read more
-            </Link>
-          )}
+          <ContentHeader header={content === 'header'} title={title} description={description} />
+          {children}
         </div>
       </Block>
     );
