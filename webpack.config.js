@@ -88,7 +88,8 @@ module.exports = env => [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'dist/client'
+      files: 'dist/client',
+      hooks: ['initialize']
     }], { verbose: true }),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',

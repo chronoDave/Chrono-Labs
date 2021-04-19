@@ -17,6 +17,7 @@ $theme-palette-14: #FF77A8;
 $theme-palette-15: #FFCCAA;
 
 // Z-index
+$theme-z-drawer: 90;
 $theme-z-navigation: 100;
 
 // Opacity
@@ -42,7 +43,7 @@ $theme-breakpoints-xl: 1280px;
 $theme-breakpoints-fs: 1920px;
 
 // Mixins
-$theme-mixins-navigation: $theme-unit * 8;
+$theme-mixins-header: $theme-unit * 8;
 $theme-mixins-footer: $theme-unit * 4;
 
 // Border

@@ -8,8 +8,14 @@ import { cx } from '../../utils';
 
 import './Navigation.scss';
 
-export class Navigation extends Mtx {
-  view() {
+export interface NavigationProps {
+  className?: string
+}
+
+export class Navigation extends Mtx<NavigationProps> {
+  view({ attrs }: m.Vnode<NavigationProps>) {
+    const { className } = attrs;
+
     const routes = [
       STATIC_ROUTES.HOME,
       STATIC_ROUTES.WORKS,
@@ -18,7 +24,10 @@ export class Navigation extends Mtx {
     ];
 
     return (
-      <nav className="navigation" aria-label="Main Navigation">
+      <nav
+        className={cx('navigation', className)}
+        aria-label="Main Navigation"
+      >
         <ul className="navigation-ul">
           {routes.map(route => (
             <li key={route.href} className="navigation-li">
