@@ -7,7 +7,7 @@ import {
   Block,
   Typography
 } from '../../components';
-import { Carousel, ContentPersona, ContentHeader, ContentWorks } from '../../modules';
+import { Carousel, ContentPersona, ContentWorks } from '../../modules';
 
 import { getMediaQuery } from '../../utils';
 

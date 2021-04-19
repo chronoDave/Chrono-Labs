@@ -48,7 +48,7 @@ export class ContactPage extends Mtx {
             {routes.map(route => (
               <li key={route.id}>
                 <Link button href={route.href}>
-                  {<Icon small id={route.id} />}
+                  {<Icon small id={route.id as any} />}
                   {route.title}
                 </Link>
               </li>
