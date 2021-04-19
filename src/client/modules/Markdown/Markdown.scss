@@ -11,12 +11,12 @@
     }
   }
 
-  p, h1, h2, h3, h4, h5, h6, ul, li, i, a {
+  p, h1, h2, h3, h4, h5, h6, ul, li, i, a, blockquote {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     color: inherit;
-    margin-bottom: $theme-unit * 1.5;
+    margin-bottom: 1rem;
   }
 
   h1 {
@@ -64,9 +64,10 @@
     margin: $theme-unit * 4 0;
   }
 
-  img {
+  img, video {
     border: $theme-border;
-    padding: $theme-unit;
+    max-width: 100%;
+    margin-bottom: $theme-unit;
   }
 
   li {
@@ -77,5 +78,10 @@
     &.last-updated {
       font-size: 0.75rem;
     }
+  }
+
+  blockquote {
+    padding: $theme-unit;
+    margin-left: $theme-unit * 2;
   }
 }

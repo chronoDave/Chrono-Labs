@@ -23,7 +23,7 @@ export class Markdown extends Mtx<MarkdownProps> {
       if (typeof data === 'string') {
         this.data = snarkdown(data)
           .replace(/^-{3,}/gm, '<hr />')
-          .replace(/^\w.*/gm, match => `<p>${match}</p>`)
+          .replace(/^([\u3000-\u30ff]|[\u4e00-\u9faf]|\w).*/gm, match => `<p>${match}</p>`)
           .replace(/(\n\s*-)(?:(?!\n<).)*/s, match => `<ul>${match}</ul>`)
           .replace(/^([^\n]\s*-)([^\n]*)/gm, (_, __, p2) => `<li>${p2}</li>`);
 

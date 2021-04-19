@@ -83,14 +83,10 @@ const staticRouter: http.RequestListener = (req, res) => {
     const stream = fs.createReadStream(url);
 
     stream.on('error', err => {
-      const regPath = /(?:[A-Za-z]:)?\\(\\|\w|\d)*/; // Don't reveal absolute path
+      console.log(err);
 
       res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({
-        name: err.name,
-        message: err.message.replace(regPath, req.url || ''),
-        stack: err.stack?.replace(regPath, req.url || '')
-      }));
+      res.end('An unknown error has occurred');
     });
 
     stream.on('ready', () => {

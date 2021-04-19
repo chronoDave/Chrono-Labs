@@ -7,11 +7,7 @@ import {
   Block,
   Typography
 } from '../../components';
-import {
-  Carousel,
-  CarouselImage,
-  ContentPersona
-} from '../../modules';
+import { Carousel, ContentPersona } from '../../modules';
 
 import { getMediaQuery } from '../../utils';
 
@@ -32,12 +28,13 @@ export class HomePage extends Mtx {
       STATIC_ROUTES.CONTACT
     ];
 
-    const images: CarouselImage[] = [
+    const images = [
       STATIC_ROUTES.TUHN,
       STATIC_ROUTES.DOOMBOX,
       STATIC_ROUTES.THESIS
     ].map(work => ({
       key: work.id,
+      href: work.href,
       src: isMd ?
         work.images?.['2x'] || work.images.og :
         work.images?.['1x'] || work.images.og,
@@ -87,14 +84,14 @@ export class HomePage extends Mtx {
               this.carouselIndex = index;
             }}
           />
-          <Typography
-            component="h2"
+          <Link
+            href={images[this.carouselIndex].href}
             variant="h5"
             className="home-carousel-alt"
             style={{ width: `${size}px` }}
           >
             {images[this.carouselIndex].alt}
-          </Typography>
+          </Link>
         </div>
       </Block>
     ), (

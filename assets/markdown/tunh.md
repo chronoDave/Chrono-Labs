@@ -1,4 +1,6 @@
-<img src="assets/images/tunh@2x.gif" />
+<div align="center">
+  <img src="assets/images/tunh@2x.gif" />
+</div>
 
 ---
 
@@ -10,28 +12,16 @@
 
 ---
 
-<div style="display:flex; justify-content:center">
-  <div style="max-width:700px">
-    <iframe
-      src="https://itch.io/embed/581378"
-      width="100%"
-      height="167"
-      frameborder="0"
-    >
-      <a href="https://chrono-dave.itch.io/unh">
-        Touhou ~ Unmei no Hoshi ~ / 東方運命の星 by chronoDave
-      </a>
-    </iframe>
-    <iframe
-      style="border:0; width:100%; height:120px; margin-top:20px"
-      src="https://bandcamp.com/EmbeddedPlayer/album=1895131296/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/transparent=true/" seamless
-    >
-      <a href="https://chronodave.bandcamp.com/album/original-soundtrack">
-        東方運命の星 Original Soundtrack by Chronocide
-      </a>
-    </iframe>
-  </div>
-</div>
+<iframe src="https://itch.io/embed/581378" width="100%" height="167" frameborder="0">
+  <a href="https://chrono-dave.itch.io/unh">
+    Touhou ~ Unmei no Hoshi ~ / 東方運命の星 by chronoDave
+  </a>
+</iframe>
+<iframe style="border:0; width:100%; height:120px; margin-top:20px" src="https://bandcamp.com/EmbeddedPlayer/album=1895131296/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=small/transparent=true/" seamless>
+  <a href="https://chronodave.bandcamp.com/album/original-soundtrack">
+    東方運命の星 Original Soundtrack by Chronocide
+  </a>
+</iframe>
 
 ---
 
@@ -51,4 +41,4 @@ And the following mechanics:
  - **Bomb**, you start with 3 bombs which can be used to clear the screen. For each enemy you defeat, you get one bomb.
  - **Lives**, when you get hit, you'll lose a life. When you lose all lives, you game over. Lives cannot be replenished, so don't forget to use your bombs! The amount of lives depends on the difficulty chosen.
 
-<i>Last updated Februari 28, 2021</i>
+<i>Last updated April 19, 2021</i>

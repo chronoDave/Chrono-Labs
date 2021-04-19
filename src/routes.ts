@@ -57,8 +57,8 @@ export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
     }
   },
   TUHN: {
-    id: 'tuhn',
-    href: DYNAMIC_ROUTES.WORK('tuhn'),
+    id: 'tunh',
+    href: DYNAMIC_ROUTES.WORK('tunh'),
     title: '東方運命の星 (Touhou Unmei no Hoshi)',
     alt: 'Unmei no Hoshi',
     description: '東方運命の星 (Touhou Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',

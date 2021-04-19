@@ -1,4 +1,6 @@
-<img src="assets/images/doombox@2x.png" />
+<div align="center">
+  <img src="assets/images/doombox@2x.png" />
+</div>
 
 ---
 
@@ -33,13 +35,12 @@ I've been working on Doombox for nearly 2 years as of writing, and a lot has cha
 <img src="assets/images/doombox-poc.jpg" alt="Doombox proof of concept (blurred image is censored)">
 
 <video controls="true" allowfullscreen="true">
-  <source src="assets/videos/2019-04-23_19-55-21.mp4" type="video/mp4">
+  <source src="assets/videos/20190423195521.mp4" type="video/mp4">
+  <caption align="center">Doombox vertical slice</caption>
 </video>
-
-<caption align="center">Doombox vertical slice</caption>
 
 <img src="assets/images/doombox-v1.jpg" alt="Doombox v1">
 
 <img src="assets/images/doombox-v2.png" alt="Doombox v2">
 
-<i>Last updated Februari 28, 2021</i>
+<i>Last updated April 19, 2021</i>
