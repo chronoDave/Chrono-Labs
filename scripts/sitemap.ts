@@ -12,6 +12,7 @@ const date = [
   now.getDate()
 ].join('-');
 
+fs.mkdirSync(path.resolve(__dirname, '../dist'), { recursive: true });
 fs.writeFileSync(
   path.resolve(__dirname, '../dist/sitemap.xml'),
   [
