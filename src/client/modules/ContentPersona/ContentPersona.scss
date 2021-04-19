@@ -1,0 +1,27 @@
+@import 'src/client/theme/theme.scss';
+
+.content-persona {
+  display: flex;
+  color: $theme-palette-7;
+  padding: $theme-unit * 2 $theme-unit * 4;
+
+  > .avatar {
+    display: flex;
+    flex-direction: column;
+
+    > p {
+      font-weight: 600;
+      padding: $theme-unit
+    }
+  }
+
+  > .text {
+    @media (min-width: $theme-breakpoints-md) {
+      margin-left: $theme-unit * 4
+    }
+
+    > a {
+      margin-top: $theme-unit * 1.5;
+    }
+  }
+}

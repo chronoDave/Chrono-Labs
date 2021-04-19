@@ -46,9 +46,9 @@ export class Page extends Mtx {
 
   view({ children }: m.Vnode) {
     return (
-      <div>
+      <div className="page">
         <Header />
-        <div className="page">
+        <div className="page-body">
           {children}
         </div>
         <Footer />

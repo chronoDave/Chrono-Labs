@@ -11,7 +11,7 @@ export interface MarkdownProps {
 }
 
 export class Markdown extends Mtx<MarkdownProps> {
-  private data = 'Loading...';
+  private data = snarkdown('<p>Loading...</p>');
 
   oninit(v: m.Vnode<MarkdownProps>) {
     const id = v.attrs.id || m.route.get().split('/').pop();
@@ -26,6 +26,8 @@ export class Markdown extends Mtx<MarkdownProps> {
           .replace(/^\w.*/gm, match => `<p>${match}</p>`)
           .replace(/(\n\s*-)(?:(?!\n<).)*/s, match => `<ul>${match}</ul>`)
           .replace(/^([^\n]\s*-)([^\n]*)/gm, (_, __, p2) => `<li>${p2}</li>`);
+
+        window.scrollTo(0, 0);
       }
     }).catch(err => {
       this.data = err.message;
@@ -34,7 +36,7 @@ export class Markdown extends Mtx<MarkdownProps> {
 
   view() {
     return (
-      <Block className="markdown" maxWidth="md" background="fillInverse">
+      <Block fullHeight className="markdown" maxWidth="md" background="fillInverse">
         {m.trust(this.data)}
       </Block>
     );

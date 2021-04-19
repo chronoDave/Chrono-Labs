@@ -1,6 +1,10 @@
 @import 'src/client/theme/theme.scss';
 
 .page {
+  background-color: $theme-palette-2;
+}
+
+.page-body {
   padding-top: $theme-mixins-header;
   min-height: calc(100vh - #{$theme-mixins-header} - #{$theme-mixins-footer});
 }

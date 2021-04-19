@@ -11,7 +11,7 @@ export class Footer extends Mtx {
     return (
       <footer className="footer">
         <Link href={EXTERNAL_ROUTES.TWITTER.href} variant="caption">
-          {EXTERNAL_ROUTES.TWITTER.title}
+          Created by {EXTERNAL_ROUTES.TWITTER.description}
         </Link>
         <Link href={EXTERNAL_ROUTES.REPO.href} variant="caption">
           {EXTERNAL_ROUTES.REPO.title}

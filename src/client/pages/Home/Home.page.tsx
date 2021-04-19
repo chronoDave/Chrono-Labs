@@ -2,8 +2,16 @@ import { mtx, Mtx } from 'mtx';
 
 import { STATIC_ROUTES } from '../../../routes';
 
-import { Link, Block, Typography } from '../../components';
-import { Carousel, CarouselImage } from '../../modules';
+import {
+  Link,
+  Block,
+  Typography
+} from '../../components';
+import {
+  Carousel,
+  CarouselImage,
+  ContentPersona
+} from '../../modules';
 
 import { getMediaQuery } from '../../utils';
 
@@ -38,7 +46,7 @@ export class HomePage extends Mtx {
         work.alt || work.title
     }));
 
-    return (
+    return [(
       <Block
         fullHeight
         background="fade"
@@ -89,6 +97,15 @@ export class HomePage extends Mtx {
           </Typography>
         </div>
       </Block>
-    );
+    ), (
+      <ContentPersona
+        className="home-about"
+        persona="smug"
+        alt="David Wolters (ChronoDave, Chronocide, NIGHTOBLANE)"
+        title="ABOUT"
+        description="ChronoDave is a minimalist multimedia designer and spends most of his time developing software and games, such as Doombox and Touhou: Star of Destiny. He values customization, transparency and privacy and is an advocate for open-source software."
+        href={STATIC_ROUTES.ABOUT.href}
+      />
+    )];
   }
 }

@@ -31,6 +31,7 @@ export class Typography extends Mtx<TypographyProps> {
         className: cx(
           'typography',
           `typography-${variant}`,
+          paragraph && 'typography-paragraph',
           color && `typography-color-${color}`,
           className
         ),

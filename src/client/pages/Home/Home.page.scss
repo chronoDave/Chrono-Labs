@@ -57,5 +57,10 @@
 
   @media (min-width: $theme-breakpoints-md) {
     margin-top: $theme-unit * 2;
+    height: $theme-unit * 6;
   }
+}
+
+.home-about {
+  margin: $theme-unit * 16 0
 }

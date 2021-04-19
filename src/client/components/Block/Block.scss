@@ -3,6 +3,10 @@
 .block {
   display: flex;
   justify-content: center;
+
+  > div {
+    width: 100%;
+  }
 }
 
 .block-landing {
