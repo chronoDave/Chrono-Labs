@@ -1,8 +1,8 @@
 import { mtx, Mtx } from 'mtx';
 
-import { ContentWorks, ContentHeader } from '../modules';
+import { ContentWorks, ContentHeader } from '../../modules';
 
-import { STATIC_ROUTES } from '../../routes';
+import { STATIC_ROUTES } from '../../../routes';
 
 export class WorksPage extends Mtx {
   view() {
