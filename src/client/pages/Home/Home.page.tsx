@@ -29,11 +29,13 @@ export class HomePage extends Mtx {
       STATIC_ROUTES.DOOMBOX,
       STATIC_ROUTES.THESIS
     ].map(work => ({
-      key: work.title,
+      key: work.id,
       src: isMd ?
         work.images?.['2x'] || work.images.og :
         work.images?.['1x'] || work.images.og,
-      alt: work.title
+      alt: isMd ?
+        work.title :
+        work.alt || work.title
     }));
 
     return (

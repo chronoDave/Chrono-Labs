@@ -10,7 +10,8 @@ export interface StaticRoute {
   images: {
     og: string,
     [key: string]: string
-  }
+  },
+  alt?: string
 }
 
 export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
@@ -59,6 +60,7 @@ export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
     id: 'tuhn',
     href: DYNAMIC_ROUTES.WORK('tuhn'),
     title: '東方運命の星 (Touhou Unmei no Hoshi)',
+    alt: 'Unmei no Hoshi',
     description: '東方運命の星 (Touhou Star of Destiny) is a Touhou fangame made with the PICO-8 fantasy console, where you shoot bullets at the enemy whilst avoiding getting shot yourself.',
     images: {
       og: '/assets/images/tunh@2x.gif',
@@ -70,6 +72,7 @@ export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
     id: 'doombox',
     href: DYNAMIC_ROUTES.WORK('doombox'),
     title: 'Doombox',
+    alt: 'Doombox',
     description: 'Doombox is a music player designed and built to support a large, personal music collection. It\'s free, open source and high customizable.',
     images: {
       og: '/assets/images/doombox@2x.png',
@@ -81,6 +84,7 @@ export const STATIC_ROUTES: { [key: string]: StaticRoute } = {
     id: 'thesis',
     href: DYNAMIC_ROUTES.WORK('thesis'),
     title: 'Meaningful Interaction in Narrative-Driven Games',
+    alt: 'Thesis',
     description: 'Can games be developed in such a way that the story within the game makes optimal usage of the inherent interactivity of the medium?',
     images: {
       og: '/assets/images/thesis@2x.png',

@@ -55,7 +55,7 @@
   margin-top: $theme-unit;
   text-align: center;
 
-  @media (min-width: $theme-breakpoints-xl) {
+  @media (min-width: $theme-breakpoints-md) {
     margin-top: $theme-unit * 2;
   }
 }
