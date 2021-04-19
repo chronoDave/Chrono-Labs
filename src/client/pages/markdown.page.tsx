@@ -1,7 +1,5 @@
 import m from 'mithril';
 import { Mtx } from 'mtx';
-// import Markdown from 'markdown-it';
-// import Markdown from 'marked';
 import snarkdown from 'snarkdown';
 
 export interface MarkdownPageProps {
@@ -9,8 +7,6 @@ export interface MarkdownPageProps {
 }
 
 export class MarkdownPage extends Mtx<MarkdownPageProps> {
-  // private parser = new Markdown({ html: true, linkify: true });
-
   oninit({ attrs }: m.Vnode<MarkdownPageProps>) {
     const element = document.getElementsByClassName('page')[0];
 
@@ -21,7 +17,9 @@ export class MarkdownPage extends Mtx<MarkdownPageProps> {
       if (typeof data === 'string') {
         element.innerHTML = snarkdown(data)
           .replace(/^-{3,}/gm, '<hr />')
-          .replace(/^\w.*/gm, match => `<p>${match}</p>`);
+          .replace(/^\w.*/gm, match => `<p>${match}</p>`)
+          .replace(/(\n\s*-)(?:(?!\n<).)*/s, match => `<ul>${match}</ul>`)
+          .replace(/^([^\n]\s*-)([^\n]*)/gm, (_, __, p2) => `<li>${p2}</li>`);
       }
     }).catch(err => {
       element.innerHTML = 'Page not found';
