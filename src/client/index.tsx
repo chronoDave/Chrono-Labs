@@ -18,7 +18,7 @@ m.route(document.body, STATIC_ROUTES.HOME.href, {
   },
   [STATIC_ROUTES.WORKS.href]: {
     render: v => <Page>{v}</Page>,
-    onmatch: () => import('./pages/Works.page').then(x => x.WorksPage)
+    onmatch: () => import('./pages/Works/Works.page').then(x => x.WorksPage)
   },
   [STATIC_ROUTES.ABOUT.href]: {
     render: v => <Page>{v}</Page>,
