@@ -16,7 +16,8 @@
     "start": "node dist/index.js",
     "start:server": "nodemon",
     "start:webpack": "webpack -w --mode development",
-    "build": "webpack --mode production"
+    "test": "npm run lint",
+    "build": "npm run sitemap && webpack --mode production"
   },
   "dependencies": {
     "mithril": "^2.0.4",
