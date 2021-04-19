@@ -64,3 +64,20 @@
 .home-link-more {
   margin-top: $theme-unit;
 }
+
+.home-persona {
+  margin-bottom: 0;
+  padding-bottom: $theme-unit * 64;
+}
+
+.home-works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $theme-palette-7;
+  margin-top: $theme-unit * 8;
+
+  > h3 {
+    text-align: center;
+  }
+}

@@ -27,7 +27,11 @@ export class ContentHeader extends Mtx<ContentHeaderProps> {
 
     return (
       <Block
-        className={cx('content-header', className)}
+        className={cx(
+          'content-header',
+          header && 'content-header-center',
+          className
+        )}
         maxWidth="md"
         {...rest}
       >

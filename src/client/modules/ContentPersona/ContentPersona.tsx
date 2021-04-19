@@ -30,7 +30,8 @@ export class ContentPersona extends Mtx<ContentPersonaProps> {
       alt,
       content,
       className,
-      persona
+      persona,
+      ...rest
     } = attrs;
 
     const isMd = getMediaQuery('md');
@@ -42,7 +43,7 @@ export class ContentPersona extends Mtx<ContentPersonaProps> {
           `content-persona-${content}`,
           className
         )}
-        maxWidth="md"
+        {...rest}
       >
         {isMd && (
           <div className="avatar">

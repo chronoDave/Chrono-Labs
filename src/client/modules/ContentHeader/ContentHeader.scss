@@ -3,3 +3,10 @@
 .content-header {
   color: $theme-palette-7;
 }
+
+.content-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $theme-unit * 4 0;
+}

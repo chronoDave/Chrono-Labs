@@ -7,7 +7,7 @@ import {
   Block,
   Typography
 } from '../../components';
-import { Carousel, ContentPersona } from '../../modules';
+import { Carousel, ContentPersona, ContentHeader, ContentWorks } from '../../modules';
 
 import { getMediaQuery } from '../../utils';
 
@@ -96,6 +96,9 @@ export class HomePage extends Mtx {
       </Block>
     ), (
       <ContentPersona
+        className="home-persona"
+        maxWidth="lg"
+        background="fadeInverse"
         content="body"
         persona="smug"
         alt="David Wolters (ChronoDave, Chronocide, NIGHTOBLANE)"
@@ -106,6 +109,22 @@ export class HomePage extends Mtx {
           Read more
         </Link>
       </ContentPersona>
+    ), (
+      <Block className="home-works" background="fade" maxWidth="xl">
+        <Typography
+          component="h3"
+          variant={isMd ? 'h3' : 'h4'}
+        >
+          {STATIC_ROUTES.WORKS.title.toUpperCase()}
+        </Typography>
+        <ContentWorks
+          works={[
+            STATIC_ROUTES.TUHN,
+            STATIC_ROUTES.DOOMBOX,
+            STATIC_ROUTES.THESIS
+          ]}
+        />
+      </Block>
     )];
   }
 }
