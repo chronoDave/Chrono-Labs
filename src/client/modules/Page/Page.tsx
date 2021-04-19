@@ -5,6 +5,7 @@ import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
 import { getBreakpoint, BreakpointKeys } from '../../utils';
+import { STATIC_ROUTES } from '../../../routes';
 
 import './Page.scss';
 
@@ -30,6 +31,13 @@ export class Page extends Mtx {
 
   oncreate() {
     window.addEventListener('resize', this.handleResize);
+  }
+
+  onupdate() {
+    const url = m.route.get();
+    const metadata = Object.values(STATIC_ROUTES).find(({ href }) => href === url);
+
+    if (metadata?.title) document.title = `${metadata.title} | @chronoDave`;
   }
 
   onremove() {

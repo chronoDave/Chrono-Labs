@@ -41,7 +41,7 @@ export class HomePage extends Mtx {
         fullHeight
         background="fade"
         className="home"
-        width="fs"
+        maxWidth="fs"
       >
         <div className="home-text">
           <Typography

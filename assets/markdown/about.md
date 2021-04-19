@@ -1,5 +1,5 @@
-<div style="display:flex">
-  <img src="/assets/images/happy@6x.gif" style="max-width:initial" />
+<div style="display:flex;" class="row-md">
+  <img src="/assets/images/happy@6x.gif" width="240" height="240" alt="Avatar smiling" />
   <div style="padding:16px">
 
 #### Hey there!
@@ -39,4 +39,4 @@ When it comes to games, I'm a huge fan of (turn-based) strategy games and JRPG's
 
 Oh, and check out [Subset Games](https://subsetgames.com/) and [Zachtronics](http://www.zachtronics.com/). They make amazing games.
 
-<i>Last updated Februari 28, 2021</i>
+<i class="last-updated">Last updated April 19, 2021</i>

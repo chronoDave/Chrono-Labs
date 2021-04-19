@@ -7,7 +7,7 @@ import './Block.scss';
 
 export interface BlockProps {
   className?: string
-  width?: BreakpointKeys
+  maxWidth?: BreakpointKeys
   background?: 'fill' | 'fillInverse' | 'fade' | 'fadeInverse'
   fullHeight?: boolean
 }
@@ -15,7 +15,7 @@ export interface BlockProps {
 export class Block extends Mtx<BlockProps> {
   view({ attrs, children }: m.Vnode<BlockProps>) {
     const {
-      width = 'lg',
+      maxWidth = 'lg',
       fullHeight,
       background,
       className
@@ -29,7 +29,7 @@ export class Block extends Mtx<BlockProps> {
           fullHeight && 'block-landing'
         )}
       >
-        <div className={cx(`block-${width}`, className)}>
+        <div className={cx(`block-${maxWidth}`, className)}>
           {children}
         </div>
       </div>
