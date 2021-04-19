@@ -23,6 +23,13 @@ export class Navigation extends Mtx<NavigationProps> {
       STATIC_ROUTES.CONTACT,
     ];
 
+    const getActiveRoute = (href: string) => {
+      const current = m.route.get();
+
+      if (href === '/') return href === current;
+      return current.includes(href);
+    };
+
     return (
       <nav
         className={cx('navigation', className)}
@@ -35,7 +42,7 @@ export class Navigation extends Mtx<NavigationProps> {
                 href={route.href}
                 className={cx(
                   'navigation-a',
-                  m.route.get() === route.href && 'navigation-a-active'
+                  getActiveRoute(route.href) && 'navigation-a-active'
                 )}
               >
                 {route.id.toUpperCase()}
