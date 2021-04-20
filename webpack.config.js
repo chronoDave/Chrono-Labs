@@ -46,7 +46,7 @@ module.exports = env => [{
   entry: path.resolve(__dirname, 'src/client'),
   output: {
     path: path.resolve(__dirname, 'dist/client'),
-    filename: '[name].bundle.js',
+    filename: '[name]-[hash].bundle.js',
     chunkFilename: '[contenthash].chunk.js'
   },
   optimization: {
@@ -92,7 +92,7 @@ module.exports = env => [{
       hooks: ['initialize']
     }], { verbose: true }),
     new MiniCssExtractPlugin({
-      filename: '[name].bundle.css',
+      filename: '[name]-[hash].bundle.css',
       chunkFilename: '[chunkhash].chunk.css'
     }),
     new HtmlWebpackPlugin({
