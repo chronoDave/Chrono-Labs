@@ -10,7 +10,8 @@ import { STATIC_ROUTES } from '../../../routes';
 import './Page.scss';
 
 export class Page extends Mtx {
-  breakpoint: BreakpointKeys;
+  private breakpoint: BreakpointKeys;
+  private current = m.route.get();
 
   constructor() {
     super();
@@ -33,11 +34,18 @@ export class Page extends Mtx {
     window.addEventListener('resize', this.handleResize);
   }
 
-  onupdate() {
+  onbeforeupdate(v: m.Vnode, o: m.VnodeDOM) {
     const url = m.route.get();
-    const metadata = Object.values(STATIC_ROUTES).find(({ href }) => href === url);
 
-    if (metadata?.title) document.title = `${metadata.title} | @chronoDave`;
+    if (url !== this.current) {
+      this.current = url;
+
+      const metadata = Object.values(STATIC_ROUTES).find(({ href }) => href === url);
+
+      if (metadata?.title) document.title = `${metadata.title} | @chronoDave`;
+
+      window.scrollTo(0, 0);
+    }
   }
 
   onremove() {

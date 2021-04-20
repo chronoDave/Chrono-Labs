@@ -24,8 +24,6 @@ export class Markdown extends Mtx<MarkdownProps> {
           .replace(/^([\u3000-\u30ff]|[\u4e00-\u9faf]|\w).*/gm, match => `<p>${match}</p>`)
           .replace(/(\n\s*-)(?:(?!\n<).)*/s, match => `<ul>${match}</ul>`)
           .replace(/^([^\n]\s*-)([^\n]*)/gm, (_, __, p2) => `<li>${p2}</li>`);
-
-        window.scrollTo(0, 0);
       }
     }).catch(err => {
       this.data = err.message;
