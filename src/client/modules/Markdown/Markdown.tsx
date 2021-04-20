@@ -37,7 +37,7 @@ export class Markdown extends Mtx<MarkdownProps> {
   }
 
   onbeforeupdate(v: m.Vnode<MarkdownProps>, o: m.VnodeDOM<MarkdownProps>) {
-    this.fetch(v.attrs.id);
+    if (v.attrs.id !== o.attrs.id) this.fetch(v.attrs.id);
   }
 
   view() {
