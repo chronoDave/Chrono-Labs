@@ -34,6 +34,7 @@ export class Header extends Mtx {
             onclick={() => {
               this.open = !this.open;
             }}
+            aria-label="Open Navigation Drawer"
             aria-haspopup="true"
             aria-controls="drawer"
           />
