@@ -88,7 +88,7 @@ export class HomePage extends Mtx {
             href={images[this.carouselIndex].href}
             variant="h5"
             className="home-carousel-alt"
-            style={{ width: `${size}px` }}
+            style={{ 'max-width': `${size}px` }}
           >
             {images[this.carouselIndex].alt}
           </Link>

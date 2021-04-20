@@ -85,8 +85,8 @@ const staticRouter: http.RequestListener = (req, res) => {
     stream.on('error', err => {
       // console.log(err);
 
-      res.writeHead(500, { 'Content-Type': 'application/json' });
-      res.end('An unknown error has occurred');
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end('File not found');
     });
 
     stream.on('ready', () => {
