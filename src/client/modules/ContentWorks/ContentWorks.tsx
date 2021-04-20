@@ -39,9 +39,11 @@ export class ContentWorks extends Mtx<ContentWorksProps> {
             <Typography variant="h6">
               {route.description}
             </Typography>
-            <Link button href={route.href}>
-              Read more
-            </Link>
+            <div>
+              <Link button href={route.href}>
+                Read more
+              </Link>
+            </div>
           </div>
         ))}
       </Block>
