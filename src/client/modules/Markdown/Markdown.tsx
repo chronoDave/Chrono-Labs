@@ -13,11 +13,9 @@ export interface MarkdownProps {
 export class Markdown extends Mtx<MarkdownProps> {
   private data = snarkdown('<p>Loading...</p>');
 
-  oninit(v: m.Vnode<MarkdownProps>) {
-    const id = v.attrs.id || m.route.get().split('/').pop();
-
+  fetch(id?: string) {
     m.request({
-      url: `/assets/markdown/${id}.md`,
+      url: `/assets/markdown/${id || m.route.get().split('/').pop()}.md`,
       responseType: 'text'
     }).then(data => {
       if (typeof data === 'string') {
@@ -32,6 +30,14 @@ export class Markdown extends Mtx<MarkdownProps> {
     }).catch(err => {
       this.data = err.message;
     });
+  }
+
+  oninit(v: m.Vnode<MarkdownProps>) {
+    this.fetch(v.attrs.id);
+  }
+
+  onbeforeupdate(v: m.Vnode<MarkdownProps>, o: m.VnodeDOM<MarkdownProps>) {
+    this.fetch(v.attrs.id);
   }
 
   view() {
