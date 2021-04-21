@@ -1,5 +1,5 @@
 <div style="display:flex;" class="row-md">
-  <img src="/assets/images/happy@6x.gif" width="240" height="240" alt="Avatar smiling" />
+  <img src="/assets/images/happy@6x.png" width="240" height="240" alt="Avatar smiling" />
   <div style="padding:16px">
 
 #### Hey there!

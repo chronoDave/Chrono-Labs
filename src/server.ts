@@ -17,7 +17,6 @@ const getMIMEType = (url: string) => {
   const ext = url.split('.').pop()?.toLowerCase();
   const type = [
     { ext: 'png', category: 'image' },
-    { ext: 'gif', category: 'image' },
     { ext: 'jpg', category: 'image' },
     { ext: 'jpeg', category: 'image' },
     { ext: 'mp4', category: 'video' },

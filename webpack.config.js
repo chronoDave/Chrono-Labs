@@ -81,7 +81,7 @@ module.exports = env => [{
       ],
       include: path.resolve(__dirname, 'src/client')
     }, {
-      test: /\.png|jpg|gif/,
+      test: /\.png|jpg/,
       loader: 'url-loader'
     }]
   },

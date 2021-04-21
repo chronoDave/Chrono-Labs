@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/images/tunh@2x.gif" />
+  <img src="assets/images/tunh@2x.png" />
 </div>
 
 ---
@@ -41,4 +41,4 @@ And the following mechanics:
  - **Bomb**, you start with 3 bombs which can be used to clear the screen. For each enemy you defeat, you get one bomb.
  - **Lives**, when you get hit, you'll lose a life. When you lose all lives, you game over. Lives cannot be replenished, so don't forget to use your bombs! The amount of lives depends on the difficulty chosen.
 
-<i>Last updated April 19, 2021</i>
+<i>Last updated April 21, 2021</i>

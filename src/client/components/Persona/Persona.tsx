@@ -14,7 +14,7 @@ export class Persona extends Mtx<PersonaProps> {
     return (
       <img
         className="persona"
-        src={`assets/images/${type}@6x.gif`}
+        src={`assets/images/${type}@6x.png`}
         alt={`Avatar ${type}`}
         width={240}
         height={240}

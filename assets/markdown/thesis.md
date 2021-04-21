@@ -44,7 +44,7 @@ A conversation where one party doesn't listen, speak or thinks isn't a conversat
 
 ---
 
-<img src="assets/images/thesis-gameplay.gif" alt="ITFE gameplay footage" />
+<img src="assets/images/thesis-gameplay.png" alt="ITFE gameplay footage" />
 
 To prove that our research was applicable in practice, I developed game that applied the insights obtained during our research. The game, called ITFE, is playable in both [the browser](https://ludumstercore.com/game) and [free to download for Windows](https://drive.google.com/file/d/1VA29y7w1NmeKmoxb537ruFurPIEId4ZO/view).
 
@@ -97,7 +97,7 @@ Interactive storytelling is very complex. It's something that's very time consum
 
 <h5 id="ai">The difficulty of writing convincing AI</h5>
 
-<img src="/assets/images/thesis-ai.gif" alt="ITFE pathfinding AI prototype">
+<img src="/assets/images/thesis-ai.png" alt="ITFE pathfinding AI prototype">
 
 In theory it sounds simple. You take the board state, calculate the best move and perform said move. In practice, however, calculating the best move is incredibly difficult. Something that's quite natural for players to do is very hard to define in a programming language, I've found.
 
@@ -130,4 +130,4 @@ One of the biggest issues of working with TIC-80 was the lack of a good debugger
 
 Another problem with TIC-80 is the lack of file bundling. As the game grew bigger in size, it become increasingly more difficult to maintain the code. To solve this problem, I wrote a bundler myself, called [tic-bundle](https://github.com/chronoDave/tic-bundle).
 
-<i>Last updated April 19, 2021</i>
+<i>Last updated April 21, 2021</i>
