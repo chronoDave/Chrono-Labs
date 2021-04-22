@@ -90,6 +90,7 @@ module.exports = env => ({
     }),
     ...Object.values(STATIC_ROUTES).map(route => new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/template.html'),
+      favicon: path.resolve(__dirname, 'assets/images/favicon.png'),
       filename: `${route.name}.html`,
       chunks: [route.id],
       title: route.title,
