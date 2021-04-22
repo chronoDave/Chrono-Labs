@@ -26,6 +26,7 @@ module.exports = {
     'no-console': ['error', {
       allow: ['warn', 'info']
     }],
+    'max-len': 'off',
     // Import
     'import/prefer-default-export': 'off',
     'import/order': ['error', {

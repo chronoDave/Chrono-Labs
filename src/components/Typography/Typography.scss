@@ -1,0 +1,80 @@
+@import 'src/styles/theme.scss';
+
+.typography {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: inherit;
+}
+
+.typography-h1 {
+  font-size: 6rem;
+  letter-spacing: 4px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.typography-h2 {
+  font-size: 4.5rem;
+  letter-spacing: 3px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.typography-h3 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.typography-h4 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.typography-h5 {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.typography-h6 {
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.typography-body {
+  font-size: 1rem;
+}
+
+.typography-subtitle {
+  font-size: 0.875rem;
+}
+
+.typography-caption {
+  font-size: 0.75rem;
+}
+
+.typography-paragraph {
+  margin-bottom: 1rem
+}
+
+.typography-center {
+  text-align: center;
+}
+
+// Colours
+.typography-color-textPrimary {
+  color: $theme-palette-7
+}
+
+.typography-color-textSecondary {
+  color: $theme-palette-6
+}
+
+.typography-color-primary {
+  color: $theme-palette-2
+}

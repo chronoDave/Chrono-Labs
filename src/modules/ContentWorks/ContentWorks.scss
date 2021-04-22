@@ -1,0 +1,37 @@
+@import 'src/styles/theme.scss';
+
+.content-works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-works-work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 256px;
+  color: $theme-palette-7;
+  margin: $theme-unit * 8 $theme-unit * 4;
+
+  @media (min-width: $theme-breakpoints-md) {
+    width: 512px;
+  }
+
+  > img {
+    border: $theme-border;
+    margin: $theme-unit 0;
+  }
+
+  > p {
+    padding: $theme-unit;
+  }
+
+  > h3 {
+    text-align: center;
+  }
+
+  > div {
+    margin-top: $theme-unit * 2;
+  }
+}

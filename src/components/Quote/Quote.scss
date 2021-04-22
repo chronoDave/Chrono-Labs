@@ -1,0 +1,9 @@
+@import 'src/styles/theme.scss';
+
+.quote {
+  margin: $theme-unit * 2;
+
+  > * {
+    display: inline;
+  }
+}

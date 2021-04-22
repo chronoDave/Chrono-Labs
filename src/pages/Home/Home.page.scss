@@ -1,0 +1,83 @@
+@import 'src/styles/theme.scss';
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  color: $theme-palette-7;
+
+  @media (min-width: $theme-breakpoints-xl) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $theme-unit * 4 0;
+
+  @media (min-width: $theme-breakpoints-xl) {
+    margin: 0
+  }
+}
+
+.home-navigation {
+  display: flex;
+  padding: $theme-unit;
+}
+
+.home-navigation-ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.home-navigation-li {
+  display: flex;
+}
+
+.home-navigation-a {
+  margin: $theme-unit;
+  padding: $theme-unit * 1.25 $theme-unit * 2.5;
+}
+
+.home-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-carousel-alt {
+  margin-top: $theme-unit;
+  text-align: center;
+
+  @media (min-width: $theme-breakpoints-md) {
+    margin-top: $theme-unit * 2;
+    height: $theme-unit * 6;
+  }
+}
+
+.home-link-more {
+  margin-top: $theme-unit;
+}
+
+.home-persona {
+  margin-bottom: 0;
+  padding-bottom: $theme-unit * 64;
+}
+
+.home-works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $theme-palette-7;
+  margin-top: $theme-unit * 8;
+
+  > h3 {
+    text-align: center;
+  }
+}

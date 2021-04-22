@@ -1,0 +1,14 @@
+@import 'src/styles/theme.scss';
+
+.about-page-avatar {
+  display: flex;
+
+  @media (max-width: $theme-breakpoints-md) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  > div {
+    padding: $theme-unit * 2;
+  }
+}

@@ -7,59 +7,44 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = env => [{
-  name: 'server',
-  target: 'node',
-  resolve: {
-    extensions: ['.js', '.ts']
-  },
-  entry: path.resolve(__dirname, 'src/server.ts'),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
-  },
-  module: {
-    rules: [{
-      test: /\.ts$/,
-      loader: 'ts-loader',
-      include: [
-        path.resolve(__dirname, 'src/routes.ts'),
-        path.resolve(__dirname, 'src/server.ts')
-      ]
-    }]
-  },
-  plugins: [
-    new FsWebpackPlugin([{
-      type: 'delete',
-      files: 'dist/index.js'
-    }], { verbose: true })
-  ]
-}, {
+const { STATIC_ROUTES } = require('./src/routes');
+
+const capitalize = string => `${string[0].toUpperCase()}${string.slice(1)}`;
+
+module.exports = env => ({
   name: 'client',
   target: 'web',
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      mtx: path.resolve(__dirname, 'src/client/utils/mtx')
+      mtx: path.resolve(__dirname, 'src/utils/mtx')
     }
   },
-  entry: path.resolve(__dirname, 'src/client'),
+  entry: Object.values(STATIC_ROUTES)
+    .reduce((acc, route) => ({
+      ...acc,
+      [route.id]: `/src/pages/${capitalize(route.id)}/${capitalize(route.id)}.page.tsx`
+    }), {}),
   output: {
-    path: path.resolve(__dirname, 'dist/client'),
-    filename: '[name]-[hash].bundle.js',
-    chunkFilename: '[contenthash].chunk.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[contenthash].bundle.js',
+    chunkFilename: '[chunkhash].chunk.js'
   },
   optimization: {
     moduleIds: 'deterministic',
-    minimizer: [
-      new CssMinimizerPlugin()
-    ],
+    minimizer: [new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         vendors: {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'all'
+          chunks: 'all',
+          enforce: true
+        },
+        common: {
+          test: /[\\/]src[\\/](?!pages)/,
+          name: 'shared',
+          chunks: 'initial'
         }
       }
     }
@@ -68,10 +53,7 @@ module.exports = env => [{
     rules: [{
       test: /\.ts|tsx$/,
       loader: 'ts-loader',
-      include: [
-        path.resolve(__dirname, 'src/routes.ts'),
-        path.resolve(__dirname, 'src/client')
-      ]
+      include: [path.resolve(__dirname, 'src')]
     }, {
       test: /\.scss$/,
       use: [
@@ -79,7 +61,7 @@ module.exports = env => [{
         'css-loader',
         'sass-loader'
       ],
-      include: path.resolve(__dirname, 'src/client')
+      include: path.resolve(__dirname, 'src')
     }, {
       test: /\.png|jpg/,
       loader: 'url-loader'
@@ -88,21 +70,29 @@ module.exports = env => [{
   plugins: [
     new FsWebpackPlugin([{
       type: 'delete',
-      files: 'dist/client',
+      files: 'dist',
       hooks: ['initialize']
     }], { verbose: true }),
     new MiniCssExtractPlugin({
-      filename: '[name]-[hash].bundle.css',
+      filename: '[contenthash].bundle.css',
       chunkFilename: '[chunkhash].chunk.css'
-    }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/client/index.html'),
-      filename: 'index.html'
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       openAnalyzer: false,
       reportFilename: path.resolve(__dirname, 'report.html')
-    })
+    }),
+    ...Object.values(STATIC_ROUTES).map(route => new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/template.html'),
+      filename: `${route.name}.html`,
+      chunks: [route.id],
+      title: route.title,
+      meta: {
+        description: route.description,
+        'og:title': route.title,
+        'og:description': route.description,
+        'og:image': route.images.og
+      }
+    }))
   ]
-}];
+});
