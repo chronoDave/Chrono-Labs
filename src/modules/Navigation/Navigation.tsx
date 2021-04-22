@@ -29,11 +29,12 @@ export class Navigation extends Mtx<NavigationProps> {
       STATIC_ROUTES.TUHN
     ];
 
-    const getActiveRoute = (route: string) => {
+    const getActiveRoute = (current: string) => {
       const active = window.location.pathname;
 
-      if (route === STATIC_ROUTES.WORKS.name && workRoutes.some(workRoute => active.includes(workRoute.name))) return true;
-      return active.includes(route);
+      if (current === STATIC_ROUTES.WORKS.name && workRoutes.some(workRoute => active.includes(workRoute.name))) return true;
+      if (active.includes(current)) return true;
+      return (current === STATIC_ROUTES.HOME.name && active === (process.env.NODE_ENV === 'development' ? '/dist/' : '/'));
     };
 
     return (
