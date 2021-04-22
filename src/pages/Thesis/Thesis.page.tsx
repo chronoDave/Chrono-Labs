@@ -19,7 +19,7 @@ export class ThesisPage extends Mtx {
           src="/assets/images/thesis@2x.png"
           type="Thesis"
           title="Meaningful Interaction in Narrative-driven Games"
-          date="Januari 6th, 2020 - August 27th, 2020"
+          date="January 6th, 2020 - August 27th, 2020"
         />
         <Typography paragraph>
           The way stories are told within narrative-driven games is inherently flawed. The past few years the industry has seen a surge of so-called "cinematic games" which primarily focus on telling a story using techniques commonly found in cinema. We (<Link underline href="https://linkedin.com/in/danilovandenbeemt">Danilo van den Beemt</Link> and David Wolters) believe that games have the ability to tell stories in a way no other medium can; by means of interaction.

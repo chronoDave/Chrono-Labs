@@ -72,6 +72,12 @@ module.exports = env => ({
       type: 'delete',
       files: 'dist',
       hooks: ['initialize']
+    }, {
+      type: 'copy',
+      files: {
+        from: 'assets',
+        to: 'dist'
+      }
     }], { verbose: true }),
     new MiniCssExtractPlugin({
       filename: '[contenthash].bundle.css',
